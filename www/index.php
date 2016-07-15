@@ -17,7 +17,7 @@
 		<div class="container">
 		<div class="row header">
 				<div class="col-md-offset-2 col-md-8 text-center">
-					<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+					<h1>Загогогоогогогоголовок</h1>
 				</div>
 			</div>
 			<div class="row degustation">
