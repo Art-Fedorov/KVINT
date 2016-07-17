@@ -1,0 +1,108 @@
+* {
+	padding:0;
+	margin: 0;
+}
+html{
+	height: 100%;
+}
+/*a,a:hover,a:focus,a:active{
+	text-decoration: none;
+	color:#f2f2f2;
+  
+  background-color: white;
+}*/
+.container > a{			
+	display: block;
+	float:right;
+	padding:8px 16px;
+	margin-right: 10px;
+	margin-top: -20px;
+	text-decoration: none;	
+	background-color: #ED5650;
+	color: #fff;
+	border-radius: 20px;
+	font-size: 11px;
+}
+.container > a:hover{
+	background-color: #f07772;
+}
+body{
+	background: url("../images/iconbox-1.jpg") no-repeat 50% 50% ;
+	/*background-color: #4b4756;*/
+	background-attachment: fixed;	
+	height: 100%;	
+	background-size:cover;
+	vertical-align: middle;	
+	
+}
+.bg{	
+	height: 100%;	
+	position:relative;
+	padding:20px 10px 20px 10px;
+}
+.container{
+	padding:30px 0 30px 0;
+  display: table;	
+	height: 100%;		
+	border-radius: 10px;
+	background-color: rgba(255,255,255,.9);
+	box-sizing: border-box;
+}
+.container .vertical-align{	
+	display: table-row;	
+	vertical-align: middle;
+}
+.vertical-align{
+	margin: 0;padding: 0;
+}
+.header h1{
+	font-size: 40px;
+	/*изменение шрифта медиа запросами*/
+}
+.header p{
+	font-size: 34x;
+}
+ p{
+	font-size: 20px;
+}
+.degustation{
+	margin-top: 30px;
+}
+.start-btn{	
+	margin-top: 30px;
+	padding: 20px 40px;
+	background-color: #ccc;
+	background-color: #ED5650;
+	color: #fff;
+	border-radius: 50px;
+	border:none;
+	font-size: 18px;	
+}
+.start-btn:hover{
+	background-color: #f28884; 
+}
+.smoothly{
+	-webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+}
+/*
+.start-btn:focus,.start-btn:active{
+	border: none;
+	box-shadow: none;
+}*/
+#flying-bubbles{
+	z-index: 0;
+}
+#bg{
+	z-index: 100;
+}
+.sup{
+	position: absolute;
+	z-index: 100;
+	height: 400px;
+	width:400px;
+	background-color: white;
+}
+.action:active .sup{
+	display: none;
+}
