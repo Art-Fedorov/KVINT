@@ -2,6 +2,9 @@
 	padding:0;
 	margin: 0;
 }
+html{
+	height: 100%;
+}
 ul{
 	list-style: none;
 }
@@ -9,22 +12,40 @@ a,a:hover,a:focus,a:active{
 	text-decoration: none;
 	color:inherit;
 }
-body{
-	height: 100%;
+body{	
+	height: 100%;	
 	position:relative;
-	background: url("/images/iconbox-1.jpg") no-repeat 50% 50% ;
+	background: url("../images/iconbox-1.jpg") no-repeat 50% 50% ;
+	background-attachment: fixed;
 	background-size:cover;
+	vertical-align: middle;
+	padding: 20px;
+	box-sizing: border-box;
 }
-a{
+.admin{
 	position:absolute;
 	top:20px; right:20px;
 }
 h1{
-	font-size:48px;
+	font-size:42px;
 }
-.container{
-	padding:100px 0;
+.container{			
+	display: table-cell;
+	vertical-align: middle;
+	min-height: 100%;
+	border-radius: 4px;
+	background-size: cover;
+	background-color: #ED5650;	
+	box-sizing: border-box;
+	color: white;
 }
 .header{
 	margin:0 0 40px;
+}
+.row{	
+
+}
+.section{
+	display: block table;
+	height: 100%;
 }
