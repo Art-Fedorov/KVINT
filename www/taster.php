@@ -13,10 +13,10 @@
 	<script src="js/common.js"></script>
 </head>
 <body>	
-	
+	<?php echo"Hello world!";?>
 	<div class="bg">			
 		<div class="container">		
-		<a href="index.html">Вернуться</a>
+		<a href="index.php">Вернуться</a>
 		<div class="vertical-align"	>
 			<div class="row header">			
 				<div class="col-md-12 col-xs-offset-0 col-xs-12 text-center">					

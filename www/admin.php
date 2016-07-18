@@ -13,7 +13,7 @@
 	<script src="js/common.js"></script>
 </head>
 <body>
-	<a class="admin" href="admin.html">Admin</a>
+	<a class="admin" href="admin.php">Admin</a>
 	<div class="container">
 		<div class="row header">
 				<div class="col-md-12 col-xs-offset-0 
