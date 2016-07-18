@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -13,6 +13,7 @@
 	<script src="js/common.js"></script>
 </head>
 <body>	
+	
 	<div class="bg">			
 		<div class="container">		
 		<a href="index.html">Вернуться</a>
