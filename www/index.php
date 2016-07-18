@@ -29,7 +29,7 @@
 				<div class="col-md-offset-2 col-md-8 col-xs-offset-1 col-xs-10 text-center">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem enim repellendus aliquam voluptates quam, error corporis deleniti quo tenetur.					
 					</p>
-					<button class="start-btn smoothly" onClick='location.href="taster.html"'>
+					<button class="start-btn smoothly" onClick='location.href="taster.php"'>
 					Начать дегустацию
 					</button>
 				</div>
