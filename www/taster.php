@@ -33,6 +33,7 @@
 					Начать дегустацию
 					</button>
 					<?php
+					echo"smth";
 					//phpinfo();
 					//echo system("/home/oracle/u01/app/oracle/product/12.2.0/dbhome_1/bin/tnsping ORAS1");
 					$db = "(ADDRESS = (PROTOCOL = TCP)(HOST = ora2.kvint.md/UNIACC)(PORT = 1521))" ;
