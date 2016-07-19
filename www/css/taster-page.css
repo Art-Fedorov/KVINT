@@ -25,3 +25,15 @@
 	background-color: #f2f2f2;
 	overflow-y: hidden;
 }
+.list p{
+	display:block;
+	padding:3px 10px;
+	max-width:200px;
+	background: #888;
+}
+.list p:hover{
+	cursor: pointer;
+}
+.cognacgroup ul li{
+	display:inline-block;
+}
