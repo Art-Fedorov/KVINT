@@ -4,59 +4,40 @@
 }
 html{
 	height: 100%;
+	overflow: hidden;
 }
-/*a,a:hover,a:focus,a:active{
-	text-decoration: none;
-	color:#f2f2f2;
-  
-  background-color: white;
-}*/
-.container > a{			
-	display: block;
-	float:right;
-	padding:8px 16px;
-	margin-right: 10px;
-	margin-top: -20px;
+.bg > a{	
+	padding:8px 20px;
+	float: right;
+	margin-right: 15px; margin-top: 15px;*/
 	text-decoration: none;	
 	background-color: #ED5650;
 	color: #fff;
 	border-radius: 20px;
 	font-size: 11px;
 }
-.container > a:hover{
+.bg > a:hover{
+	text-decoration: none;
 	background-color: #f07772;
 }
-body{
-	/*background-color: #4b4756;*/
-	background-attachment: fixed;	
-	height: 100%;	
-	
-}
-.bg{	
-	height: 100%;	
-	position:relative;
-	padding:20px 10px 20px 10px;
+body{	
+	height: 100%;
 	background: url("../images/iconbox-1.jpg") no-repeat 50% 50% ;
 	background-attachment: fixed;	
-	background-size:cover;
-	vertical-align: middle;	
-	
+	padding: 10px;
+	box-sizing: border-box;
+	overflow: auto;
+}
+.bg{	
+	min-height: 100%;	
+	background-color: rgba(255,255,255,0.9); 
+	border-radius: 6px;	
 }
 .container{
-	padding:30px 0 30px 0;
-  display: table;	
-	height: 100%;		
-	border-radius: 10px;
-	background-color: rgba(255,255,255,.9);
+	height: 100%;	
+	padding-top: 50px;
+	padding-bottom: 30px;	
 	box-sizing: border-box;
-
-}
-.container .vertical-align{	
-	display: table-row;	
-	vertical-align: middle;
-}
-.vertical-align{
-	margin: 0;padding: 0;
 }
 .header h1{
 	font-size: 40px;
