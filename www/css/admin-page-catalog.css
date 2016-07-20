@@ -1,0 +1,69 @@
+.cognacgroup ul li{
+	display: inline-block;
+	margin-left: 20px;
+}
+.cognacgroup a{
+	display: block;
+	padding: 8px 10px;
+	color: white;
+	background-color: #fff;
+	color:  #919191;
+	text-decoration: none;
+	border-radius: 20px;
+	border: 1px solid #919191;
+	font-size: 12px;
+}
+.cognacgroup a:hover{
+	background-color: #919191;
+	color: #fff;
+}
+.right-column {
+	padding: 20px 0px 0px 20px;
+	box-sizing: border-box;
+}
+.left-column {
+	padding: 20px 10px 0px 10px;
+	box-sizing: border-box;
+}
+.smoothly{
+	-webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+}
+.btn-right{
+	display: block;
+	float: right;
+	width:120px;
+	height: 38px;
+	font-size: 15px;
+	border-radius: 25px;
+	background-color: #fff;
+	margin-bottom: 10px;
+	color: #797979;
+}
+.button-add:hover{
+	background-color: #91D069;
+	color: #fff;
+}
+.button-re:hover{
+  background-color: #477E9F;
+  color: #fff;
+}
+.button-del:hover{
+	background-color: #D26E5C;
+	color: #fff;
+}
+.button-add{
+	border: 1px solid #91D069;
+}
+.button-re{
+  border: 1px solid #477E9F;
+}
+.button-del{
+	border: 1px solid #D26E5C;
+}
+.table td{
+	text-align: left;
+}
+.table th{	
+	text-align: left;
+}

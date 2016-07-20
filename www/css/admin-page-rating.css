@@ -37,7 +37,7 @@ a,a:hover,a:focus,a:active{
 }
 .admin-link{	
 	display: block;
-	padding:15px 20px;
+	padding:15px;
 	float: right;			
 	height: 50px;	
 }
@@ -72,10 +72,7 @@ li.list-report-button > input:hover{
 .main-menu > li {
 	display: block;
   position: relative;
-  display: inline-block;  
-}
-.main-menu >li:not(:first-child){
-	margin-left: -4px;
+  display: inline-block;
 }
 .main-menu .sub-menu {
 	/*width: 210px;*/

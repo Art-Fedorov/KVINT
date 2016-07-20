@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div class="bg">
-	<a class="admin smoothly" href="admin.php">Администратор</a>	
+	<a class="admin smoothly" href="admin-catalog.php">Администратор</a>	
 		<div class="container">					
 			<div class="row header">			
 				<div class="col-md-12 col-xs-offset-0 col-xs-12 text-center">					
