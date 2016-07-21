@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="css/taster-page.css" />
   <script src="libs/jquery/jquery-2.1.4.min.js"></script>	
 	<script src="libs/modernizr.js"></script>
-	<script src="js/main.js"></script>
+	<script src="libs/mustache.min.js"></script>
 	<script type="text/javascript">
 	$(function(){
 		$('.formgroup').hide();
@@ -41,15 +41,16 @@
 		        url:'php/group-ajax-create.php',
 		        data:{'code':code},
 		        response:'text',
-		        success:function (data) {//возвращаемый результат от сервера
-		            $(".group").html(data);
-		        },
+		        success:function (data) {
+		            $.get("tmpl/formgroup.html",function(tmpl){
+		            	var q={"data":data};
+		            var rendered = Mustache.render(tmpl, q);
+    						$('.group').html(rendered);
+		            })
+		            
+		          },
 		        timeout:5000//таймаут запроса
 		    });
-		  };
-		  function sendRow(){
-		  	alert("a");
-		  	return false;
 		  };
 })
 </script>
@@ -93,9 +94,9 @@
 							<li><p>K</p></li>
 						</ul>
 					</nav>
-					<div class="group">
-						
 					
+					<div id="group" class="group">
+						
 					</div>
 					
 				</form>
