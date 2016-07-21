@@ -15,7 +15,7 @@
 	<script src="js/main.js"></script>
 	<script type="text/javascript">
 	$(function(){
-		//$('.cognacgroup').hide();
+		$('.formgroup').hide();
 		$('#exit').click(function(){
 			$('.cd-wrapper').hide();
 		});
@@ -26,10 +26,11 @@
 
 		$('.cd-wrapper div.list p').click(function(){
 			$('#start-degustation').text($(this).text());
-			$('#hidden').html("<input type='hidden' value='"+$(this).text()+"'>");
+			$('#hidden').html("<input type='hidden' value='"+$(this).text()+"' name='taster'>");
 			$('.vibortext').hide();
-			$('.cognacgroup').show();
+			$('.formgroup').show();
 			$('#exit').click();
+			sendTable("A");
 		});
 		$('.cognacgroup>ul>li>p').click(function(){
 			sendTable($(this).text());
@@ -37,7 +38,7 @@
 		function sendTable(code) {
 		    $.ajax({
 		        type:'get',
-		        url:'ajaxTable.php',
+		        url:'php/group-ajax-create.php',
 		        data:{'code':code},
 		        response:'text',
 		        success:function (data) {//возвращаемый результат от сервера
@@ -71,7 +72,7 @@
 					<button class="choose-send smoothly" name="StartDeg" id="start-degustation">
 					Выбрать имя
 					</button>
-					<form method="POST" action="taster.php">
+					<form method="POST" action="taster.php" class="formgroup">
 					<div id="hidden">
 
 					</div>
@@ -94,67 +95,11 @@
 					</nav>
 					<div class="group">
 						
-					<?php	
-					if (isset($_GET['code']))
-					{
-						$code=$_GET['code'];
-						$query='SELECT COGNAC_CODE,COGNAC_AGE FROM TAST_COGNAC WHERE COGNAC_CAPTION=63 AND COGNAC_CODE like \''.$code.'%\' ORDER BY COGNAC_CODE';
-						$stid = oci_parse($conn,$query );
-						oci_execute($stid);
-						//echo "<div class=\"group\">\n";
-						$i=0;
-						while ($row = oci_fetch_array($stid)) {
-							echo "<div class=\"rowrate\">";
-						    echo "<p code=\"p".$i."\">\nКод коньяка: ";
-						    /*foreach ($row as $item) {
-						        echo $item !== null ? htmlentities($item, ENT_QUOTES, 'cp1251') : "";
-						    }*/
-						    echo $row[0] !== null ? htmlentities($row[0], ENT_QUOTES, 'cp1251') : "";
-						    echo "</p>\n";
-						    echo "<p name=\"age".$i."\">\nВозраст коньяка: ";
-						    echo $row[1] !== null ? htmlentities($row[1], ENT_QUOTES, 'cp1251') : "";
-						    echo "</p>\n";
-						    echo '<div class="cellrate"><span>Прозрачность</span><input type="number" name="opacity" required min="0" max="0.5" step="0.05"></div>';
-						    echo '<div class="cellrate"><span>Цвет</span><input type="number" name="opacity" required min="0" max="0.5" step="0.05"></div>';
-						    echo '<div class="cellrate"><span>Букет</span><input type="number" name="opacity" required min="0" max="3.0" step="0.05"></div>';
-						    echo '<div class="cellrate"><span>Вкус</span><input type="number" name="opacity" required min="0" max="5.0" step="0.05"></div>';
-						    echo '<div class="cellrate"><span>Типичность</span><input type="number" name="opacity" required min="0" max="1.0" step="0.05"></div>';
-						    echo '<div class="cellrate"><span>Общий балл</span><input type="number" name="opacity" required min="0" max="10.0" step="0.05"></div>';
-						    echo '<div class="cellrate"><span>Примечания</span><input type="text" name="opacity"></div>';
-						    echo '<button type="submit" class="secure" name="submit">Закрепить</button>';
-						    echo "</div>";
-					}
-					//echo "</div>\n";
-					}
 					
-					?>
 					</div>
-					<button type="submit" class="secure" name="submit">Закрепить изменения</button>
-				</form>
-				<?php 
-					if (!empty($_POST))
-					{				
-							$array=array();
-							$i=0;	
-							while (isset($_POST['code'.$i]))
-							{
-								$array[$i]= array('code'=>$_POST['code'.$i],
-									'opacity'=>$_POST['opacity'.$i],
-								'age'=>$_POST['opacity'.$i],
-'color'=>$_POST['color'.$i],
-'taste'=>$_POST['taste'.$i],
-'bouquet'=>$_POST['bouquet'.$i],
-'mainpoint'=>$_POST['mainpoint'.$i],
-'note'=>$_POST['note'.$i],
-'typicality'=>$_POST['typicality'.$i]);
-
-								
-								$i++;
-							}
-							print_r($array);
-					}
 					
-				 ?>
+				</form>
+					<?php include_once 'php/secure-insert.php' ?>
 				</div><!-- end of col-md-->
 			</div>			
 		</div>
