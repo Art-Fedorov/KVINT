@@ -37,6 +37,13 @@
 .cognacgroup ul li{
 	display:inline-block;
 }
-.rowrate input{
-	display:inline-block;
+.rowrate{}
+.cellrate{
+	clear:both; 
+   text-align:left;
+}
+.cellrate span{
+padding-left:10px;
+float:left;
+padding-right:10px;
 }

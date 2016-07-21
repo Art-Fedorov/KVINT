@@ -1,4 +1,4 @@
-﻿<?php include_once 'connect.php' ?>
+﻿<?php include_once 'php/connect.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,10 +31,15 @@
 			$('.formgroup').show();
 			$('#exit').click();
 			sendTable("A");
+			$("span.main").text("text");
+			$("#form span").hide();
 		});
 		$('.cognacgroup>ul>li>p').click(function(){
 			sendTable($(this).text());
+
 		});
+
+		
 		function sendTable(code) {
 		    $.ajax({
 		        type:'get',
@@ -52,6 +57,8 @@
 		        timeout:5000//таймаут запроса
 		    });
 		  };
+		  
+		
 })
 </script>
 </head>
@@ -73,11 +80,10 @@
 					<button class="choose-send smoothly" name="StartDeg" id="start-degustation">
 					Выбрать имя
 					</button>
-					<form method="POST" action="taster.php" class="formgroup">
+					<form method="POST" action="taster.php" class="formgroup" id="form">
 					<div id="hidden">
 
 					</div>
-
 					<div class="taster">
 
 					</div>
@@ -92,13 +98,14 @@
 							<li><p>F</p></li>
 							<li><p>G</p></li>
 							<li><p>K</p></li>
-						</ul>
+					</ul>
 					</nav>
 					
 					<div id="group" class="group">
 						
+
 					</div>
-					
+					<button type="submit">Закрепить изменения</button>
 				</form>
 					<?php include_once 'php/secure-insert.php' ?>
 				</div><!-- end of col-md-->
@@ -126,5 +133,20 @@
 					echo "</div>\n";
 					?>
 	</div> <!-- .cd-wrapper -->	
+	<script type="text/javascript">
+	 $(function(){
+
+  $('#form').on('change', '.rowrate input[type=number]', function(){
+  	var sum=0;
+  	//var opacity=$('#form .rowrate input[type=number]:nth-of-type(n+5)');
+   $('#form .rowrate input[type=number]').each(function(){
+   		sum+=parseFloat($(this).val())||0;
+   });
+   	$('#form .rowrate span.main').text(sum);
+  })
+  
+ })
+		
+	</script>
 </body>
 </html>
