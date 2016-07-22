@@ -21,5 +21,17 @@ $conn = oci_connect('TASTING', '1111', 'ora2.kvint.md/UNIACC', 'CL8MSWIN1251');
 					header('Content-Type: application/json');
 					echo json_encode($output);
 				}//endif
-					
+										/*$stid = oci_parse($conn, 'SELECT MAN_FIO FROM tAst_MAN WHERE MAN_CAPTION=63');
+					oci_execute($stid);
+					echo "<div class=\"list\">\n";
+					$i=0;
+					while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
+
+					    echo "<p name=\"p".$i++."\">\n";
+					    foreach ($row as $item) {
+					        echo $item !== null ? htmlentities($item, ENT_QUOTES, 'cp1251') : "";
+					    }
+					    echo "</p>\n";
+					}
+					echo "</div>\n";*/
 					?>
