@@ -1,0 +1,103 @@
+/*одинаковые свойства для всех окон*/
+.b-popup{		
+	display: none;
+	z-index: 103;
+  width:100%;
+  min-height:100%;
+  background-color: rgba(0,0,0,0.1);
+  overflow:hidden;
+  position:fixed;
+  top:0px;
+}
+.b-popup-border{
+	position: absolute;
+  padding:10px;
+  background-color: #fff;
+  border: 1px solid #000;
+  box-sizing: border-box;
+}
+/*индивидуальные размеры окон*/
+.b-popup-border1{
+  top:-webkit-calc(50% - 150px);
+  left:-webkit-calc(50% - 250px);  
+  width:500px;
+  height: 300px;
+}
+.b-popup-border2{
+  top:-webkit-calc(50% - 125px);
+  left:-webkit-calc(50% - 250px);  
+  width:500px;
+  height: 250px;
+}
+.b-popup-border3{
+  top:-webkit-calc(50% - 150px);
+  left:-webkit-calc(50% - 250px);  
+  width:500px;
+  height: 300px;
+}
+.b-popup-border4{
+  top:-webkit-calc(50% - 150px);
+  left:-webkit-calc(50% - 250px);  
+  width:500px;
+  height: 300px;
+}
+.b-popup-border5{
+  top:-webkit-calc(50% - 170px);
+  left:-webkit-calc(50% - 250px);  
+  width:500px;
+  height: 340px;
+}
+.b-popup-border6{
+  top:-webkit-calc(50% - 210px);
+  left:-webkit-calc(50% - 350px);  
+  width:700px;
+  height: 420px;
+}
+
+/*одиноквые свойства для хэдера и футера для окон*/
+.b-popup-header{
+  height: 40px;
+}
+.b-popup-header label{
+  float:left;
+  padding: 10px;
+}
+.b-popup-header a{
+  float:right;
+  padding: 10px;
+}
+.b-popup-content{
+  padding: 10px;  
+}
+.b-popup-content-block{
+  padding: 0px 0 10px 0;
+  //display: inline-block;
+}
+.b-popup-footer{
+  height: 40px;
+  padding: 0 10px;
+}
+.b-popup-footer input.button-ok{
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #47af78;
+  padding: 5px 10px;
+  margin-right: 5px;
+}
+.b-popup-footer input.button-ok:hover{
+  background-color: #47af78;
+  color: #fff;
+}
+.b-popup-footer .button-cancel{
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #bd4c46;
+  padding: 5px 10px;
+}
+.b-popup-footer .button-cancel:hover{
+  background-color: #bd4c46;
+  color: #fff;
+}
+
+
+/*индивидулаьные свойсвта контентов*/
