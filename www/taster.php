@@ -26,12 +26,11 @@
 
 		$('.cd-wrapper div.list p').click(function(){
 			$('#start-degustation').text($(this).text());
-			$('#hidden').html("<input type='hidden' value='"+$(this).text()+"' name='taster'>");
+			$('#hidden').html("<input type='hidden' value='"+$(this).attr('id')+"' name='taster'>");
 			$('.vibortext').hide();
 			$('.formgroup').show();
 			$('#exit').click();
 			sendTable("A");
-			$("span.main").text("text");
 			$("#form span").hide();
 		});
 		$('.cognacgroup>ul>li>p').click(function(){
@@ -49,16 +48,30 @@
 		        success:function (data) {
 		            $.get("tmpl/formgroup.html",function(tmpl){
 		            	var q={"data":data};
+		            	for (i in data)
+   									data[i].index = i;
 		            var rendered = Mustache.render(tmpl, q);
     						$('.group').html(rendered);
-		            })
-		            
+		            })            
 		          },
 		        timeout:5000//таймаут запроса
 		    });
-		  };
-		  
-		
+		  };	
+		  function trysearch(data,code){
+		  	var id=$('#hidden input').val();
+		  	$.ajax({
+		  		type:'get',
+		  		url:'php/try-search.php',
+		  		data:{
+		  			'id':id,
+		  			'code':code
+		  		},
+		  		response:'text',
+		  		success:function(data){
+		  			
+		  		}
+		  	});
+		  }
 })
 </script>
 </head>
@@ -67,8 +80,7 @@
 		<a class="return-main smoothly" href="index.php">Вернуться</a>
 		<div class="container">	
 			<div class="row header">			
-				<div class="col-md-12 col-xs-offset-0 col-xs-12 text-center">
-					
+				<div class="col-md-12 col-xs-offset-0 col-xs-12 text-center">					
 				</div>
 			</div>
 			<div class="row degustation">
@@ -76,18 +88,14 @@
 					<div class="vibortext"><h1>CHOOSE YOUR NAME</h1>
 					<!--<p>свое имя и фамилию из списка</p>-->
 					</div>
-					
 					<button class="choose-send smoothly" name="StartDeg" id="start-degustation">
 					Выбрать имя
 					</button>
 					<form method="POST" action="taster.php" class="formgroup" id="form">
 					<div id="hidden">
-
 					</div>
 					<div class="taster">
-
 					</div>
-					
 					<nav class="cognacgroup">
 						<ul>
 							<li><p>A</p></li>
@@ -99,11 +107,8 @@
 							<li><p>G</p></li>
 							<li><p>K</p></li>
 					</ul>
-					</nav>
-					
+					</nav>					
 					<div id="group" class="group">
-						
-
 					</div>
 					<button type="submit">Закрепить изменения</button>
 				</form>
@@ -112,41 +117,54 @@
 			</div>			
 		</div>
 	</div> <!--конец .bg-->
-	
-
 	<div class="cd-wrapper">
 		<button class="choose-send smoothly" name="Exit" id="exit">Отменить</button>
-
 			<?php	
-					$stid = oci_parse($conn, 'SELECT MAN_FIO FROM tAst_MAN WHERE MAN_CAPTION=63');
-					oci_execute($stid);
-					echo "<div class=\"list\">\n";
-					$i=0;
-					while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
-
-					    echo "<p name=\"p".$i++."\">\n";
-					    foreach ($row as $item) {
-					        echo $item !== null ? htmlentities($item, ENT_QUOTES, 'cp1251') : "";
-					    }
-					    echo "</p>\n";
-					}
-					echo "</div>\n";
+					include_once 'php/taster-list.php';
 					?>
 	</div> <!-- .cd-wrapper -->	
 	<script type="text/javascript">
 	 $(function(){
 
+	 function getsum()
+	 {
+
+	 }
   $('#form').on('change', '.rowrate input[type=number]', function(){
-  	var sum=0;
-  	//var opacity=$('#form .rowrate input[type=number]:nth-of-type(n+5)');
-   $('#form .rowrate input[type=number]').each(function(){
-   		sum+=parseFloat($(this).val())||0;
-   });
-   	$('#form .rowrate span.main').text(sum);
-  })
-  
+  	var sum=parseFloat(0.00);
+  	var opacity=$('#form .rowrate input[type=number]').length/5;
+  	for(var i=0;i<opacity;i++)
+  	{
+  		/*проверка на мин макс значения*/
+  		var opa=parseFloat($('input[name=opacity'+i+']').val())||0;
+  		if (opa>0.5) opa=0.5;
+  		if (opa<0) opa=0;
+  		$('input[name=opacity'+i+']').val(opa);
+  		var col=parseFloat($('input[name=color'+i+']').val())||0;
+  		if (col>0.5) col=0.5;
+  		if (col<0) col=0;
+  		$('input[name=color'+i+']').val(col);
+  		var tas=parseFloat($('input[name=taste'+i+']').val())||0;
+  		if (tas>3.0) tas=3.0;
+  		if (tas<0) tas=0;
+  		$('input[name=taste'+i+']').val(tas);
+  		var bou=parseFloat($('input[name=bouquet'+i+']').val())||0;
+  		if (bou>5.0) bou=5.0;
+  		if (bou<0) bou=0;
+  		$('input[name=bouquet'+i+']').val(bou);
+  		var typ=parseFloat($('input[name=typicality'+i+']').val())||0;
+  		if (typ>1.0) typ=1.0;
+  		if (typ<0) typ=0;
+  		$('input[name=typicality'+i+']').val(typ);
+  		var sum=opa+col+tas+bou+typ;
+  		$('span[name=main'+i+']').text(sum.toFixed(2));
+  		$('input[name=mainpoint'+i+']').attr("value",sum.toFixed(2));
+  	}
+  });
  })
 		
-	</script>
+	</script><?php 
+	
+	echo $array[0]['taster']; ?>
 </body>
 </html>
