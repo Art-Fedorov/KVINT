@@ -20,7 +20,7 @@ $('#first').click(function(){
     $("#popup6").show();
     });
 });             
-             
+       
 function Show_float_window(){    
     var query = window.location.search.substring(1);
     var vars = query.split("&");     
