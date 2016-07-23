@@ -34,8 +34,20 @@
 .list p:hover{
 	cursor: pointer;
 }
+.cognacgroup ul{
+	width:100%;
+	margin-top:20px;
+}
 .cognacgroup ul li{
 	display:inline-block;
+	padding:0;
+	margin:0;
+	padding:3px 10px;
+	background:#ddd;
+}
+.cognacgroup ul li p{
+	padding-bottom:0;
+	margin-bottom:0;
 }
 .group{
 	text-align:left;
@@ -47,8 +59,9 @@
 	text-align:center;
 }
 .cellrate{
-	margin:0 auto;
+	margin:5px auto;
 	width:300px;
+	line-height:25px;
 }
 .rowrate .cellrate:last-of-type label{
 	min-width:124px;
@@ -56,6 +69,7 @@
 .cellrate label{
 	max-width:40%;
 	min-width:120px;
+	font-size:16px;
 }
 .cellrate input{
 	padding-left:5px;
@@ -65,13 +79,15 @@
 }
 .cellrate input[type=number]+span{
 	display:inline-block;
-	width:100px;
-	text-align:center;
+	padding-left:20px;
 	font-style: italic;
 	font-weight:600;
 	color:#999;
-	
 }
+.cellrate input[type=text]{
+	width:150px;
+}
+
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
