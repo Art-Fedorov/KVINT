@@ -1,29 +1,36 @@
+.cognacgroup {
+	box-sizing: border-box;
+}
 .cognacgroup ul li{
 	display: inline-block;
-	margin-left: 20px;
+	margin-left: 20px;	
+}
+.cognacgroup ul li:first-child{
+	margin-left: 0px;
 }
 .cognacgroup a{
 	display: block;
-	padding: 6px 10px;
+	padding: 7px 14px;
 	margin:10px 0;
 	color: white;
 	background-color: #fff;
-	color:  #919191;
+	color:  #000;
 	text-decoration: none;
-	border-radius: 8px;
-	border: 1px solid #919191;
-	font-size: 14px;
+	border-radius: 3px;
+	border: 1px solid #555555;	
+	font-size: 14px;	
 }
 .cognacgroup a:hover{
-	background-color: #919191;
-	color: #fff;
+	background-color: #555555;
+	color: #f4f4f4;	
+	//border-bottom: 2px solid #555555;
 }
 .right-column {
 	padding: 20px 0px 0px 20px;
 	box-sizing: border-box;
 }
 .left-column {
-	padding: 20px 10px 0px 10px;
+	padding: 20px 0px 0px 20px;
 	box-sizing: border-box;
 }
 .smoothly{
@@ -33,21 +40,20 @@
 .btn-right{
 	display: block;
 	float: right;
-	width:120px;
-	height: 38px;
+	padding: 10px 0px;
+	width: 140px;
 	font-size: 15px;
-	border-radius: 10px;
+	border-radius: 4px;
 	background-color: #fff;
 	margin-bottom: 10px;
 	margin-right:10px; 
-	color: #797979;
+	color: #000;
 }
-.btn-right:active{
-	box-shadow: 0 0 0 0 #fff;
-	border: none;
+.btn-right:focus{
+	box-shadow: 0 0 0 0 #fff;	
 }
 .button-add:hover{
-	background-color: #91D069;
+	background-color: #429667;
 	color: #fff;
 }
 .button-re:hover{
@@ -55,17 +61,17 @@
   color: #fff;
 }
 .button-del:hover{
-	background-color: #D26E5C;
+	background-color: #b93838;
 	color: #fff;
 }
 .button-add{
-	border: 1px solid #91D069;
+	border: 2px solid #429667;
 }
 .button-re{
-  border: 1px solid #477E9F;
+  border: 2px solid #477E9F;
 }
 .button-del{
-	border: 1px solid #D26E5C;
+	border: 2px solid #b93838;
 }
 .table td{
 	text-align: left;

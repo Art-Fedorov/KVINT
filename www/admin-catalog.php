@@ -10,7 +10,8 @@
 		<div class="row table">
 				<div class="col-md-12 col-xs-12 text-center conte">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem enim repellendus aliquam voluptates quam, error corporis deleniti quo tenetur assumenda ea, excepturi nobis explicabo? Nos	trum dignissimos animi eligendi id totam.
-					</p>										
+					</p>		
+          <hr>								
 				</div>
         <div class="col-md-12 col-xs-12 text-center conte">
         <nav class="cognacgroup">
@@ -27,7 +28,7 @@
           <div class="left-column col-md-10" style="float: left;">
             <?php include_once('php/fill-table.php'); ?>
           </div>              
-          <div class="right-column col-md-2 aside" style="float: right;">
+          <div class="right-column col-md-2 col-xs-2 aside" style="float: right;">
             <div class="sticky-block">
               <div class="inner">
                 <input type="button" id="right-column-button-add" class="button-add smoothly btn-right" onclick="javascript:Show_float_window()" value="Добавить"></input>

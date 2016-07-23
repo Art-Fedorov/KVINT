@@ -2,22 +2,21 @@
 <div class="b-popup" id="popup1">
   <div class="b-popup-border b-popup-border1">    
   	<div class="b-popup-header">
-  		<label>Дегустация</label>
-  		<a href="javascript:PopUpHide()">X</a>  		
+  		<label>Проведение дегустации</label>
+  		<a href="javascript:PopUpHide()">&#215;</a>  		
   	</div> 
   	<div class="b-popup-content">
   		<div class="b-popup-content-block">
   			<span>Начало дегустации</span>
-				<input type="date" class="input"></input>
+				<input type="date" class="input-date"></input>
 			</div>
 			<div class="b-popup-content-block">
 				<span>Конец дегустации</span>
-				<input type="date" class="input">
+				<input type="date" class="input-date">
 			</div>
-			<div class="b-popup-content-block">
-				</input>
+			<div class="b-popup-content-block">				
 				<p>Описание дегустации</p>			
-				<textarea>
+				<textarea class="textarea-input" rows="2" cols="48">
 				</textarea> 
 			</div>			
   	</div>		
@@ -32,18 +31,18 @@
 <div class="b-popup" id="popup2">
   <div class="b-popup-border b-popup-border2">
   	<div class="b-popup-header">
-  		<label>Группа</label>
-  		<a href="javascript:PopUpHide()">X</a>  		
+  		<label>Группа </label>
+  		<a href="javascript:PopUpHide()">&#215;</a>  		
   	</div> 
-  	<div class="b-popup-content">
-  		<div class="b-popup-content-block">
-  			<p>Наименование группы</p>
-				<input type="text" class="input"></input>
-			</div>
+  	<div class="b-popup-content">  		
 			<div class="b-popup-content-block">
-				<p>Префикс группы</p>
-				<input type="text" class="input">
-			</div>					
+				<span>Префикс группы</span>
+				<input type="text" class="input-text textalign-center"  style="width: 80px;">
+			</div>		
+			<div class="b-popup-content-block">
+  			<p>Наименование группы</p>
+				<input type="text" class="input-text" style="width: 400px;"></input>
+			</div>			
   	</div>		
   	<div class="b-popup-footer">
 			<input type="button" class="button-ok smoothly" value="Применить"></input>
@@ -57,29 +56,29 @@
   <div class="b-popup-border b-popup-border3">
     <div class="b-popup-header">
   		<label>Призовые места</label>
-  		<a href="javascript:PopUpHide()">X</a>  		
+  		<a href="javascript:PopUpHide()">&#215;</a>  		
   	</div> 
   	<div class="b-popup-content">
   		<div class="b-popup-content-block">
   			<span>Номер призового места</span>				
-				<input type="number" step="1" min="0" max="4" value="0">
+				<input type="number" class="number-data" style="width: 60px;" step="1" min="0" max="4" value="0">
 			</div>
 			<div class="b-popup-content-block">
-				<p>Группа</p>				
-				<select>
+				<span>Группа</span>				
+				<select style="width: 380px;">
 					<option>cognakc1</option>
 					<option>cognakc2</option>
 				</select>
 			</div>	
 			<div class="b-popup-content-block">
 				<span>Нижняя граница</span>				
-				<input type="number" step="0.01" min="0" max="10">
+				<input type="number" class="number-data" style="width: 80px; margin-right: 30px;" step="0.01" min="0" max="10">
 				<span>Верхняя граница</span>				
-				<input type="number" step="0.01" min="0" max="10">
+				<input type="number" class="number-data" style="width: 80px;" step="0.01" min="0" max="10">
 			</div>
 			<div class="b-popup-content-block">
 				<span>Наименование места</span>				
-				<select>
+				<select style="width: 285px;">
 					<option>Золотая медаль</option>
 					<option>Серебряная медаль</option>
 					<option>Бронзовая медаль</option>
@@ -99,16 +98,16 @@
   <div class="b-popup-border b-popup-border4">
     <div class="b-popup-header">
   		<label>Дегустаторы</label>
-  		<a href="javascript:PopUpHide()">X</a>  		
+  		<a href="javascript:PopUpHide()">&#215;</a>  		
   	</div> 
   	<div class="b-popup-content">
   		<div class="b-popup-content-block">
-  			<p>ФИО Дегустатора</p>
-				<input type="text" class="input"></input>
+  			<span>ФИО Дегустатора</span>
+				<input type="text" class="input-text" style="width: 350px;"></input>
 			</div>
 			<div class="b-popup-content-block">
-				<p>Должность</p>
-				<input type="text" class="input">
+				<span>Должность</span>
+				<input type="text" class="input-text" style="width: 394px;"></input>
 			</div>					
   	</div>		
   	<div class="b-popup-footer">
@@ -123,33 +122,31 @@
   <div class="b-popup-border b-popup-border5">
   	<div class="b-popup-header">
   		<label>Коньяк</label>
-  		<a href="javascript:PopUpHide()">X</a>  		
+  		<a href="javascript:PopUpHide()">&#215;</a>  		
   	</div> 
   	<div class="b-popup-content">
   		<div class="b-popup-content-block">
-  			<p>Группа коньяка</p>				
-				<select>
+  			<span>Группа коньяка</span>				
+				<select style="width: 400px;">
 					<option>cognakc1</option>
 					<option>cognakc2</option>
 				</select>
 			</div>
 			<div class="b-popup-content-block">
 				<span>Шифр коньяка</span>
-				<input type="text" class="input">
+				<input type="text" style="width: 80px; margin-right: 20px;" class="input-text textalign-center">
+				<span>Возраст (г.)</span>
+				<input type="text" style="width: 90px; pattern="[0-9]{4};" class="input-text textalign-center">
 			</div>			
 			<div class="b-popup-content-block">
-				<span>Наименование коньяка</span>
-				<input type="text" class="input">
-			</div>		
-			<div class="b-popup-content-block">
-				<span>Возраст (г.)</span>
-				<input type="text" class="input">				
-			</div>
+				<span>Наименование коньяка</span> <br>
+				<input type="text" class="input-text"  style="width: 510px; margin-top: 10px;">
+			</div>	
 			<div class="b-popup-content-block">				
 				<span>Кондиция (спирт, %)</span>
-				<input type="text" class="input"><br>
+				<input type="text" style="width: 80px; margin-right: 20px;" class="input-text textalign-center">
 				<span>Кондиция (сахар, г/дм<sup>3</sup>)</span>
-				<input type="text" class="input">
+				<input type="text" style="width: 80px;" class="input-text textalign-center">
 			</div>
   	</div>		
   	<div class="b-popup-footer">
@@ -164,17 +161,15 @@
   <div class="b-popup-border b-popup-border6">
   	<div class="b-popup-header">
   		<label>Оценки коньяка</label>
-  		<a href="javascript:PopUpHide()">X</a>  		
+  		<a href="javascript:PopUpHide()">&#215;</a>  		
   	</div> 
   	<div class="b-popup-content">
   		<div class="b-popup-content-block">
-  			<p>ФИО Дегустатора</p>
-				<select>
+  			<span>ФИО Дегустатора</span>
+				<select style="width: 300px; margin-right: 20px;">
 					<option>cognakc1man</option>
 					<option>cognakc2man</option>
 				</select>
-			</div>
-			<div class="b-popup-content-block">
 				<span>Шифр коньяка</span>
 				<select>
 					<option>A001</option>
@@ -182,29 +177,29 @@
 					<option>C001</option>
 					<option>C002</option>
 				</select>
-			</div>			
-			<div class="b-popup-content-block">
+			</div>					
+			<!--<div class="b-popup-content-block">
 				<span>Наименование коньяка</span>
-				<input type="text" class="input">
-			</div>		
-			<div class="b-popup-content-block">
-				<p>Итоговая оценка</p>
-				<input type="text" class="input">				
-			</div>
+				<input type="text" class="input-text textalign-center">
+			</div>		-->			
 			<div class="b-popup-content-block">				
 				<span>Прозрачность</span>
-				<input type="text" class="input">
+				<input type="text" class="input-text-short textalign-center">
 				<span>Цвет</span>
-				<input type="text" class="input"><br>
+				<input type="text" class="input-text-short textalign-center">
 				<span>Букет</span>
-				<input type="text" class="input">
+				<input type="text" class="input-text-short textalign-center">	
 				<span>Вкус</span>
-				<input type="text" class="input"><br>
+				<input type="text" class="input-text-short textalign-center">
 				<span>Типичность</span>
-				<input type="text" class="input">
+				<input type="text" class="input-text-short textalign-center"">			
+			</div>			
+			<div class="b-popup-content-block">				
 				<span>Примечание</span>
-				<input type="text" class="input">
-			</div>
+				<input type="text" class="input-text" style="width: 350px; margin-right: 28px;">
+				<span>Итоговая оценка</span>
+				<input type="button" class="final-grade" value="8,65"></span>
+			</div>			
   	</div>		
   	<div class="b-popup-footer">
 			<input type="button" class="button-ok smoothly" value="Применить"></input>
