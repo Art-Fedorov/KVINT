@@ -95,7 +95,7 @@ var sum=parseFloat(0.00);
   		if (typ<0) typ=0;
   		$('input[name=typicality'+i+']').val(typ);
   		var sum=opa+col+tas+bou+typ;
-  		$('span[name=main'+i+']').text(sum.toFixed(2));
+  		$('input[name=main'+i+']').val(sum.toFixed(2));
   		$('input[name=mainpoint'+i+']').attr("value",sum.toFixed(2));
   	}
 		  };

@@ -21,11 +21,11 @@
 		<a class="return-main smoothly" href="index.php">Вернуться</a>
 		<div class="container">	
 			<div class="row header">			
-				<div class="col-md-12 col-xs-offset-0 col-xs-12 text-center">					
+				<div class="col-md-12 col-xs-12 text-center">					
 				</div>
 			</div>
 			<div class="row degustation">
-				<div class="col-md-offset-2 col-md-8 col-xs-offset-1 col-xs-10 text-center">
+				<div class="col-md-offset-2 col-md-8 text-center">
 					<div class="vibortext"><h1>CHOOSE YOUR NAME</h1>
 					<!--<p>свое имя и фамилию из списка</p>-->
 					</div>
@@ -51,7 +51,7 @@
 					</nav>					
 					<div id="group" class="group">
 					</div>
-					<button type="submit">Закрепить изменения</button>
+					<button class="secure-button submit-cognac" type="submit">Закрепить изменения</button>
 				</form>
 					<?php include_once 'php/secure-insert.php' ?>
 				</div><!-- end of col-md-->

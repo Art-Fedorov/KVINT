@@ -43,6 +43,7 @@
 	display: block;
 	border-radius: 10px;
 	border:none;
+	background-color: #ee6661;
 	//background-color: #fff;
 	//border:2px solid #ee6661;
 	margin:14px;
@@ -51,6 +52,7 @@
 	font-size: 18px;
 	width: 240px;	
 	box-sizing: content-box;
+	color:white;
 }
 
 .cognac span{
@@ -64,13 +66,15 @@
 	display:inline-block;
 	padding:0;
 	margin:0;
-	padding:4px 12px;
-	border-radius: 20px;
+
 	color: #606060;
 	//font-style: italic;
 	font-weight: lighter;	
 }
-.cognacgroup ul li:hover{
+.cognacgroup ul li:not(:first-of-type){
+	margin-left:-6px;
+}
+.cognacgroup ul li p:hover{
 	cursor: pointer;
 	color: white;
 	background-color: #ed5650;
@@ -78,6 +82,8 @@
 .cognacgroup ul li p{
 	padding-bottom:0;
 	margin-bottom:0;
+	padding:4px 12px;
+	border-radius: 50%;
 }
 .group{
 	text-align:left;
@@ -95,9 +101,7 @@
 	line-height:25px;
 	
 }
-.rowrate .cellrate:last-of-type label{
-	min-width:124px;
-}
+
 .cellrate label{
 	max-width:40%;
 	min-width:150px;
@@ -111,7 +115,7 @@
 	color: #272727;
   border: 1px solid #cac9c9;
   border-radius: 6px;
-  padding:4px 10px 4px 10px; 
+  padding:4px 10px; 
   font-size: 15px;
   width: 55px;
   box-sizing: border-box;
@@ -144,9 +148,7 @@ input[type=number]::-webkit-inner-spin-button {
 	border-radius: 25px;
 	color: #fff;
 }
-.cognac1 {
-	background-color: #ee6661;	
-}
+
 .cognac1 span{
 	color: white;
 	font-size: 20px;
@@ -159,4 +161,21 @@ input[type=number]::-webkit-inner-spin-button {
 	font-size: 15px;
 	border: none;
 	border-radius: 40px;
+	margin-top:30px;
+}
+.res-button{
+	display:inline-block;
+
+	height: 55px;
+	width: 55px;
+	background-color: #ed5650;
+	border-radius: 30px;
+	color: #fff;
+	margin-left: 20px; font-size: 16px; border:none;
+}
+.rowrate .cellrate:first-of-type{
+	margin-bottom:30px;
+}
+.rowrate>p{
+	margin-top:30px;
 }
