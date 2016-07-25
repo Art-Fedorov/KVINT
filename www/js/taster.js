@@ -21,7 +21,6 @@
 			sendTable($(this).text());
 		});
 
-		
 		function sendTable(code) {
 		    $.ajax({
 		        type:'get',
@@ -54,15 +53,6 @@
 		  		success:function(data){
 		  			var opacity=$('#form .rowrate input[type=number]').length/5;
 				  	console.log(JSON.stringify(data));
-				  	for(var i=0;i<opacity;i++)
-				  	{
-				  		/*$('input[name=color'+i+']').val(data[i].color);
-				  		$('input[name=opacity'+i+']').val(data[i].opacity);
-				  		$('input[name=typicality'+i+']').val(data[i].typicality);
-				  		$('input[name=bouquet'+i+']').val(data[i].bouquet);
-				  		$('input[name=taste'+i+']').val(data[i].taste);*/
-				  		//console.log(data[i].taste);
-				  	}
 				  	function one(s){
 				  		if (s[0]=='.') s[0]='1';
 				  		return s
@@ -74,11 +64,12 @@
 				  		$('input[name=bouquet'+i+']').val(val.bouquet);
 				  		$('input[name=typicality'+i+']').val(val.typicality);
 				  	});
+				  	sum();
 		  		}
 		  	});
 		  };
-	$('#form').on('change', '.rowrate input[type=number]', function(){
-  	var sum=parseFloat(0.00);
+		  function sum(){
+var sum=parseFloat(0.00);
   	var opacity=$('#form .rowrate input[type=number]').length/5;
   	for(var i=0;i<opacity;i++)
   	{
@@ -107,5 +98,8 @@
   		$('span[name=main'+i+']').text(sum.toFixed(2));
   		$('input[name=mainpoint'+i+']').attr("value",sum.toFixed(2));
   	}
+		  };
+	$('#form').on('change', '.rowrate input[type=number]', function(){
+  	sum();
   });       
 })
