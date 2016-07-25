@@ -59,13 +59,10 @@
 		</div>
 	</div> <!--конец .bg-->
 
-<div class="cd-wrapper">		
+<div class="cd-wrapper">
+				<button class="cancel-tast smoothly" name="Exit" id="exit">&#215;</button>		
 	<div class="container">
-		<div class="row">
-			<div class="col-md-offset-4 col-md-4 col-sn-offset-4 col-sn-4 list">
-				<button class="cancel-tast smoothly" name="Exit" id="exit">&#215;</button>
-			</div>
-		</div>
+
 			<div class="row">
 				<div class="col-md-offset-4 col-md-4 col-sn-offset-4 col-sn-4  list">
 						<?php	
