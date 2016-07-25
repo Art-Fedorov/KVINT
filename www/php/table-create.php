@@ -13,9 +13,9 @@ class Table {
       echo "</th>";
       }
       while ($row = oci_fetch_array($stid)) {
-        echo "<tr>";
+        echo "<tr value='".htmlentities($row[0], ENT_QUOTES, 'cp1251')."'>";
         for ($i = 0; $i < count($row); $i++) {
-          echo '<td>';
+          echo '<td value="'.$row[$i].'">';
           echo $row[$i] !== null ? htmlentities($row[$i], ENT_QUOTES, 'cp1251') : "";
           echo '</td>';
         }

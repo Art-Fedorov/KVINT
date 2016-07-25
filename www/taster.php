@@ -13,7 +13,8 @@
   <script src="libs/jquery/jquery-2.1.4.min.js"></script>	
 	<script src="libs/modernizr.js"></script>
 	<script src="libs/mustache.min.js"></script>
-
+<script src="js/taster.js">
+	</script>
 </head>
 <body>
 	<div class="bg">
@@ -59,12 +60,11 @@
 	</div> <!--конец .bg-->
 	<div class="cd-wrapper">
 		<button class="choose-send smoothly" name="Exit" id="exit">Отменить</button>
-			<?php	
-					//include_once 'php/taster-list.php';
-					?>
-	<div class="list"></div>
+			
+	<div class="list"><?php	
+					include_once 'php/taster-list.php';
+					?></div>
 	</div> <!-- .cd-wrapper -->	
-	<script src="js/taster.js">
-	</script>
+	
 </body>
 </html>
