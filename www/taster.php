@@ -60,10 +60,15 @@
 	</div> <!--конец .bg-->
 	<div class="cd-wrapper">
 		<button class="choose-send smoothly" name="Exit" id="exit">Отменить</button>
-			
-	<div class="list"><?php	
+	<div class="container">
+				<div class="row">
+					<div class="col-md-offset-4 col-md-4 list">
+						<?php	
 					include_once 'php/taster-list.php';
-					?></div>
+					?>
+					</div>
+				</div>
+			</div>			
 	</div> <!-- .cd-wrapper -->	
 	
 </body>
