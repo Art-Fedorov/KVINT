@@ -52,7 +52,6 @@
 		  		response:'text',
 		  		success:function(data){
 		  			var opacity=$('#form .rowrate input[type=number]').length/5;
-				  	console.log(JSON.stringify(data));
 				  	function one(s){
 				  		if (s[0]=='.') s[0]='1';
 				  		return s
