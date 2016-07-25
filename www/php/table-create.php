@@ -7,15 +7,15 @@ class Table {
       oci_execute($stid);
       echo "<table class=\"table table-hover table-condensed success\">\n";
 
-      for ($i = 1; $i-1 < oci_num_fields($stid); $i++) {
+      for ($i = 2; $i-1 < oci_num_fields($stid); $i++) {
       echo "<th>";
           echo oci_field_name($stid,$i);            
       echo "</th>";
       }
       while ($row = oci_fetch_array($stid)) {
-        echo "<tr value='".htmlentities($row[0], ENT_QUOTES, 'cp1251')."'>";
-        for ($i = 0; $i < count($row); $i++) {
-          echo '<td value="'.$row[$i].'">';
+        echo "<tr data-value='$row[0]'>";
+        for ($i = 1; $i < count($row); $i++) {
+          echo '<td>';
           echo $row[$i] !== null ? htmlentities($row[$i], ENT_QUOTES, 'cp1251') : "";
           echo '</td>';
         }

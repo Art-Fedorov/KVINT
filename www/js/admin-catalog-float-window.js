@@ -41,4 +41,4 @@ function Show_float_window(){
     }
     else  $("#popup1").show(); 
 }
-  
+

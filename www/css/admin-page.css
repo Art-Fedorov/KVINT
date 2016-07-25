@@ -12,7 +12,7 @@ body{
 	background-attachment: fixed;
 	background-size:cover;
 }
-a,a:hover,a:focus,a:active{
+a,a:hover,a:focus{
 	text-decoration: none;
 	color:inherit;
 }
@@ -46,7 +46,10 @@ a,a:hover,a:focus,a:active{
 	color: #fff;
 	cursor: pointer;
 }
-
+.active{
+	background-color: #6d6a76;
+	color: #fff;
+}
 /*-------------------------------------------------------*/
 .main-menu {
 	display: block;	

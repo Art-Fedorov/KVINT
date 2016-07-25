@@ -18,6 +18,7 @@
   <script src="js/admin-catalog-float-window.js"></script>
   <script src="js/select-table-tr.js"></script>
   <script src="js/float-choose.js"></script>
+  <script src="js/active-menu.js"></script>
 </head>
 <body>
   <?php
@@ -27,12 +28,12 @@
 	<div class="header">
 		<div class="container">
 			<ul class="main-menu">        
-        <li> <a class="admin-link smoothly" href="admin-catalog.php">Справочники</a>            
+        <li> <a class="admin-link smoothly active" href="admin-catalog.php?code=1">Справочники</a>
         </li>
-        <li><a class="admin-link smoothly" href="admin-rating.php">Оценки</a></li>
+        <li><a class="admin-link smoothly" href="admin-rating.php?code=6">Оценки</a></li>
         <li><a class="admin-link smoothly" href="admin-report.php">Отчеты</a>
         </li>    
-        <!--<li><a class="admin-link smoothly" id="first">Всплывающее окно</a></li>-->
+        <li><a class="admin-link smoothly" id="first">Всплывающее окно</a></li>
       </ul>
 			<a class="admin-link smoothly" href="index.php">Выход</a>			
 		</div>

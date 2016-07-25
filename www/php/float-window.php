@@ -127,7 +127,7 @@
   	<div class="b-popup-content">
   		<div class="b-popup-content-block">
   			<span>Группа коньяка</span>				
-				<select style="width: 400px;">
+				<select style="width: 384px;">
 					<option>cognakc1</option>
 					<option>cognakc2</option>
 				</select>
@@ -140,7 +140,7 @@
 			</div>			
 			<div class="b-popup-content-block">
 				<span>Наименование коньяка</span> <br>
-				<input type="text" class="input-text"  style="width: 510px; margin-top: 10px;">
+				<input type="text" class="input-text"  style="width: 497px; margin-top: 10px;">
 			</div>	
 			<div class="b-popup-content-block">				
 				<span>Кондиция (спирт, %)</span>

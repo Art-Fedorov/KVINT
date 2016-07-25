@@ -16,7 +16,7 @@
         <div class="col-md-12 col-xs-12 text-center conte">
         <nav class="cognacgroup">
             <ul>
-              <li><a href="admin-catalog.php?code=1" class="smoothly">Справочник дегустаций</a></li>
+              <li><a href="admin-catalog.php?code=1" class="smoothly cognacgroup-a-active">Справочник дегустаций</a></li>
               <li><a href="admin-catalog.php?code=2" class="smoothly">Справочник групп</a></li>
               <li><a href="admin-catalog.php?code=3" class="smoothly">Справочник призовых мест</a></li>
               <li><a href="admin-catalog.php?code=4" class="smoothly">Справочник дегустаторов</a></li>

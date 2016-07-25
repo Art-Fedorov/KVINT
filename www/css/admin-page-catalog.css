@@ -23,7 +23,10 @@
 .cognacgroup a:hover{
 	background-color: #555555;
 	color: #f4f4f4;	
-	//border-bottom: 2px solid #555555;
+}
+.cognacgroup .cognacgroup-a-active{
+	background-color: #555555;
+	color: #f4f4f4;
 }
 .right-column {
 	padding: 20px 0px 0px 20px;
