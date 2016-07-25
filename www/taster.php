@@ -58,8 +58,8 @@
 			</div>			
 		</div>
 	</div> <!--конец .bg-->
-	<div class="cd-wrapper">
-		<button class="choose-send smoothly" name="Exit" id="exit">Отменить</button>
+	<div class="cd-wrapper">	
+		<button class="choose-send smoothly" name="Exit" id="exit">&#215;</button>
 	<div class="container">
 				<div class="row">
 					<div class="col-md-offset-4 col-md-4 list">

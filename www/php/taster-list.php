@@ -1,6 +1,5 @@
 <?php 
 	include_once 'connect.php' ;
-
 					$stid = oci_parse($conn, 'SELECT MAN_FIO,MAN_ID FROM tAst_MAN WHERE MAN_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)');
 					oci_execute($stid);
 					$i=0;
