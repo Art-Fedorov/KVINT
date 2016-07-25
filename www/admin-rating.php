@@ -7,11 +7,8 @@
 		</div>
 		<div class="row table">
 				<div class="col-xs-10 col-md-12 text-center conte">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem enim repellendus aliquam voluptates quam, error corporis deleniti quo tenetur assumenda ea, excepturi nobis explicabo? Nos	trum dignissimos animi eligendi id totam.		
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem enim repellendus aliquam voluptates quam, error corporis deleniti quo tenetur assumenda ea, excepturi nobis explicabo? Nostrum dignissimos animi eligendi id totam.	
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem enim repellendus aliquam voluptates quam, error corporis deleniti quo tenetur assumenda ea, excepturi nobis explicabo? Nostrum dignissimos animi eligendi id totam.
-					</p>					
-					<button class="btn">Дегустация</button>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem enim repellendus aliquam voluptates quam, error corporis deleniti quo tenetur assumenda ea, excepturi nobis explicabo? Nos	trum dignissimos animi eligendi id totam.	
+					</p>										
           
           <div class="content">
           <div class="left-column col-md-10" style="float: left;">
@@ -21,8 +18,8 @@
             <div class="sticky-block">
               <div class="inner">
                 <input type="button" id="right-column-button-add" class="button-add smoothly btn-right" onclick="javascript:Show_float_window()" value="Добавить"></input>
-                <input type="button" id="right-column-button-re" class="button-re smoothly btn-right" value="Изменить"></input>
-                <input type="button" id="right-column-button-del" class="button-del smoothly btn-right" value="Удалить"></input>
+                <input type="button" id="right-column-button-re" class="button-re smoothly btn-right" onclick="javascript:Show_tr_id()" value="Изменить"></input>
+                <input type="button" id="right-column-button-del" class="button-del smoothly btn-right" onclick="javascript:Show_delete_window()" value="Удалить"></input>
               </div>
             </div>
           </div>

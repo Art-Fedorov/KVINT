@@ -33,7 +33,7 @@
         <li><a class="admin-link smoothly" href="admin-rating.php?code=6">Оценки</a></li>
         <li><a class="admin-link smoothly" href="admin-report.php">Отчеты</a>
         </li>    
-        <li><a class="admin-link smoothly" id="first">Всплывающее окно</a></li>
+        <!--<li><a class="admin-link smoothly" id="first">Всплывающее окно</a></li>-->
       </ul>
 			<a class="admin-link smoothly" href="index.php">Выход</a>			
 		</div>

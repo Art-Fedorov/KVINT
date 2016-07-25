@@ -48,6 +48,12 @@
   left:-webkit-calc(50% - 350px);  
   box-sizing: content-box;
 }
+.b-popup-border7{
+  top:-webkit-calc(50% - 95px);
+  left:-webkit-calc(50% - 270px);  
+  box-sizing: content-box;
+}
+
 
 /*одиноквые свойства для хэдера и футера для окон*/
 .b-popup-header{
