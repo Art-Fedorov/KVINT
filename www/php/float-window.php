@@ -8,20 +8,20 @@
   	<div class="b-popup-content">
   		<div class="b-popup-content-block">
   			<span>Начало дегустации</span>
-				<input type="date" class="input-date"></input>
+				<input id="popup1-date1" type="date" class="input-date"></input>
 			</div>
 			<div class="b-popup-content-block">
 				<span>Конец дегустации</span>
-				<input type="date" class="input-date">
+				<input  id="popup1-date2" type="date" class="input-date">
 			</div>
 			<div class="b-popup-content-block">				
 				<p>Описание дегустации</p>			
-				<textarea class="textarea-input" rows="2" cols="48">
+				<textarea  id="popup1-desc" class="textarea-input" rows="2" cols="48">
 				</textarea> 
 			</div>			
   	</div>		
   	<div class="b-popup-footer">
-			<input type="button" class="button-ok smoothly" value="Применить"></input>
+			<input type="button" class="button-ok-popup-1 button-ok smoothly" value="Применить"></input>
 			<input type="button" id="#float-window-cancel" class="button-cancel smoothly" onclick="javascript:cancel()" value="Отменить"></input>
 		</div>
   </div>  
@@ -37,15 +37,15 @@
   	<div class="b-popup-content">  		
 			<div class="b-popup-content-block">
 				<span>Префикс группы</span>
-				<input type="text" class="input-text textalign-center"  style="width: 80px;">
+				<input id="popup2-prefix" type="text" class="input-text textalign-center"  style="width: 80px;">
 			</div>		
 			<div class="b-popup-content-block">
   			<p>Наименование группы</p>
-				<input type="text" class="input-text" style="width: 400px;"></input>
+				<input id="popup2-group" type="text" class="input-text" style="width: 400px;"></input>
 			</div>			
   	</div>		
   	<div class="b-popup-footer">
-			<input type="button" class="button-ok smoothly" value="Применить"></input>
+			<input type="button" class="button-ok-popup-2 button-ok smoothly" value="Применить"></input>
 			<input type="button" id="#float-window-cancel" class="button-cancel smoothly" onclick="javascript:cancel()" value="Отменить"></input>
 		</div>
   </div>
@@ -61,7 +61,7 @@
   	<div class="b-popup-content">
   		<div class="b-popup-content-block">
   			<span>Номер призового места</span>				
-				<input type="number" class="number-data" style="width: 60px;" step="1" min="0" max="4" value="0">
+				<input id="popup2-num" type="number" class="number-data" style="width: 60px;" step="1" min="0" max="4" value="0">
 			</div>
 			<div class="b-popup-content-block">
 				<span>Группа</span>				
@@ -90,7 +90,7 @@
 			</div>					
   	</div>		
   	<div class="b-popup-footer">
-			<input type="button" class="button-ok smoothly" value="Применить"></input>
+			<input type="button" class="button-ok-popup-3 button-ok smoothly" value="Применить"></input>
 			<input type="button" id="#float-window-cancel" class="button-cancel smoothly" onclick="javascript:cancel()" value="Отменить"></input>
 		</div>  
   </div>
@@ -106,15 +106,15 @@
   	<div class="b-popup-content">
   		<div class="b-popup-content-block">
   			<span>ФИО Дегустатора</span>
-				<input type="text" class="input-text" style="width: 350px;"></input>
+				<input id="popup4-fio" type="text" class="input-text" style="width: 350px;"></input>
 			</div>
 			<div class="b-popup-content-block">
 				<span>Должность</span>
-				<input type="text" class="input-text" style="width: 394px;"></input>
+				<input id="popup4-pos" type="text" class="input-text" style="width: 394px;"></input>
 			</div>					
   	</div>		
   	<div class="b-popup-footer">
-			<input type="button" class="button-ok smoothly" value="Применить"></input>
+			<input type="button" class="button-ok-popup-4 button-ok smoothly" value="Применить"></input>
 			<input type="button" id="#float-window-cancel" class="button-cancel smoothly" onclick="javascript:cancel()" value="Отменить"></input>
 		</div> 
   </div>
@@ -154,7 +154,7 @@
 			</div>
   	</div>		
   	<div class="b-popup-footer">
-			<input type="button" class="button-ok smoothly" value="Применить"></input>
+			<input type="button" class="button-ok-popup-5 button-ok smoothly" value="Применить"></input>
 			<input type="button" id="#float-window-cancel" class="button-cancel smoothly" onclick="javascript:cancel()" value="Отменить"></input>
 		</div>
   </div>
@@ -181,11 +181,7 @@
 					$select->fillselect_3();					
 					?>
 				</select>
-			</div>					
-			<!--<div class="b-popup-content-block">
-				<span>Наименование коньяка</span>
-				<input type="text" class="input-text textalign-center">
-			</div>		-->			
+			</div>
 			<div class="b-popup-content-block">				
 				<span>Прозрачность</span>
 				<input type="text" class="input-text-short textalign-center">
@@ -206,7 +202,7 @@
 			</div>			
   	</div>		
   	<div class="b-popup-footer">
-			<input type="button" class="button-ok smoothly" value="Применить"></input>
+			<input type="button" class="button-ok-popup-6 button-ok smoothly" value="Применить"></input>
 			<input type="button" id="#float-window-cancel" class="button-cancel smoothly" onclick="javascript:cancel()" value="Отменить"></input>
 		</div>
   </div>
@@ -225,7 +221,7 @@
 			</div>						
   	</div>		
   	<div class="b-popup-footer">
-			<input type="button" class="button-ok smoothly" value="Да"></input>
+			<input type="button" class="button-ok smoothly"  value="Да"></input>
 			<input type="button" id="#float-window-cancel" class="button-cancel smoothly" onclick="javascript:cancel()" value="Нет"></input>
 		</div> 
   </div>
