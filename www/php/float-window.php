@@ -67,8 +67,9 @@
 				<span>Группа</span>				
 				<select style="width: 380px;">
 					<?php 
-					$sect ='1';
-					include_once("php/fill-select.php");
+					require('php/selection-create.php');
+					$select = new Select();
+ 					$select->fillselect_1(); 					
 					?>
 				</select>
 			</div>	
@@ -131,8 +132,7 @@
   			<span>Группа коньяка</span>				
 				<select style="width: 384px;">
 					<?php 
-					$sect ='1';
-					include_once("php/fill-select.php");
+					$select->fillselect_1();
 					?>
 				</select>
 			</div>
@@ -172,15 +172,13 @@
   			<span>ФИО Дегустатора</span>
 				<select style="width: 300px; margin-right: 20px;">
 					<?php 
-					$sect ='2';
-					include_once("php/fill-select.php");
+					$select->fillselect_2();					
 					?>
 				</select>
 				<span>Шифр коньяка</span>
 				<select>
 					<?php 
-					$sect ='3';
-					include_once("php/fill-select.php");
+					$select->fillselect_3();					
 					?>
 				</select>
 			</div>					

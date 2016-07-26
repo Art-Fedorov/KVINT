@@ -1,7 +1,6 @@
 <?php
 class Select {    
     public function fillselect_1() {
-    	//include_once("connect.php");
       $conn = oci_connect('TASTING', '1111', 'ora2.kvint.md/UNIACC', 'CL8MSWIN1251');
           if (!$conn) {
             $e = oci_error();
@@ -38,7 +37,6 @@ class Select {
     }
 
    public function fillselect_3() {
-      //include_once("connect.php");
       $conn = oci_connect('TASTING', '1111', 'ora2.kvint.md/UNIACC', 'CL8MSWIN1251');
           if (!$conn) {
             $e = oci_error();
