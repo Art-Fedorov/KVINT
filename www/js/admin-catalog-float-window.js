@@ -5,9 +5,14 @@ $(document).mouseup(function (e) {
     }
 });
 
+/*
+$(document).ready(function() {
+ $("#popup3").show();
+});*/
+/*
 function PopUpShow(){
-    $("#popup6").show();
-}
+    $("#popup3").show();
+}*/
 function PopUpHide(){
     $(".b-popup").hide();
 }

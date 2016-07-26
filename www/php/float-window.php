@@ -66,8 +66,10 @@
 			<div class="b-popup-content-block">
 				<span>Группа</span>				
 				<select style="width: 380px;">
-					<option>cognakc1</option>
-					<option>cognakc2</option>
+					<?php 
+					$sect ='1';
+					include_once("php/fill-select.php");
+					?>
 				</select>
 			</div>	
 			<div class="b-popup-content-block">
@@ -128,8 +130,10 @@
   		<div class="b-popup-content-block">
   			<span>Группа коньяка</span>				
 				<select style="width: 384px;">
-					<option>cognakc1</option>
-					<option>cognakc2</option>
+					<?php 
+					$sect ='1';
+					include_once("php/fill-select.php");
+					?>
 				</select>
 			</div>
 			<div class="b-popup-content-block">
@@ -167,15 +171,17 @@
   		<div class="b-popup-content-block">
   			<span>ФИО Дегустатора</span>
 				<select style="width: 300px; margin-right: 20px;">
-					<option>cognakc1man</option>
-					<option>cognakc2man</option>
+					<?php 
+					$sect ='2';
+					include_once("php/fill-select.php");
+					?>
 				</select>
 				<span>Шифр коньяка</span>
 				<select>
-					<option>A001</option>
-					<option>B002</option>
-					<option>C001</option>
-					<option>C002</option>
+					<?php 
+					$sect ='3';
+					include_once("php/fill-select.php");
+					?>
 				</select>
 			</div>					
 			<!--<div class="b-popup-content-block">

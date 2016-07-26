@@ -1,7 +1,13 @@
 <?php
 class Table {    
     public function filltable($code) {
-    	include_once("php/connect.php");
+
+    	$conn = oci_connect('TASTING', '1111', 'ora2.kvint.md/UNIACC', 'CL8MSWIN1251');
+          if (!$conn) {
+            $e = oci_error();
+            trigger_error(htmlentities($e['message'], ENT_QUOTES, 'cp1251'), E_USER_ERROR);
+          }
+
       $query=$code;
       $stid = oci_parse($conn,$query );
       oci_execute($stid);
@@ -21,7 +27,8 @@ class Table {
         }
         echo "</tr>\n";
       }
-      echo "</table>\n";
+      echo "</table>\n";   
+      oci_close($conn);          
     }
 }
 ?>

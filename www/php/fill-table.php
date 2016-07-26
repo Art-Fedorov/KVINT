@@ -4,7 +4,7 @@ require('php/table-create.php');
           {
             $code=$_GET['code'];
             if($code=='1'){
-              $code='SELECT CAPTION_ID, CAPTION_DATEBEG as "Начало", CAPTION_DATEEND as "Окончание", CAPTION_DESC as "Описание" FROM TAST_CAPTION ';              
+              $code='SELECT CAPTION_ID, CAPTION_DATEBEG as "Начало", CAPTION_DATEEND as "Окончание", CAPTION_DESC as "Описание" FROM TAST_CAPTION ';
             }
             if($code=='2'){
               $code='SELECT GROUP_ID, GROUP_TITLE as "Наименование", GROUP_PREFIX as "Префикс" FROM TAST_GROUP e where GROUP_CAPTION = (SELECT MAX(GROUP_CAPTION) FROM TAST_GROUP)';
@@ -26,5 +26,5 @@ require('php/table-create.php');
             }     
             $table = new Table();
             $table->filltable($code);    
-            }     
+  }     
 ?> 

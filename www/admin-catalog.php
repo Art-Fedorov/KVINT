@@ -1,5 +1,5 @@
 	
-  <?php include_once 'admin.php' ?>  
+  <?php include_once 'admin.php' ?>
 
 	<div class="container">		
 		<div class="row headine">
@@ -22,8 +22,7 @@
               <li><a href="admin-catalog.php?code=4" class="smoothly">Справочник дегустаторов</a></li>
               <li><a href="admin-catalog.php?code=5" class="smoothly">Справочник коньяков</a></li>              
             </ul>
-        </nav>
-
+        </nav> 
         <div class="content">
           <div class="left-column col-md-10" style="float: left;">
             <?php include_once('php/fill-table.php'); ?>
