@@ -32,7 +32,7 @@
 					<button class="choose-send smoothly" name="StartDeg" id="start-degustation">
 					Выбрать имя
 					</button>
-					<form method="POST" action="taster.php" class="formgroup" id="form">
+					<form method="POST" action="php/secure-insert.php" class="formgroup" id="form">
 					<div id="hidden">
 					</div>
 					<div class="taster">
@@ -53,7 +53,8 @@
 					</div>
 					<button class="secure-button submit-cognac" type="submit">Закрепить изменения</button>
 				</form>
-					<?php include_once 'php/secure-insert.php' ?>
+					<?php //require 'php/secure-insert.php';
+					//secure(); ?>
 				</div><!-- end of col-md-->
 			</div>			
 		</div>
@@ -66,9 +67,8 @@
 			<div class="row">
 				<div class="col-md-offset-4 col-md-4 col-sn-offset-4 col-sn-4  list">
 						<?php	
-					require 'php/taster-list.php';
-					$secure = new Secure();
-            $secure->secure();
+						include_once 'php/taster-list.php';
+					
 					?>
 				</div>
 			</div>
