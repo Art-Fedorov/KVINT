@@ -175,6 +175,7 @@ input[type=number]::-webkit-inner-spin-button {
 	margin-top:30px;
 }
 .list{
+
 	margin-top: 50px;
 }
 .cancel-tast{
@@ -201,9 +202,10 @@ input[type=number]::-webkit-inner-spin-button {
 	border-radius: 20px;
 	border: 2px solid #fff;
 	font-size: 16px;
+
 }
-.list p:hover{	
-	//border: 2 px solid #ed5650;
+.list p:hover,.list p.active{	
+	//border: 2px solid #ed5650;
 	border-color:   #ed5650;
 	cursor: pointer;
 	//background: #f7f7f7;	

@@ -78,6 +78,6 @@
 .table th{	
 	text-align: left;
 }
-.active{ 
+.selected{ 
 	background: #d1e4dd;
 }

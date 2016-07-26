@@ -6,6 +6,11 @@
 
 		$('#start-degustation').click(function(){
 			$('.cd-wrapper').show();
+			$('.list p').removeClass('active');
+			if ($('#hidden input').length>0)
+			{
+				$('p#'+$('#hidden input').attr('value')).addClass('active');
+			}
 		});
 
 		$('.cd-wrapper div.list p').click(function(){
