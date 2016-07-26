@@ -1,4 +1,12 @@
-<?php if (!empty($_POST))
+<?php 
+class Secure { 
+function secure() {	
+		$conn = oci_connect('TASTING', '1111', 'ora2.kvint.md/UNIACC', 'CL8MSWIN1251');
+					if (!$conn) {
+    				$e = oci_error();
+    				trigger_error(htmlentities($e['message'], ENT_QUOTES, 'cp1251'), E_USER_ERROR);
+					}
+				if (!empty($_POST))
 					{				
 							$array=array();
 							$i=0;	
@@ -24,12 +32,8 @@
 								$s = oci_parse($conn,$q);
 
 								oci_execute($s);
-								$count=0;
-								while ($row = oci_fetch_array($s)) {
-									$count++;
-								}
-								
-								
+								$count=oci_num_rows($s);
+								//debug($count);
 								if ($count==0) {
 									$query = 'INSERT INTO TAST_RATING (RATING_MAN,RATING_COGNAC,RATING_CAPTION,RATING_POINT,RATING_OPACITY,RATING_COLOR,RATING_BOUQUET,RATING_TASTE,RATING_TYPICALITY,RATING_NOTE) VALUES ('.$taster.','.$array[$i]['cognac_id'].',(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION),'.$array[$i]['mainpoint'].','.$array[$i]['opacity'].','.$array[$i]['color'].','.$array[$i]['bouquet'].','.$array[$i]['taste'].','.$array[$i]['typicality'].',\''.$array[$i]['note'].'\')';
 									$stid = oci_parse($conn,$query);
@@ -48,8 +52,11 @@
 								}
 							}
 							oci_commit($conn);
+							oci_close($conn);
 						}
-		function debug( $data ) {
+
+					}
+							function debug( $data ) {
 
     if ( is_array( $data ) )
         $output = "<script>console.log(" . implode($data) . " );</script>";
@@ -58,5 +65,7 @@
 
     echo $output;
 }
+				}
+
 
 ?>

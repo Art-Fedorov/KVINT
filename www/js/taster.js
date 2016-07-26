@@ -62,6 +62,7 @@
 				  		$('input[name=opacity'+i+']').val(val.opacity);
 				  		$('input[name=bouquet'+i+']').val(val.bouquet);
 				  		$('input[name=typicality'+i+']').val(val.typicality);
+				  		$('input[name=note'+i+']').val(val.note);
 				  	});
 				  	sum();
 		  		}
@@ -100,5 +101,10 @@ var sum=parseFloat(0.00);
 		  };
 	$('#form').on('change', '.rowrate input[type=number]', function(){
   	sum();
-  });       
+  });     
+  $('.cognacgroup ul li p').click(function(){
+			$('.cognacgroup ul li p').removeClass('active');
+			$(this).addClass('active');
+
+	});  
 })

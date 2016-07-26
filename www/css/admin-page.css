@@ -35,21 +35,7 @@ a,a:hover,a:focus{
 	-webkit-transition-duration: 0.4s; 
   transition-duration: 0.4s;
 }
-.admin-link{	
-	display: block;
-	padding:15px 20px;
-	float: right;			
-	height: 50px;	
-}
-.admin-link:hover{
-	background-color: #6d6a76;
-	color: #fff;
-	cursor: pointer;
-}
-.active{
-	background-color: #6d6a76;
-	color: #fff;
-}
+
 /*-------------------------------------------------------*/
 .main-menu {
 	display: block;	
@@ -79,4 +65,19 @@ li.list-report-button > input:hover{
 }
 .main-menu >li:not(:first-child){
 	margin-left: -4px;
+}
+.admin-link{	
+	display: block;
+	padding:15px 20px;
+	float: right;			
+	height: 50px;	
+}
+.admin-link:hover{
+	background-color: #6d6a76;
+	color: #fff;
+	cursor: pointer;
+}
+.main-menu li a.active{
+	background-color: #6d6a76;
+	color: #fff;
 }

@@ -1,13 +1,11 @@
-
-var $menu = $(".main-menu"),
- 		// кэшируем в переменную меню
-var links = $menu.find("a");
-    // кэшируем в переменную ссылки
-
-$links.on("click", function() {
-    //$menu.children().removeClass("active"); 
-    // убираем класс у всех пунктов
-    $(this).addClass("active"); 
-    // добавляем к пункту, содержащему нажатую ссылку
-});
+$(function(){
+	$('.cognacgroup li a').each(function () {
+     if($(this).attr('href') == location.pathname.substring(1)+location.search) 
+     { $(this).addClass('active');	}
+  });
+  	$('.main-menu li a').each(function () {
+     if($(this).attr('href') == location.pathname.substring(1)+location.search) 
+     { $(this).addClass('active');	}
+  });
+})
 

@@ -28,7 +28,7 @@
 	<div class="header">
 		<div class="container">
 			<ul class="main-menu">        
-        <li> <a class="admin-link smoothly active" href="admin-catalog.php?code=1">Справочники</a>
+        <li> <a class="admin-link smoothly" href="admin-catalog.php?code=1">Справочники</a>
         </li>
         <li><a class="admin-link smoothly" href="admin-rating.php?code=6">Оценки</a></li>
         <li><a class="admin-link smoothly" href="admin-report.php">Отчеты</a>

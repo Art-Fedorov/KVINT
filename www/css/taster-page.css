@@ -66,16 +66,19 @@
 .cognacgroup ul li:not(:first-of-type){
 	margin-left:-6px;
 }
-.cognacgroup ul li p:hover{
+.cognacgroup ul li p:hover,
+.cognacgroup ul li p.active{
 	cursor: pointer;
 	color: white;
 	background-color: #ed5650;
+	transition:all 0.5s;
 }
 .cognacgroup ul li p{
 	padding-bottom:0;
 	margin-bottom:0;
 	padding:4px 12px;
 	border-radius: 50%;
+
 }
 .group{
 	text-align:left;
