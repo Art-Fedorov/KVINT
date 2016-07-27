@@ -25,7 +25,23 @@
 		$('.cognacgroup>ul>li>p').click(function(){
 			sendTable($(this).text());
 		});
+		/*$('button.secure-button[type=submit]').click(function(){
 
+		});*/
+		$('form#form').submit(function (){
+			var msg   = $('form#form').serialize();
+			$.ajax({
+				type:'post',
+        url:'php/secure-insert.php',
+        data:msg,
+        response:'text',
+        success:function (data) {   
+        console.log(data);        
+          },
+        timeout:5000//таймаут запроса
+			});
+			return false;
+		});
 		function sendTable(code) {
 		    $.ajax({
 		        type:'get',
