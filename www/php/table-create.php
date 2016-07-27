@@ -20,7 +20,7 @@ class Table {
       }
       while ($row = oci_fetch_array($stid)) {
         echo "<tr data-value='$row[0]'>";
-        for ($i = 1; $i < count($row); $i++) {
+        for ($i = 1; $i < oci_num_fields($stid); $i++) {
           echo '<td>';
           echo $row[$i] !== null ? htmlentities($row[$i], ENT_QUOTES, 'cp1251') : "";
           echo '</td>';

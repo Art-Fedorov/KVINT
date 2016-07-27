@@ -10,6 +10,7 @@ var table_add;
     });
     $('.button-ok-popup-2').click(function(){
           data_add_2();
+          event.preventDefault();
     });
     $('.button-ok-popup-3').click(function(){
           data_add_3();
@@ -73,15 +74,32 @@ function data_add_1(){
 function data_add_2(){ 
   var prefix = document.getElementById("popup2-prefix").value;
   var group = document.getElementById("popup2-group").value; 
-  /*var m = fio + pos + table_add; 
+  /*var m = table_add + prefix + group;
   alert(m);*/
   $.ajax({ 
   type:'POST', 
   url:'php/add_popup2.php', 
   data:{   
   'table_add':table_add,
-  'fio':prefix,
-  'pos':group
+  'prefix':prefix,
+  'group':group
+  }, 
+  response:'text', 
+  success:function(data){ }});  
+}
+
+function data_add_3(){ 
+  var prefix = document.getElementById("popup3-prefix").value;
+  var group = document.getElementById("popup3-group").value; 
+  var m = table_add + prefix + group; 
+  alert(m);
+  $.ajax({ 
+  type:'POST', 
+  url:'php/add_popup3.php', 
+  data:{   
+  'table_add':table_add,
+  'prefix':prefix,
+  'group':group
   }, 
   response:'text', 
   success:function(data){ }});  
@@ -102,18 +120,18 @@ function data_add_4(){
   }, 
   response:'text', 
   success:function(data){ }});  
+  return false;
 }
 
-function data_add_5(){ 
-  var e = document.getElementById("popup5-group");
-  var group = e.options[e.selectedIndex].text;
+function data_add_5(){   
+  var group = $('#popup5-group option:selected').attr('data-value');
   var code = document.getElementById("popup5-code").value;
   var age = document.getElementById("popup5-age").value; 
   var name = document.getElementById("popup5-name").value;
   var cond = document.getElementById("popup5-cond").value; 
   var sugare = document.getElementById("popup5-sugare").value; 
-  /*var m = fio + pos + table_add; 
-  alert(m);*/
+  var m = group + code + age + name + cond + sugare; 
+  alert(m);
   $.ajax({ 
   type:'POST', 
   url:'php/add_popup5.php', 
@@ -123,6 +141,7 @@ function data_add_5(){
   'code':code,
   'age':age,
   'name':name,
+  'manuf':manuf,    
   'cond':cond,
   'sugare':sugare
   }, 

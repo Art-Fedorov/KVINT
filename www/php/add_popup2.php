@@ -10,9 +10,9 @@ if (!empty($_POST))
             $e = oci_error();
             trigger_error(htmlentities($e['message'], ENT_QUOTES, 'cp1251'), E_USER_ERROR);
           }
+		$query="INSERT INTO ".$table_add." (GROUP_TITLE, GROUP_PREFIX, GROUP_CAPTION) VALUES ('regerg','erherhrh',(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION))";
 
-		$query="INSERT INTO ".$table_add." (GROUP_PREFIX, GROUP_TITLE) VALUES ('".$prefix."','".$group."')";
-		$stid = oci_parse($conn,$query );
+		$stid = oci_parse($conn,$query);
     oci_execute($stid);
     oci_commit($conn);
     oci_close($conn);

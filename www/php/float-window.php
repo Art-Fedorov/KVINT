@@ -69,7 +69,7 @@
 					<?php 
 					require('php/selection-create.php');
 					$select = new Select();
- 					$select->fillselect_1(); 					
+ 					$select->fillselect_1();
 					?>
 				</select>
 			</div>	
@@ -145,6 +145,10 @@
 			<div class="b-popup-content-block">
 				<span>Наименование коньяка</span> <br>
 				<input id="popup5-name" type="text" class="input-text"  style="width: 497px; margin-top: 10px;">
+			</div>	
+			<div class="b-popup-content-block">
+				<span>Предприятие изготовитель</span> <br>
+				<input id="popup5-manuf" type="text" class="input-text"  style="width: 497px; margin-top: 10px;">
 			</div>	
 			<div class="b-popup-content-block">				
 				<span>Кондиция (спирт, %)</span>

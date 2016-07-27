@@ -12,7 +12,7 @@ if (!empty($_POST))
           }
 
 		$query="INSERT INTO ".$table_add." (MAN_FIO, MAN_CAPTION, MAN_STATUS) VALUES ('".$fio."',(SELECT CAPTION_ID FROM TAST_CAPTION where CAPTION_ID = (SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)),'".$pos."')";
-		$stid = oci_parse($conn,$query );
+		$stid = oci_parse($conn,$query );		
     oci_execute($stid);
     oci_commit($conn);
     oci_close($conn);
