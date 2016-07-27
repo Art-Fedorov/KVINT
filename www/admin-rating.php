@@ -17,8 +17,8 @@
           <div class="right-column col-md-2 col-xs-2 aside" style="float: right;">
             <div class="sticky-block">
               <div class="inner">
-                <input type="button" id="right-column-button-add" class="button-add smoothly btn-right" onclick="javascript:Show_float_window()" value="Добавить"></input>
-                <input type="button" id="right-column-button-re" class="button-re smoothly btn-right" onclick="javascript:Show_tr_id()" value="Изменить"></input>
+                <input type="button" id="right-column-button-add" class="button-add smoothly btn-right" value="Добавить"></input>
+                <input type="button" id="right-column-button-re" class="button-re smoothly btn-right" value="Изменить"></input>
                 <input type="button" id="right-column-button-del" class="button-del smoothly btn-right" onclick="javascript:Show_delete_window()" value="Удалить"></input>
               </div>
             </div>

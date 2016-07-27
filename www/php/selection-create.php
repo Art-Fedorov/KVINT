@@ -10,7 +10,7 @@ class Select {
       $stid = oci_parse($conn,$query);
       oci_execute($stid);
       while ($row = oci_fetch_array($stid)) {
-        echo "<option data-value='$row[0]'>";        
+        echo "<option value='$row[0]'>";        
           echo $row[1] !== null ? htmlentities($row[1], ENT_QUOTES, 'cp1251') : "";
           echo '</option>';
         }
@@ -28,7 +28,7 @@ class Select {
       $stid = oci_parse($conn,$query);
       oci_execute($stid);
       while ($row = oci_fetch_array($stid)) {
-        echo "<option data-value='$row[0]'>";
+        echo "<option value='$row[0]'>";
           echo $row[1] !== null ? htmlentities($row[1], ENT_QUOTES, 'cp1251') : "";
           echo '</option>';
         }
@@ -46,7 +46,7 @@ class Select {
       $stid = oci_parse($conn,$query);
       oci_execute($stid);
       while ($row = oci_fetch_array($stid)) {
-        echo "<option data-value='$row[0]'>";
+        echo "<option value='$row[0]'>";
           echo $row[1] !== null ? htmlentities($row[1], ENT_QUOTES, 'cp1251') : "";
           echo '</option>';
         }      

@@ -20,6 +20,8 @@
   <script src="js/float-choose.js"></script>
   <script src="js/active-menu.js"></script>
   <script src="js/function_add.js"></script>
+  <script src="js/function_del.js"></script>
+  <script src="js/function_change.js"></script>
 </head>
 <body>
   <?php

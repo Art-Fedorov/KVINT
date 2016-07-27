@@ -5,23 +5,23 @@ var table_add;
         $(this).addClass('selected');
         tr_id = $(this).data('value');        
         });
-    $('.button-ok-popup-1').click(function(){
+    $('.apply:nth-of-type(1)').click(function(){
           data_add_1();
     });
-    $('.button-ok-popup-2').click(function(){
+    $('.apply:nth-of-type(2)').click(function(){
           data_add_2();
-          event.preventDefault();
+          //event.preventDefault();
     });
-    $('.button-ok-popup-3').click(function(){
+    $('.apply:nth-of-type(3)').click(function(){
           data_add_3();
     });
-    $('.button-ok-popup-4').click(function(){
+    $('.apply:nth-of-type(4)').click(function(){
           data_add_4();
     });
-    $('.button-ok-popup-5').click(function(){
+    $('.apply:nth-of-type(5)').click(function(){
           data_add_5();
     });
-    $('.button-ok-popup-6').click(function(){
+    $('.apply:nth-of-type(6)').click(function(){
           data_add_6();
     });
   });
