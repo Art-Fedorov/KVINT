@@ -10,7 +10,7 @@ require('php/table-create.php');
               $code='SELECT GROUP_ID, GROUP_TITLE as "Наименование", GROUP_PREFIX as "Префикс" FROM TAST_GROUP e where GROUP_CAPTION = (SELECT MAX(GROUP_CAPTION) FROM TAST_GROUP)';
             }                 
             if($code=='3'){
-              $code='SELECT PRIZE_GROUP, PRIZE_PLACE as "Место", group_title as "Наименование", PRIZE_LOWRANGE as "Нижняя оцнека", PRIZE_HIGHRANGE as "Верхняя оцнека", PRIZE_TITLE as "Медаль" FROM TAST_PRIZE, TAST_GROUP where PRIZE_CAPTION = (SELECT MAX(PRIZE_CAPTION) FROM TAST_PRIZE) and
+              $code='SELECT PRIZE_GROUP, PRIZE_PLACE as "Место", group_title as "Наименование", PRIZE_LOWRANGE as "Нижняя оценка", PRIZE_HIGHRANGE as "Верхняя оценка", PRIZE_TITLE as "Медаль" FROM TAST_PRIZE, TAST_GROUP where PRIZE_CAPTION = (SELECT MAX(PRIZE_CAPTION) FROM TAST_PRIZE) and
               GROUP_CAPTION = (SELECT MAX(GROUP_CAPTION) FROM TAST_GROUP) and PRIZE_GROUP = GROUP_ID order by GROUP_ID, PRIZE_PLACE
               ';
             }  
