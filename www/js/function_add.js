@@ -56,9 +56,10 @@ function data_add_1(){
   var date1 = document.getElementById("popup1-date1").value;
   var date2 = document.getElementById("popup1-date2").value; 
   var desc = document.getElementById("popup1-desc").value;   
+  var m = table_add + date1 + date2 + desc;   
   $.ajax({ 
   type:'POST', 
-  url:'php/add_popup4.php', 
+  url:'php/add_popup1.php', 
   data:{   
   'table_add':table_add,
   'date1':date1,
@@ -66,8 +67,24 @@ function data_add_1(){
   'desc':desc
   }, 
   response:'text', 
-  success:function(data){ }});
-  window.location.reload();
+  success:function(data){ }});  
+}
+
+function data_add_2(){ 
+  var prefix = document.getElementById("popup2-prefix").value;
+  var group = document.getElementById("popup2-group").value; 
+  /*var m = fio + pos + table_add; 
+  alert(m);*/
+  $.ajax({ 
+  type:'POST', 
+  url:'php/add_popup2.php', 
+  data:{   
+  'table_add':table_add,
+  'fio':prefix,
+  'pos':group
+  }, 
+  response:'text', 
+  success:function(data){ }});  
 }
 
 function data_add_4(){ 
@@ -84,6 +101,64 @@ function data_add_4(){
   'pos':pos
   }, 
   response:'text', 
-  success:function(data){ }});
-  window.location.reload();
+  success:function(data){ }});  
+}
+
+function data_add_5(){ 
+  var e = document.getElementById("popup5-group");
+  var group = e.options[e.selectedIndex].text;
+  var code = document.getElementById("popup5-code").value;
+  var age = document.getElementById("popup5-age").value; 
+  var name = document.getElementById("popup5-name").value;
+  var cond = document.getElementById("popup5-cond").value; 
+  var sugare = document.getElementById("popup5-sugare").value; 
+  /*var m = fio + pos + table_add; 
+  alert(m);*/
+  $.ajax({ 
+  type:'POST', 
+  url:'php/add_popup5.php', 
+  data:{   
+  'table_add':table_add,
+  'group':group,
+  'code':code,
+  'age':age,
+  'name':name,
+  'cond':cond,
+  'sugare':sugare
+  }, 
+  response:'text', 
+  success:function(data){ }});  
+}
+
+function data_add_6(){ 
+  var e = document.getElementById("popup6-fio");
+  var fio = e.options[e.selectedIndex].value;
+  var e = document.getElementById("popup6-code");
+  var code = e.options[e.selectedIndex].value;
+  var opasity = document.getElementById("popup6-opacity").value;
+  var color = document.getElementById("popup6-color").value; 
+  var buk = document.getElementById("popup6-buk").value;
+  var taste = document.getElementById("popup6-taste").value; 
+  var type = document.getElementById("popup6-type").value; 
+  var desc = document.getElementById("popup6-desc").value; 
+  var garde = document.getElementById("popup6-grade").value; 
+  /*var m = fio + pos + table_add; 
+  alert(m);*/
+  $.ajax({ 
+  type:'POST', 
+  url:'php/add_popup6.php', 
+  data:{   
+  'table_add':table_add,
+  'fio':fio,
+  'code':code,
+  'opasity':opasity,
+  'color':color,
+  'buk':buk,
+  'taste':taste,
+  'type':type,
+  'desc':desc,
+  'garde':garde
+  }, 
+  response:'text', 
+  success:function(data){ }});  
 }

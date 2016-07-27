@@ -130,7 +130,7 @@
   	<div class="b-popup-content">
   		<div class="b-popup-content-block">
   			<span>Группа коньяка</span>				
-				<select style="width: 384px;">
+				<select id="popup5-group" style="width: 384px;">
 					<?php 
 					$select->fillselect_1();
 					?>
@@ -138,19 +138,19 @@
 			</div>
 			<div class="b-popup-content-block">
 				<span>Шифр коньяка</span>
-				<input type="text" style="width: 80px; margin-right: 20px;" class="input-text textalign-center">
+				<input id="popup5-code" type="text" style="width: 80px; margin-right: 20px;" class="input-text textalign-center">
 				<span>Возраст (г.)</span>
-				<input type="text" style="width: 90px; pattern="[0-9]{4};" class="input-text textalign-center">
+				<input id="popup5-age" type="text" style="width: 90px; pattern="[0-9]{4};" class="input-text textalign-center">
 			</div>			
 			<div class="b-popup-content-block">
 				<span>Наименование коньяка</span> <br>
-				<input type="text" class="input-text"  style="width: 497px; margin-top: 10px;">
+				<input id="popup5-name" type="text" class="input-text"  style="width: 497px; margin-top: 10px;">
 			</div>	
 			<div class="b-popup-content-block">				
 				<span>Кондиция (спирт, %)</span>
-				<input type="text" style="width: 80px; margin-right: 20px;" class="input-text textalign-center">
+				<input id="popup5-cond" type="text" style="width: 80px; margin-right: 20px;" class="input-text textalign-center">
 				<span>Кондиция (сахар, г/дм<sup>3</sup>)</span>
-				<input type="text" style="width: 80px;" class="input-text textalign-center">
+				<input id="popup5-sugare" type="text" style="width: 80px;" class="input-text textalign-center">
 			</div>
   	</div>		
   	<div class="b-popup-footer">
@@ -170,13 +170,13 @@
   	<div class="b-popup-content">
   		<div class="b-popup-content-block">
   			<span>ФИО Дегустатора</span>
-				<select style="width: 300px; margin-right: 20px;">
+				<select id="popup6-fio" style="width: 300px; margin-right: 20px;">
 					<?php 
 					$select->fillselect_2();					
 					?>
 				</select>
 				<span>Шифр коньяка</span>
-				<select>
+				<select id="popup6-code">
 					<?php 
 					$select->fillselect_3();					
 					?>
@@ -184,21 +184,21 @@
 			</div>
 			<div class="b-popup-content-block">				
 				<span>Прозрачность</span>
-				<input type="text" class="input-text-short textalign-center">
+				<input id="popup6-opacity" type="text" class="input-text-short textalign-center">
 				<span>Цвет</span>
-				<input type="text" class="input-text-short textalign-center">
+				<input id="popup6-color" type="text" class="input-text-short textalign-center">
 				<span>Букет</span>
-				<input type="text" class="input-text-short textalign-center">	
+				<input id="popup6-buk" type="text" class="input-text-short textalign-center">	
 				<span>Вкус</span>
-				<input type="text" class="input-text-short textalign-center">
+				<input id="popup6-taste" type="text" class="input-text-short textalign-center">
 				<span>Типичность</span>
-				<input type="text" class="input-text-short textalign-center"">			
+				<input id="popup6-type" type="text" class="input-text-short textalign-center"">			
 			</div>			
 			<div class="b-popup-content-block">				
 				<span>Примечание</span>
-				<input type="text" class="input-text" style="width: 350px; margin-right: 28px;">
+				<input id="popup6-desc" type="text" class="input-text" style="width: 350px; margin-right: 28px;">
 				<span>Итоговая оценка</span>
-				<input type="button" class="final-grade" value="8,65"></span>
+				<input id="popup6-grade" type="button" class="final-grade" value="8,65"></span>
 			</div>			
   	</div>		
   	<div class="b-popup-footer">
