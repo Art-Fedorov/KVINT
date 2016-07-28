@@ -15,7 +15,8 @@ if (!empty($_POST))
             $e = oci_error();
             trigger_error(htmlentities($e['message'], ENT_QUOTES, 'cp1251'), E_USER_ERROR);
           }
-		$query="INSERT INTO ".$table_add." (COGNAC_CODE, COGNAC_CAPTION, COGNAC_TITLE, COGNAC_MANUF, COGNAC_GROUP, COGNAC_AGE, COGNAC_CONDALC, COGNAC_CONDSUG) VALUES ('".$code."',(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION),'"$name"','".$manuf."',".$group.",".$age.",".$cond.",".$sugare.")";
+		$query="INSERT INTO ".$table_add." (COGNAC_CODE, COGNAC_CAPTION, COGNAC_TITLE, COGNAC_MANUF, COGNAC_GROUP, COGNAC_AGE, COGNAC_CONDALC, COGNAC_CONDSUG) VALUES ('".$code."',(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION),'".$name."','".$manuf."',".$group.",'".$age."',".$cond.",".$sugare.")";
+		echo $query;
 		$stid = oci_parse($conn,$query );
     oci_execute($stid);
     oci_commit($conn);

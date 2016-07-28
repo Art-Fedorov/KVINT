@@ -10,8 +10,7 @@ if (!empty($_POST))
             $e = oci_error();
             trigger_error(htmlentities($e['message'], ENT_QUOTES, 'cp1251'), E_USER_ERROR);
           }
-
-		$query="INSERT INTO ".$table_add." (MAN_FIO, MAN_CAPTION, MAN_STATUS) VALUES ('".$fio."',(SELECT CAPTION_ID FROM TAST_CAPTION where CAPTION_ID = (SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)),'".$pos."')";
+		$query="INSERT INTO ".$table_add." (MAN_FIO, MAN_CAPTION, MAN_STATUS) VALUES ('".$fio."',(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION),'".$pos."')";
 		$stid = oci_parse($conn,$query );		
     oci_execute($stid);
     oci_commit($conn);

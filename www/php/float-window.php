@@ -22,7 +22,7 @@
 			</div>			
   	</div>		
   	<div class="b-popup-footer">
-			<input type="submit" class="apply button-ok smoothly" value="Применить"></input>
+			<input type="submit" class="apply1 button-ok smoothly" value="Применить"></input>
 			<input type="button" id="#float-window-cancel" class="button-cancel smoothly" onclick="javascript:cancel()" value="Отменить"></input>
 		</div>
 		</form>
@@ -48,7 +48,7 @@
 			</div>			
   	</div>		
   	<div class="b-popup-footer">
-			<input type="submit" class="apply button-ok smoothly" value="Применить"></input>
+			<input type="submit" class="apply2 button-ok smoothly" value="Применить"></input>
 			<input type="button" id="#float-window-cancel" class="button-cancel smoothly" onclick="javascript:cancel()" value="Отменить"></input>
 		</div>
 		</form>
@@ -66,11 +66,11 @@
   	<div class="b-popup-content">
   		<div class="b-popup-content-block">
   			<span>Номер призового места</span>				
-				<input id="popup2-num" type="number" name="d0" class="number-data" style="width: 60px;" step="1" min="0" max="4" value="0">
+				<input id="popup3-place" type="number" name="d0" class="number-data" style="width: 60px;" step="1" min="1" max="4" value="0">
 			</div>
 			<div class="b-popup-content-block">
 				<span>Группа</span>				
-				<select style="width: 380px;" name="d1">
+				<select id="popup3-group" style="width: 380px;" name="d1">
 					<?php 
 					require('php/selection-create.php');
 					$select = new Select();
@@ -80,13 +80,13 @@
 			</div>	
 			<div class="b-popup-content-block">
 				<span>Нижняя граница</span>				
-				<input type="number" name="d2" class="number-data" style="width: 80px; margin-right: 30px;" step="0.01" min="0" max="10">
+				<input id="popup3-down" type="number" name="d2" class="number-data" style="width: 80px; margin-right: 30px;" step="0.01" min="0" max="10">
 				<span>Верхняя граница</span>				
-				<input type="number" name="d3" class="number-data" style="width: 80px;" step="0.01" min="0" max="10">
+				<input id="popup3-up" type="number" name="d3" class="number-data" style="width: 80px;" step="0.01" min="0" max="10">
 			</div>
 			<div class="b-popup-content-block">
 				<span>Наименование места</span>				
-				<select style="width: 285px;" name="d4">
+				<select id="popup3-medal" style="width: 285px;" name="d4">
 					<option>Золотая медаль</option>
 					<option>Серебряная медаль</option>
 					<option>Бронзовая медаль</option>
@@ -95,7 +95,7 @@
 			</div>					
   	</div>		
   	<div class="b-popup-footer">
-			<input type="submit" class="apply button-ok smoothly" value="Применить"></input>
+			<input type="submit" class="apply3 button-ok smoothly" value="Применить"></input>
 			<input type="button" id="#float-window-cancel" class="button-cancel smoothly" onclick="javascript:cancel()" value="Отменить"></input>
 		</div>
 		</form>  
@@ -121,7 +121,7 @@
 			</div>					
   	</div>		
   	<div class="b-popup-footer">
-			<input type="submit" class="apply button-ok smoothly" value="Применить"></input>
+			<input type="submit" class="apply4 button-ok smoothly" value="Применить"></input>
 			<input type="button" id="#float-window-cancel" class="button-cancel smoothly" onclick="javascript:cancel()" value="Отменить"></input>
 		</div>
 		</form> 
@@ -167,7 +167,7 @@
 			</div>
   	</div>		
   	<div class="b-popup-footer">
-			<input type="submit" class="apply button-ok smoothly" value="Применить"></input>
+			<input type="submit" class="apply5 button-ok smoothly" value="Применить"></input>
 			<input type="button" id="#float-window-cancel" class="button-cancel smoothly" onclick="javascript:cancel()" value="Отменить"></input>
 		</div>
 		</form>
@@ -213,11 +213,11 @@
 				<span>Примечание</span>
 				<input name="d8" id="popup6-desc" type="text" class="input-text" style="width: 350px; margin-right: 28px;">
 				<span>Итоговая оценка</span>
-				<input name="d2" id="popup6-grade" type="button" class="final-grade" value="8,65"></span>
+				<input name="d2" id="popup6-grade" type="button" class="final-grade" value="8.65"></span>
 			</div>			
   	</div>		
   	<div class="b-popup-footer">
-			<input type="submit" class="apply button-ok smoothly" value="Применить"></input>
+			<input type="submit" class="apply6 button-ok smoothly" value="Применить"></input>
 			<input type="button" id="#float-window-cancel" class="button-cancel smoothly" onclick="javascript:cancel()" value="Отменить"></input>
 		</div>
 		</form>

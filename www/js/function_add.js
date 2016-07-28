@@ -5,23 +5,22 @@ var table_add;
         $(this).addClass('selected');
         tr_id = $(this).data('value');        
         });
-    $('.apply:nth-of-type(1)').click(function(){
+    $('.apply1').click(function(){
           data_add_1();
     });
-    $('.apply:nth-of-type(2)').click(function(){
+    $('.apply2').click(function(){
           data_add_2();
-          //event.preventDefault();
     });
-    $('.apply:nth-of-type(3)').click(function(){
+    $('.apply3').click(function(){
           data_add_3();
     });
-    $('.apply:nth-of-type(4)').click(function(){
+    $('.apply4').click(function(){
           data_add_4();
     });
-    $('.apply:nth-of-type(5)').click(function(){
+    $('.apply5').click(function(){
           data_add_5();
     });
-    $('.apply:nth-of-type(6)').click(function(){
+    $('.apply6').click(function(){
           data_add_6();
     });
   });
@@ -57,7 +56,8 @@ function data_add_1(){
   var date1 = document.getElementById("popup1-date1").value;
   var date2 = document.getElementById("popup1-date2").value; 
   var desc = document.getElementById("popup1-desc").value;   
-  var m = table_add + date1 + date2 + desc;   
+  var m = table_add + date1 + date2 + desc;
+  location.reload(); 
   $.ajax({ 
   type:'POST', 
   url:'php/add_popup1.php', 
@@ -68,7 +68,7 @@ function data_add_1(){
   'desc':desc
   }, 
   response:'text', 
-  success:function(data){ }});  
+  success:function(data){  }});   
 }
 
 function data_add_2(){ 
@@ -85,24 +85,33 @@ function data_add_2(){
   'group':group
   }, 
   response:'text', 
-  success:function(data){ }});  
+  success:function(data){ console.log(data);}});  
 }
 
 function data_add_3(){ 
-  var prefix = document.getElementById("popup3-prefix").value;
-  var group = document.getElementById("popup3-group").value; 
-  var m = table_add + prefix + group; 
-  alert(m);
+  var place = document.getElementById("popup3-place").value;
+  var group = $('#popup3-group option:selected').attr('value');
+  var down = document.getElementById("popup3-down").value;
+  var up = document.getElementById("popup3-up").value; 
+  var medal = document.getElementById("popup3-medal").value;
+
+  var m = table_add +"|" + place +"|" + group
+   +"|" + down +"|" + up +"|" + medal;
+  
+  console.log(m);
   $.ajax({ 
   type:'POST', 
   url:'php/add_popup3.php', 
   data:{   
   'table_add':table_add,
-  'prefix':prefix,
-  'group':group
+  'place':place,
+  'group':group,
+  'down':down,
+  'up':up,
+  'medal':medal
   }, 
   response:'text', 
-  success:function(data){ }});  
+  success:function(data){ console.log(data); }});  
 }
 
 function data_add_4(){ 
@@ -124,14 +133,15 @@ function data_add_4(){
 }
 
 function data_add_5(){   
-  var group = $('#popup5-group option:selected').attr('data-value');
+  var group = $('#popup5-group option:selected').attr('value');
   var code = document.getElementById("popup5-code").value;
   var age = document.getElementById("popup5-age").value; 
   var name = document.getElementById("popup5-name").value;
   var cond = document.getElementById("popup5-cond").value; 
   var sugare = document.getElementById("popup5-sugare").value; 
+  var manuf = document.getElementById("popup5-manuf").value; 
   var m = group + code + age + name + cond + sugare; 
-  alert(m);
+  console.log(m);
   $.ajax({ 
   type:'POST', 
   url:'php/add_popup5.php', 
@@ -146,23 +156,22 @@ function data_add_5(){
   'sugare':sugare
   }, 
   response:'text', 
-  success:function(data){ }});  
+  success:function(data){ console.log(data); }});  
 }
 
 function data_add_6(){ 
-  var e = document.getElementById("popup6-fio");
-  var fio = e.options[e.selectedIndex].value;
-  var e = document.getElementById("popup6-code");
-  var code = e.options[e.selectedIndex].value;
+  var fio = $('#popup6-fio option:selected').attr('value');
+  var code = $('#popup6-code option:selected').attr('value');
   var opasity = document.getElementById("popup6-opacity").value;
   var color = document.getElementById("popup6-color").value; 
   var buk = document.getElementById("popup6-buk").value;
   var taste = document.getElementById("popup6-taste").value; 
   var type = document.getElementById("popup6-type").value; 
   var desc = document.getElementById("popup6-desc").value; 
-  var garde = document.getElementById("popup6-grade").value; 
-  /*var m = fio + pos + table_add; 
-  alert(m);*/
+  var grade = document.getElementById("popup6-grade").value;   
+  var m = fio +"|" + code+"|"  + opasity +"|" + color + +"|" 
+  buk+"|"  + taste +"|" + type+"|"  + desc+"|"  + grade; 
+  console.log(m);
   $.ajax({ 
   type:'POST', 
   url:'php/add_popup6.php', 
@@ -176,8 +185,8 @@ function data_add_6(){
   'taste':taste,
   'type':type,
   'desc':desc,
-  'garde':garde
+  'grade':grade
   }, 
   response:'text', 
-  success:function(data){ }});  
+  success:function(data){ console.log(data); }});  
 }

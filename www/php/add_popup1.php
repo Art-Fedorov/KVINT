@@ -10,9 +10,9 @@ if (!empty($_POST))
 		$ndate2 = date("d/m/Y", strtotime($date2));
 
 		$conn = oci_connect('TASTING', '1111', 'ora2.kvint.md/UNIACC', 'CL8MSWIN1251');
-          if (!$conn) {
-            $e = oci_error();
-            trigger_error(htmlentities($e['message'], ENT_QUOTES, 'cp1251'), E_USER_ERROR);
+    if (!$conn) {
+      $e = oci_error();
+      trigger_error(htmlentities($e['message'], ENT_QUOTES, 'cp1251'), E_USER_ERROR);
     }
 		$query="INSERT INTO ".$table_add." (CAPTION_DATEBEG, CAPTION_DATEEND, CAPTION_DESC) VALUES ('".$ndate1."','".$ndate2."','".$desc."')";
 

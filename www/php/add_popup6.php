@@ -18,8 +18,31 @@ if (!empty($_POST))
             trigger_error(htmlentities($e['message'], ENT_QUOTES, 'cp1251'), E_USER_ERROR);
           }
 
-		$query="INSERT INTO ".$table_add." (RATING_MAN, RATING_COGNAC, RATING_POINT,RATING_OPACITY,RATING_COLOR,RATING_BOUQUET,RATING_TASTE,RATING_TYPICALITY,RATING_NOTE) VALUES ('".$fio."','"$code"','".$grade."','".$opasity."','".$color."','".$buk."','".$taste."','".$type."','".$desc."')";
+		$query="INSERT INTO ".$table_add." 
+		(RATING_MAN, 
+		RATING_COGNAC,
+		RATING_CAPTION, 
+		RATING_POINT, 
+		RATING_OPACITY, 
+		RATING_COLOR, 
+		RATING_BOUQUET, 
+		RATING_TASTE, 
+		RATING_TYPICALITY, 
+		RATING_NOTE) 
+		VALUES 
+		(".$fio.",
+		".$code.",
+		(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION),
+		".$grade.",
+		".$opasity.",
+		".$color.",
+		".$buk.",
+		".$taste.",
+		".$type.",
+		'".$desc."'
+		)";
 		$stid = oci_parse($conn,$query );
+		echo $query;
     oci_execute($stid);
     oci_commit($conn);
     oci_close($conn);
