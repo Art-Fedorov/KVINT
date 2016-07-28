@@ -9,35 +9,7 @@ $(document).ready(function(){
       tr_id = $(this).data('value');
       tr_help = $(this).attr('data-value-help');        
   });
-  $('#right-column-button-re').click(function(){
-        //delete_row();
-        if (tr_id!==undefined) Show_float_window();
-         $('tr[data-value='+tr_id+'][data-value-help="'+tr_help+'"]').find('td').each(function(key,val){
-          //console.log(key+" "+$(val).text());
-          //var date = $('form *[name=d'+key+'][type=date]';         
-          if ($('form *[name=d'+key+'][type=date]').length==1){
-            
-            var text = $(val).text();
 
-            var vars = text.split(".");
-            var date1=new Date();
-            date1 = vars[2]+"-"+vars[1]+"-"+vars[0];
-            // var xxx=new Date(date1);
-            console.log(date1); 
-            $('form *[name=d'+key+'][type=date]').val(date1);
-          }   
-          /*if ($('form select[name=d'+key+']').length==1){
-
-            var text = $(val).text();
-            var vars = text.split(".");
-            var date = vars[2]+"-"+vars[1]+"-"+vars[0];
-
-            $('form select[name=d'+key+']').text(date);
-          }   */
-          $('form *[name=d'+key+']').val($(val).text());
-
-        });
-      });
   $('form').submit(function(event) {
     return false;
   });

@@ -81,3 +81,17 @@ li.list-report-button > input:hover{
 	background-color: #6d6a76;
 	color: #fff;
 }
+span.popup-result{
+	opacity:0;
+	font-size:12px;
+	
+}
+span.popup-result.ok
+{
+	color:#429667;
+}
+span.popup-result.false
+{
+	color:#b93838;
+}
+
