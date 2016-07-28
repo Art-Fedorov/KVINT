@@ -15,7 +15,7 @@ require('php/table-create.php');
               ';
             }  
             if($code=='4'){
-              $code='SELECT MAN_ID, MAN_FIO as "ФИО", MAN_STATUS as "Должность" FROM TAST_MAN where 
+              $code='SELECT MAN_ID, MAN_FIO as "ФИО", MAN_STATUS as "Должность", MAN_PIN as "PIN" FROM TAST_MAN where 
               MAN_CAPTION = (SELECT MAX(MAN_CAPTION) FROM TAST_MAN)';
             }  
             if($code=='5'){

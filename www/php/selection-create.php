@@ -1,11 +1,7 @@
 <?php
 class Select {    
     public function fillselect_1() {
-      $conn = oci_connect('TASTING', '1111', 'ora2.kvint.md/UNIACC', 'CL8MSWIN1251');
-          if (!$conn) {
-            $e = oci_error();
-            trigger_error(htmlentities($e['message'], ENT_QUOTES, 'cp1251'), E_USER_ERROR);
-          }
+      require_once 'connect.php';
       $query='SELECT GROUP_ID, GROUP_TITLE FROM TAST_GROUP where GROUP_CAPTION = (SELECT MAX(GROUP_CAPTION) FROM TAST_GROUP)';
       $stid = oci_parse($conn,$query);
       oci_execute($stid);

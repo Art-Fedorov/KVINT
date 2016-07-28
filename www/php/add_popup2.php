@@ -10,7 +10,7 @@ if (!empty($_POST))
             $e = oci_error();
             trigger_error(htmlentities($e['message'], ENT_QUOTES, 'cp1251'), E_USER_ERROR);
           }
-		$query="INSERT INTO ".$table_add." (GROUP_ID, GROUP_TITLE, GROUP_PREFIX, GROUP_CAPTION) VALUES ((SELECT MAX(GROUP_ID) FROM TAST_GROUP) + 1,'".$group."','".$prefix."',(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION))";
+		$query="INSERT INTO ".$table_add." ( GROUP_TITLE, GROUP_PREFIX, GROUP_CAPTION) VALUES ('".$group."','".$prefix."',(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION))";
 		echo $query;
 		$stid = oci_parse($conn,$query);
     oci_execute($stid);

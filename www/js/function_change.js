@@ -1,10 +1,10 @@
 $(function(){
     $('#right-column-button-re').click(function(){
         //delete_row();
-        if (tr_id!==undefined) Show_float_window();
+        if (tr_id!==undefined) { Show_float_window();}
          $('tr[data-value='+tr_id+'][data-value-help="'+tr_help+'"]')
          .find('td').each(function(key,val){
-          if ($('form *[name=d'+key+'][type=date]').length==1){
+          /*if ($('form *[name=d'+key+'][type=date]').length==1){
             var text = $(val).text();
             var vars = text.split(".");
             var date1=new Date();
@@ -13,17 +13,16 @@ $(function(){
              //console.log($(val).text()+" "+key);
           } else 
           if($('form select[name=d'+key+']').length==1){
-            //console.log($(val).text()+" "+key);
-              $('form select[name=d'+key+'] option')
+            $('form select[name=d'+key+'] option')
                 .each(function(k,v){
                   if ($(v).text()==$(val).text()) {
                     //alert($(v).text());
                   }
               })
-          } else {
+          } else {*/
           $('form *[name=d'+key+']').val($(val).text());
           
-          }
+          /*}*/
         });
       });
     /*$('#right-column-button-re').click(function(){

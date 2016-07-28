@@ -1,11 +1,14 @@
-var table_add;
+
   $(document).ready(function(){
     $('tr').click(function(){
         $('tr').removeClass();
         $(this).addClass('selected');
         tr_id = $(this).data('value');        
         });
-    $('.apply1').click(function(){
+    $('#right-column-button-add').click(function(){
+        Show_float_window();
+      });
+    /*$('.apply1').click(function(){
           data_add_1();
     });
     $('.apply2').click(function(){
@@ -15,6 +18,7 @@ var table_add;
           data_add_3();
     });
     $('.apply4').click(function(){
+         
           data_add_4();
     });
     $('.apply5').click(function(){
@@ -22,10 +26,11 @@ var table_add;
     });
     $('.apply6').click(function(){
           data_add_6();
-    });
+    });*/
+
   });
 
-function Show_float_window(){    
+/*function Show_float_window(){    
     var query = window.location.search.substring(1);
     var vars = query.split("&");     
     var l = vars[0].split("=");
@@ -50,7 +55,7 @@ function Show_float_window(){
         table_add = 'TAST_RATING';
     }
     else  $("#popup1").show(); 
-}
+}*/
 
 function data_add_1(){ 
   var date1 = document.getElementById("popup1-date1").value;
@@ -156,11 +161,11 @@ function data_add_4(){
   }, 
   response:'text', 
   success:function(data){ 
-      $('#popup1 .b-popup-footer').
+      $('#popup4 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
     $('span.popup-result').css("opacity","1");}, 
   error:function(){
-    $('#popup1 .b-popup-footer').
+    $('#popup4 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
     $('span.popup-result.false').css("opacity","1");
      }

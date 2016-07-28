@@ -1,6 +1,6 @@
 /*одинаковые свойства для всех окон*/
 .b-popup{		
-	display: none;
+	display: block;
 	z-index: 103;
   width:100%;
   min-height:100%;
@@ -8,6 +8,9 @@
   overflow:hidden;
   position:fixed;
   top:0px;
+}
+div#popup7{
+  display:none;
 }
 .b-popup-border{
 	position: absolute;
