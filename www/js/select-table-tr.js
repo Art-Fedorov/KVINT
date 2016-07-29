@@ -2,6 +2,7 @@ var tr_id;
 var tr_help;
 var table_add;
 var id_row;
+var codetable;
 $(document).ready(function(){
   //Выделение строки таблицы
   $('tr').click(function(){
@@ -33,39 +34,46 @@ function Show_float_window(){
     var query = window.location.search.substring(1);
     var vars = query.split("&");     
     var l = vars[0].split("=");
-    var codetable = l[1];
+    codetable = l[1];
     if (codetable=='1'){
       $.get('../tmpl/pop1.php', function(result) {
     $('body').append(result);
+    change();
 });
         table_add = 'TAST_CAPTION';
     } else if (codetable=='2'){
       $.get('../tmpl/pop2.php', function(result) {
     $('body').append(result);
+    change();
 });
         table_add = 'TAST_GROUP';
     } else if (codetable=='3'){
       $.get('../tmpl/pop3.php', function(result) {
     $('body').append(result);
+    change();
 });
         table_add = 'TAST_PRIZE';
     } else if (codetable=='4'){
        $.get('../tmpl/pop4.php', function(result) {
     $('body').append(result);
+    change();
 });
         table_add = 'TAST_MAN';
     } else if (codetable=='5'){
         $.get('../tmpl/pop5.php', function(result) {
     $('body').append(result);
+    change();
 });
         table_add = 'TAST_COGNAC';
     } else if (codetable=='6'){
         $.get('../tmpl/pop6.php', function(result) {
     $('body').append(result);
+    change();
 });
         table_add = 'TAST_RATING';
     }
     else console.log('bad request');
     console.log(action);
+    console.log($('form').attr('id'));
     
 }

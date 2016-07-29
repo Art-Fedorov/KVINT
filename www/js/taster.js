@@ -1,6 +1,7 @@
 	$(function(){
 		//изначально скрывается блок с заполнением оценок
 		$('.formgroup').hide();
+		$('.cognacgroup ul li:first-child p').addClass('active');
 		//кнопка выхода из выбора имени
 		$('#exit').click(function(){
 			$('.cd-wrapper').hide();
@@ -39,7 +40,8 @@
         response:'text',
         success:function (data) {
 				    $.get('../tmpl/secure-pop.php', function(result) {
-				    $('body').append(result);});   
+				    $('body').append(result);});  
+				    perehod_text(); 
           },
         timeout:5000//таймаут запроса
 			});
@@ -104,6 +106,7 @@
 					$(this).addClass('active');
 
 			});  
+
 		//функция подсчета общего балла для каждого коньяка
 			function sum(){
 			var sum=parseFloat(0.00);
@@ -137,4 +140,23 @@
 		  	}
 			};
 		});
-
+//Переход на следующую группу 
+//(во всплывающем окне)
+function perehod_text(){
+	$(".cognacgroup ul li").each(function(key,val){
+		if ($(val).children().hasClass('active')) {			
+			$('#secure-popup span.next').text($('.cognacgroup ul li:nth-child('+(key+2)+') p').text());
+			console.log($('.cognacgroup ul li:nth-child('+(key+2)+') p').text());
+			 return false;
+		}
+	});
+}
+function perehod_action(){
+	$(".cognacgroup ul li").each(function(key,val){
+			if ($(val).children().hasClass('active')) {
+				PopUpHide();
+				$('.cognacgroup ul li:nth-child('+(key+2)+') p').click();
+				 return false;
+			}
+		});
+}
