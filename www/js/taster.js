@@ -1,9 +1,11 @@
 	$(function(){
+		//изначально скрывается блок с заполнением оценок
 		$('.formgroup').hide();
+		//кнопка выхода из выбора имени
 		$('#exit').click(function(){
 			$('.cd-wrapper').hide();
 		});
-
+		//кнопка выбрать имя
 		$('#start-degustation').click(function(){
 			$('.cd-wrapper').show();
 			$('.list p').removeClass('active');
@@ -13,6 +15,7 @@
 			}
 		});
 
+		//клик по своему имени из списка 
 		$('.cd-wrapper div.list p').click(function(){
 			$('#start-degustation').text($(this).text());
 			$('#hidden').html("<input type='hidden' value='"+$(this).attr('id')+"' name='taster'>");
@@ -25,9 +28,8 @@
 		$('.cognacgroup>ul>li>p').click(function(){
 			sendTable($(this).text());
 		});
-		/*$('button.secure-button[type=submit]').click(function(){
 
-		});*/
+		//при отправке группы дегустации
 		$('form#form').submit(function (){
 			var msg   = $('form#form').serialize();
 			$.ajax({
@@ -35,13 +37,16 @@
         url:'php/secure-insert.php',
         data:msg,
         response:'text',
-        success:function (data) {   
-        console.log(data);        
+        success:function (data) {
+				    $.get('../tmpl/secure-pop.php', function(result) {
+				    $('body').append(result);});   
           },
         timeout:5000//таймаут запроса
 			});
 			return false;
 		});
+
+		//получение группы коньяков
 		function sendTable(code) {
 		    $.ajax({
 		        type:'get',
@@ -61,6 +66,8 @@
 		        timeout:5000//таймаут запроса
 		    });
 		  };	
+
+		  //поиск уже заполненных ранее полей
 		  function trysearch(code){
 		  	var id=$('#hidden input').val();
 		  	$.ajax({
@@ -75,7 +82,7 @@
 		  			var opacity=$('#form .rowrate input[type=number]').length/5;
 				  	function one(s){
 				  		if (s[0]=='.') s[0]='1';
-				  		return s
+				  		return s;
 				  	}
 				  	jQuery.each(data, function(i, val) {
 				  		$('input[name=color'+i+']').val(val.color);
@@ -89,43 +96,45 @@
 		  		}
 		  	});
 		  };
-		  function sum(){
-var sum=parseFloat(0.00);
-  	var opacity=$('#form .rowrate input[type=number]').length/5;
-  	for(var i=0;i<opacity;i++)
-  	{
-  		/*проверка на мин макс значения*/
-  		var opa=parseFloat($('input[name=opacity'+i+']').val())||0;
-  		if (opa>0.5) opa=0.5;
-  		if (opa<0) opa=0;
-  		$('input[name=opacity'+i+']').val(opa);
-  		var col=parseFloat($('input[name=color'+i+']').val())||0;
-  		if (col>0.5) col=0.5;
-  		if (col<0) col=0;
-  		$('input[name=color'+i+']').val(col);
-  		var tas=parseFloat($('input[name=taste'+i+']').val())||0;
-  		if (tas>3.0) tas=3.0;
-  		if (tas<0) tas=0;
-  		$('input[name=taste'+i+']').val(tas);
-  		var bou=parseFloat($('input[name=bouquet'+i+']').val())||0;
-  		if (bou>5.0) bou=5.0;
-  		if (bou<0) bou=0;
-  		$('input[name=bouquet'+i+']').val(bou);
-  		var typ=parseFloat($('input[name=typicality'+i+']').val())||0;
-  		if (typ>1.0) typ=1.0;
-  		if (typ<0) typ=0;
-  		$('input[name=typicality'+i+']').val(typ);
-  		var sum=opa+col+tas+bou+typ;
-  		$('input[name=main'+i+']').val(sum.toFixed(2));
-  		$('input[name=mainpoint'+i+']').attr("value",sum.toFixed(2));
-  	}
-		  };
-	$('#form').on('change', '.rowrate input[type=number]', function(){
-  	sum();
-  });     
-  $('.cognacgroup ul li p').click(function(){
-			$('.cognacgroup ul li p').removeClass('active');
-			$(this).addClass('active');
+			$('#form').on('change', '.rowrate input[type=number]', function(){
+		  	sum();
+		  });     
+		  $('.cognacgroup ul li p').click(function(){
+					$('.cognacgroup ul li p').removeClass('active');
+					$(this).addClass('active');
 
-	});  
-})
+			});  
+		//функция подсчета общего балла для каждого коньяка
+			function sum(){
+			var sum=parseFloat(0.00);
+		  	var opacity=$('#form .rowrate input[type=number]').length/5;
+		  	for(var i=0;i<opacity;i++)
+		  	{
+		  		/*проверка на мин макс значения*/
+		  		var opa=parseFloat($('input[name=opacity'+i+']').val())||0;
+		  		if (opa>0.5) opa=0.5;
+		  		if (opa<0) opa=0;
+		  		$('input[name=opacity'+i+']').val(opa);
+		  		var col=parseFloat($('input[name=color'+i+']').val())||0;
+		  		if (col>0.5) col=0.5;
+		  		if (col<0) col=0;
+		  		$('input[name=color'+i+']').val(col);
+		  		var tas=parseFloat($('input[name=taste'+i+']').val())||0;
+		  		if (tas>3.0) tas=3.0;
+		  		if (tas<0) tas=0;
+		  		$('input[name=taste'+i+']').val(tas);
+		  		var bou=parseFloat($('input[name=bouquet'+i+']').val())||0;
+		  		if (bou>5.0) bou=5.0;
+		  		if (bou<0) bou=0;
+		  		$('input[name=bouquet'+i+']').val(bou);
+		  		var typ=parseFloat($('input[name=typicality'+i+']').val())||0;
+		  		if (typ>1.0) typ=1.0;
+		  		if (typ<0) typ=0;
+		  		$('input[name=typicality'+i+']').val(typ);
+		  		var sum=opa+col+tas+bou+typ;
+		  		$('input[name=main'+i+']').val(sum.toFixed(2));
+		  		$('input[name=mainpoint'+i+']').attr("value",sum.toFixed(2));
+		  	}
+			};
+		});
+

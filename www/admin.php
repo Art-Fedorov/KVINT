@@ -6,7 +6,6 @@
     <title>Справочник</title>
   <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet" href="css/admin-page-catalog.css" />
   <link rel="stylesheet" href="css/admin-page-rating.css" />
   <link rel="stylesheet" href="css/admin-page-report.css" />
@@ -26,7 +25,7 @@
 <body>
   <?php
   /*всплывающие окна*/
-    include_once('php/float-window.php');
+  //  include_once('php/float-window.php');
   ?>
 	<div class="header">
 		<div class="container">

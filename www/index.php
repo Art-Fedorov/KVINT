@@ -6,7 +6,6 @@
     <title>Главная</title>
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
- 	<link rel="stylesheet" href="css/fonts.css" />
 	<link rel="stylesheet" href="css/main-page.css" />
   <script src="libs/jquery/jquery-2.1.4.min.js"></script>
 	<script src="libs/angular.js"></script>

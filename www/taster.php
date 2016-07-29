@@ -7,14 +7,14 @@
     <title>Дегустация</title>
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
- 	<link rel="stylesheet" href="css/fonts.css" />
 	<link rel="stylesheet" href="css/main-page.css" />
 	<link rel="stylesheet" href="css/taster-page.css" />
+	<link rel="stylesheet" href="css/admin-float-window.css" />
   <script src="libs/jquery/jquery-2.1.4.min.js"></script>
 	<script src="libs/modernizr.js"></script>
 	<script src="libs/mustache.min.js"></script>
-	<script src="js/taster.js">
-	</script>
+	<script src="js/admin-catalog-float-window.js"></script>
+	<script src="js/taster.js"></script>
 </head>
 <body>
 	<div class="bg">
@@ -39,14 +39,17 @@
 					</div>
 					<nav class="cognacgroup">
 						<ul>
-							<li><p class='active'>A</p></li>
+							<?php 
+								include_once('php/group-ul-create.php');
+							 ?>
+							<!--<li><p class='active'>A</p></li>
 							<li><p>B</p></li>
 							<li><p>C</p></li>
 							<li><p>D</p></li>
 							<li><p>E</p></li>
 							<li><p>F</p></li>
 							<li><p>G</p></li>
-							<li><p>K</p></li>
+							<li><p>K</p></li>-->
 					</ul>
 					</nav>					
 					<div id="group" class="group">

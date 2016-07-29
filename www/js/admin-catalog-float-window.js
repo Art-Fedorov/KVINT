@@ -1,18 +1,12 @@
 $(document).mouseup(function (e) {
     var container = $(".b-popup");
     if (container.has(e.target).length === 0) {
-        container.hide();
+        container.remove();
     }
 });
 function PopUpHide(){
-    $(".b-popup").hide();
+    $("div.b-popup").remove();
 }
 function cancel(){   
-    $(".b-popup").hide();    
+    $("div.b-popup").remove();   
 }
-
-$(function(){   
-$('#first').click(function(){
-    $("#popup6").show();
-    });
-});

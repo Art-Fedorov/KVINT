@@ -1,12 +1,18 @@
 $(function(){
-  $('.del').click(function(){
-          delete_row();
-        });
+  $('#right-column-button-del').click(function(){
+      Show_delete_window();
+  });
+    /*$('#popup7 input.del').click(function(){
+      alert('asd');
+    });*/
 })
 
 function Show_delete_window(){
   if(tr_id !== undefined){
-  $("#popup7").show();
+    
+    $.get('../tmpl/pop7.php', function(result) {
+    $('body').append(result);
+    });
   }
 }
 
@@ -35,7 +41,7 @@ function delete_row(){
       id_row = 'RATING_ID';
   }
   console.log(tr_id+" "+table+" "+id_row);
-  $(".b-popup").hide();
+  
   
   $.ajax({ 
   type:'POST', 
@@ -50,6 +56,8 @@ function delete_row(){
   error:function(data){
     
   }
+
 });
+  $("#popup7").remove();
   window.location.reload();
 }

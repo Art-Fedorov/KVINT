@@ -9,9 +9,6 @@
   position:fixed;
   top:0px;
 }
-div#popup7{
-  display:none;
-}
 .b-popup-border{
 	position: absolute;
   padding:20px 20px;
@@ -58,7 +55,62 @@ div#popup7{
 }
 
 
-/*одиноквые свойства для хэдера и футера для окон*/
+/*ВСПЛЫВАЮЩЕЕ ОКОШКО ПРИ НАЖАТИИ НА ЗАКРЕПИТЬ 
+ИЗМЕНЕНИЯ В taster.php*/
+.b-popup-border-secure{
+  width:500px;
+  height:200px;
+  top:-webkit-calc(50% - 100px);
+  left:-webkit-calc(50% - 250px);  
+  font-size:32px;
+  text-align:center;
+  font-weight: light;
+}
+.b-popup-border-secure .wrapper{
+  position: relative;
+  width:100%;
+  height:100%;
+
+}
+.b-popup-border-secure  p:first-child{
+  padding-top:25px;
+  width:100%;
+}
+.b-popup-border-secure  p:last-child{
+  position:absolute;
+  bottom:0px;
+  right:15%;
+  
+}
+.b-popup-border-secure  i{
+  
+  text-align:center;
+  font-size:60px;
+  color:#429667;
+}
+@media screen and (max-width: 768px) { 
+  .b-popup-border-secure{
+    width:400px;
+    left:-webkit-calc(50% - 200px);  
+  }
+}
+@media screen and (max-width: 460px) { 
+  .b-popup-border-secure{
+    width:-webkit-calc(100% - 40px);
+    margin:0 20px;
+    left:0;  
+  }
+}
+@media screen and (max-width: 320px) { 
+  .b-popup-border-secure p:first-child{
+    font-size:18px;
+  }
+}
+/********************************/
+
+
+
+/*одинаковые свойства для хэдера и футера для окон*/
 .b-popup-header{
   height: 40px;
 }
@@ -171,7 +223,7 @@ div#popup7{
 
 
 
-/*индивидулаьные свойсвта контентов*/
+/*индивидуальные свойства контентов*/
 .b-popup-border1 span{
   color: #626262;
   display: inline-block;

@@ -70,20 +70,20 @@ function data_add_1(){
   'table_add':table_add,
   'date1':date1,
   'date2':date2,
-  'desc':desc
+  'desc':desc,
+  'action':action
   }, 
   response:'text', 
   success:function(data){ 
-    $('#popup1 .b-popup-footer').
+      $('#popup1 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
-    $('span.popup-result.ok').css("opacity","1");
-     }, 
+    $('span.popup-result').css("opacity","1").addClass('ok');}, 
   error:function(){
     $('#popup1 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
-    $('span.popup-result.false').css("opacity","1");
+    $('span.popup-result').css("opacity","1").addClass('false');
      }
-  });
+  });  
 }
 
 function data_add_2(){ 
@@ -97,16 +97,18 @@ function data_add_2(){
   data:{   
   'table_add':table_add,
   'prefix':prefix,
-  'group':group
+  'group':group,
+  'action':action
   }, 
   response:'text', 
-  success:function(data){     $('#popup1 .b-popup-footer').
+  success:function(data){ 
+      $('#popup1 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
-    $('span.popup-result').css("opacity","1");  }, 
+    $('span.popup-result').css("opacity","1").addClass('ok');}, 
   error:function(){
     $('#popup1 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
-    $('span.popup-result.false').css("opacity","1");
+    $('span.popup-result').css("opacity","1").addClass('false');
      }
   });  
 }
@@ -131,17 +133,18 @@ function data_add_3(){
   'group':group,
   'down':down,
   'up':up,
-  'medal':medal
+  'medal':medal,
+  'action':action
   }, 
   response:'text', 
   success:function(data){ 
       $('#popup1 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
-    $('span.popup-result').css("opacity","1");}, 
+    $('span.popup-result').css("opacity","1").addClass('ok');}, 
   error:function(){
     $('#popup1 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
-    $('span.popup-result.false').css("opacity","1");
+    $('span.popup-result').css("opacity","1").addClass('false');
      }
   });  
 }
@@ -157,17 +160,18 @@ function data_add_4(){
   data:{   
   'table_add':table_add,
   'fio':fio,
-  'pos':pos
+  'pos':pos,
+  'action':action
   }, 
   response:'text', 
   success:function(data){ 
-      $('#popup4 .b-popup-footer').
+      $('#popup1 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
-    $('span.popup-result').css("opacity","1");}, 
+    $('span.popup-result').css("opacity","1").addClass('ok');}, 
   error:function(){
-    $('#popup4 .b-popup-footer').
+    $('#popup1 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
-    $('span.popup-result.false').css("opacity","1");
+    $('span.popup-result').css("opacity","1").addClass('false');
      }
   });  
   //return false;
@@ -194,17 +198,18 @@ function data_add_5(){
   'name':name,
   'manuf':manuf,    
   'cond':cond,
-  'sugare':sugare
+  'sugare':sugare,
+  'action':action
   }, 
   response:'text', 
   success:function(data){ 
       $('#popup1 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
-    $('span.popup-result').css("opacity","1");}, 
+    $('span.popup-result').css("opacity","1").addClass('ok');}, 
   error:function(){
     $('#popup1 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
-    $('span.popup-result.false').css("opacity","1");
+    $('span.popup-result').css("opacity","1").addClass('false');
      }
   });  
 }
@@ -235,17 +240,18 @@ function data_add_6(){
   'taste':taste,
   'type':type,
   'desc':desc,
-  'grade':grade
+  'grade':grade,
+  'action':action
   }, 
   response:'text', 
   success:function(data){ 
       $('#popup1 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
-    $('span.popup-result').css("opacity","1");}, 
+    $('span.popup-result').css("opacity","1").addClass('ok');}, 
   error:function(){
     $('#popup1 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
-    $('span.popup-result.false').css("opacity","1");
+    $('span.popup-result').css("opacity","1").addClass('false');
      }
-  }); 
+  });  
 }

@@ -26,6 +26,9 @@ $(document).ready(function(){
     return false;
   });
 });
+
+//Функция добавления всплывающего окна в разметку и
+//запоминания текущей таблицы
 function Show_float_window(){    
     var query = window.location.search.substring(1);
     var vars = query.split("&");     
@@ -62,5 +65,7 @@ function Show_float_window(){
 });
         table_add = 'TAST_RATING';
     }
-    else alert('fuck');
+    else console.log('bad request');
+    console.log(action);
+    
 }

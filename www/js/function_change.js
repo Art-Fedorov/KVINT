@@ -1,10 +1,14 @@
+//Админ
+//Заполнение полей по кнопки изменить
 $(function(){
     $('#right-column-button-re').click(function(){
-        //delete_row();
-        if (tr_id!==undefined) { Show_float_window();}
-         $('tr[data-value='+tr_id+'][data-value-help="'+tr_help+'"]')
+        if (tr_id!==undefined) { Show_float_window();
+          $('.b-popup').text("123");
+        $('tr[data-value='+tr_id+'][data-value-help="'+tr_help+'"]')
          .find('td').each(function(key,val){
+            console.log($('form').attr('id'));
           /*if ($('form *[name=d'+key+'][type=date]').length==1){
+            alert('asd');
             var text = $(val).text();
             var vars = text.split(".");
             var date1=new Date();
@@ -20,11 +24,15 @@ $(function(){
                   }
               })
           } else {*/
+
           $('form *[name=d'+key+']').val($(val).text());
           
-          /*}*/
+          //}
         });
+       }  
       });
+  });
+
     /*$('#right-column-button-re').click(function(){
           //delete_row();
           if (tr_id!==undefined) Show_float_window();
@@ -39,8 +47,4 @@ $(function(){
             //$('form *[name]')
           });
         });*/
-    $('form').submit(function(event) {
-      return false;
-    });
-  });
 //$.ajax
