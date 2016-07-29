@@ -1,6 +1,9 @@
 <?php 
 if (!empty($_POST))
 	{		
+		/*подключение к бд*/
+    include('../php/connect.php');
+		/*значения, которые необходиом занести в бд*/
 		$table_add=$_POST['table_add'];
 		$fio=$_POST['fio'];
 		$code=$_POST['code'];
@@ -11,38 +14,13 @@ if (!empty($_POST))
 		$type=$_POST['type'];
 		$desc=$_POST['desc'];
 		$grade=$_POST['grade'];
-
-		$conn = oci_connect('TASTING', '1111', 'ora2.kvint.md/UNIACC', 'CL8MSWIN1251');
-          if (!$conn) {
-            $e = oci_error();
-            trigger_error(htmlentities($e['message'], ENT_QUOTES, 'cp1251'), E_USER_ERROR);
-          }
-
+		/*формирование sql запроса к бд*/		
 		$query="INSERT INTO ".$table_add." 
-		(RATING_MAN, 
-		RATING_COGNAC,
-		RATING_CAPTION, 
-		RATING_POINT, 
-		RATING_OPACITY, 
-		RATING_COLOR, 
-		RATING_BOUQUET, 
-		RATING_TASTE, 
-		RATING_TYPICALITY, 
-		RATING_NOTE) 
-		VALUES 
-		(".$fio.",
-		".$code.",
-		(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION),
-		".$grade.",
-		".$opasity.",
-		".$color.",
-		".$buk.",
-		".$taste.",
-		".$type.",
-		'".$desc."'
-		)";
-		$stid = oci_parse($conn,$query );
-		echo $query;
+		(RATING_MAN,RATING_COGNAC,RATING_CAPTION,RATING_POINT,RATING_OPACITY, 
+		RATING_COLOR,RATING_BOUQUET,RATING_TASTE,RATING_TYPICALITY,RATING_NOTE) 
+		VALUES (".$fio.",	".$code.",(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION),
+		".$grade.",	".$opasity.",	".$color.",	".$buk.",	".$taste.",	".$type.",'".$desc."'	)";
+		$stid = oci_parse($conn,$query );		
     oci_execute($stid);
     oci_commit($conn);
     oci_close($conn);

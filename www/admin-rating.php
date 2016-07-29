@@ -6,13 +6,34 @@
 				</div>
 		</div>
 		<div class="row table">
-				<div class="col-xs-10 col-md-12 text-center conte">
+			<div class="col-xs-10 col-md-12 text-center conte">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem enim repellendus aliquam voluptates quam, error corporis deleniti quo tenetur assumenda ea, excepturi nobis explicabo? Nos	trum dignissimos animi eligendi id totam.	
 					</p>										
-          
-          <div class="content">
+          <hr>
+          <div class="b-popup-content-block">
+            <span>ФИО Дегустатора</span>
+            <select id="search-man-rating" style="width: 380px;" >
+            <option value="0">Нет</option>
+              <?php 
+              require('php/selection-create.php');
+              $select = new Select();
+              $select->fillselect_2();
+              ?>
+            </select>
+            <span>Шифр коньяка</span>
+            <select id="search-cognac-rating" style="width: 100px;">
+            <option value="0">Нет</option>
+              <?php              
+              $select->fillselect_3();
+              ?>
+            </select>
+          </div>  
+
+        <div class="content">
           <div class="left-column col-md-10" style="float: left;">
-            <?php include_once('php/fill-table.php'); ?>
+            <?php               
+              include_once('php/fill-table-rating.php'); 
+            ?>
           </div>              
           <div class="right-column col-md-2 col-xs-2 aside" style="float: right;">
             <div class="sticky-block">

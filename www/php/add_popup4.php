@@ -1,15 +1,13 @@
 <?php 
 if (!empty($_POST))
 	{		
+		/*подключение к бд*/
+    include('../php/connect.php');
+		/*значения, которые необходиом занести в бд*/
 		$table_add=$_POST['table_add'];
 		$fio=$_POST['fio'];
 		$pos=$_POST['pos'];
-
-		$conn = oci_connect('TASTING', '1111', 'ora2.kvint.md/UNIACC', 'CL8MSWIN1251');
-          if (!$conn) {
-            $e = oci_error();
-            trigger_error(htmlentities($e['message'], ENT_QUOTES, 'cp1251'), E_USER_ERROR);
-          }
+		/*формирование sql запроса к бд*/		
 		$query="INSERT INTO ".$table_add." (MAN_FIO, MAN_CAPTION, MAN_STATUS) VALUES ('".$fio."',(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION),'".$pos."')";
 		$stid = oci_parse($conn,$query );		
     oci_execute($stid);
