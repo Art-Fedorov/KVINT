@@ -6,11 +6,7 @@ var codetable;
 $(document).ready(function(){
   //Выделение строки таблицы
   $('tr').click(function(){
-      $('tr').removeClass();
-      $(this).addClass('selected');
-      tr_id = $(this).data('value');
-      tr_help = $(this).attr('data-value-help');
-
+      //click_tr();
   });
   //Вызов нужного всплывающего окна и отмена 
   $('body').on('submit','form', function() {
@@ -27,6 +23,14 @@ $(document).ready(function(){
     return false;
   });
 });
+//функция клик для выделения строки таблицы
+function click_tr(){
+  $('tr').removeClass();
+  $(this).addClass('selected');
+  tr_id = $(this).data('value');
+  tr_help = $(this).attr('data-value-help');
+}
+
 
 //Функция добавления всплывающего окна в разметку и
 //запоминания текущей таблицы

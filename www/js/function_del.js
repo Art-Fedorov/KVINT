@@ -40,24 +40,20 @@ function delete_row(){
       table = 'TAST_RATING';
       id_row = 'RATING_ID';
   }
-  console.log(tr_id+" "+table+" "+id_row);
-  
-  
+  //console.log(tr_id+" "+table+" "+id_row);
+  location.reload();  
   $.ajax({ 
-  type:'POST', 
-  url:'php/delete-row.php', 
-  data:{ 
-  'id':tr_id ,
-  'table':table,
-  'row':id_row 
-  }, 
-  response:'text', 
-  success:function(data){  },
-  error:function(data){
-    
-  }
-
-});
+    type:'POST', 
+    url:'php/delete-row.php', 
+    data:{ 
+    'id':tr_id ,
+    'table':table,
+    'row':id_row 
+    }, 
+    response:'text', 
+    success:function(data){  },
+    error:function(data){    
+    }
+  });
   $("#popup7").remove();
-  window.location.reload();
 }

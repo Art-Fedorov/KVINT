@@ -10,6 +10,7 @@
   top:0px;
 }
 .b-popup-border{
+  z-index:104;
 	position: absolute;
   padding:20px 20px;
   background-color: #fff;

@@ -74,14 +74,23 @@ function data_add_1(){
   'action':action
   }, 
   response:'text', 
-  success:function(data){ 
+  success:function(data){    
+     $.ajax({ 
+      type:'POST', 
+      url:'php/fill-table.php', 
+      data:{        
+      }, 
+      response:'text', 
+      success:function(data){ }
+      })
+
       $('#popup1 .b-popup-footer').
-    prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
-    $('span.popup-result').css("opacity","1").addClass('ok');}, 
-  error:function(){
-    $('#popup1 .b-popup-footer').
-    prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
-    $('span.popup-result').css("opacity","1").addClass('false');
+      prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
+      $('span.popup-result').css("opacity","1").addClass('ok');}, 
+    error:function(){
+      $('#popup1 .b-popup-footer').
+      prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
+      $('span.popup-result').css("opacity","1").addClass('false');
      }
   });  
 }
@@ -102,11 +111,22 @@ function data_add_2(){
   }, 
   response:'text', 
   success:function(data){ 
-      $('#popup1 .b-popup-footer').
+    /*перезаполнение таблицы*/    
+    $.ajax({ 
+      type:'GET', 
+      url:'php/fill-table.php', 
+      data:{    
+      'code': codetable   
+      }, 
+      response:'text', 
+      success:function(data){$('.left-column').html(data); }
+      });
+
+    $('#popup2 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
     $('span.popup-result').css("opacity","1").addClass('ok');}, 
   error:function(){
-    $('#popup1 .b-popup-footer').
+    $('#popup2 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
     $('span.popup-result').css("opacity","1").addClass('false');
      }
@@ -138,11 +158,20 @@ function data_add_3(){
   }, 
   response:'text', 
   success:function(data){ 
-      $('#popup1 .b-popup-footer').
+    $.ajax({ 
+      type:'POST', 
+      url:'php/fill-table.php', 
+      data:{        
+      }, 
+      response:'text', 
+      success:function(data){ }
+      })
+
+      $('#popup3 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
     $('span.popup-result').css("opacity","1").addClass('ok');}, 
   error:function(){
-    $('#popup1 .b-popup-footer').
+    $('#popup3 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
     $('span.popup-result').css("opacity","1").addClass('false');
      }
@@ -165,11 +194,20 @@ function data_add_4(){
   }, 
   response:'text', 
   success:function(data){ 
-      $('#popup1 .b-popup-footer').
+    $.ajax({ 
+      type:'POST', 
+      url:'php/fill-table.php', 
+      data:{        
+      }, 
+      response:'text', 
+      success:function(data){ }
+      })
+
+      $('#popup4 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
     $('span.popup-result').css("opacity","1").addClass('ok');}, 
   error:function(){
-    $('#popup1 .b-popup-footer').
+    $('#popup4 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
     $('span.popup-result').css("opacity","1").addClass('false');
      }
@@ -203,11 +241,20 @@ function data_add_5(){
   }, 
   response:'text', 
   success:function(data){ 
-      $('#popup1 .b-popup-footer').
+    $.ajax({ 
+      type:'POST', 
+      url:'php/fill-table.php', 
+      data:{        
+      }, 
+      response:'text', 
+      success:function(data){ }
+      })
+
+      $('#popup5 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
     $('span.popup-result').css("opacity","1").addClass('ok');}, 
   error:function(){
-    $('#popup1 .b-popup-footer').
+    $('#popup5 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
     $('span.popup-result').css("opacity","1").addClass('false');
      }
@@ -245,11 +292,20 @@ function data_add_6(){
   }, 
   response:'text', 
   success:function(data){ 
-      $('#popup1 .b-popup-footer').
+    $.ajax({ 
+      type:'POST', 
+      url:'php/fill-table-rating.php', 
+      data:{        
+      }, 
+      response:'text', 
+      success:function(data){ }
+      })
+
+    $('#popup6 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
     $('span.popup-result').css("opacity","1").addClass('ok');}, 
   error:function(){
-    $('#popup1 .b-popup-footer').
+    $('#popup6 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
     $('span.popup-result').css("opacity","1").addClass('false');
      }
