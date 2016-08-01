@@ -23,10 +23,13 @@ function data_add_1(){
   'date1':date1,
   'date2':date2,
   'desc':desc,
-  'action':action
+  'action':action,
+  'id':tr_id,   
+  'row':id_row 
   }, 
   response:'text', 
   success:function(data){    
+    console.log(data);
      $.ajax({ 
       type:'GET', 
       url:'php/fill-table.php', 
@@ -60,10 +63,13 @@ function data_add_2(){
   'table_add':table_add,
   'prefix':prefix,
   'group':group,
-  'action':action
+  'action':action,
+  'id':tr_id,   
+  'row':id_row 
   }, 
   response:'text', 
-  success:function(data){ 
+  success:function(data){
+    console.log(data);
     /*перезаполнение таблицы*/    
     $.ajax({
       type:'GET', 
@@ -107,10 +113,13 @@ function data_add_3(){
   'down':down,
   'up':up,
   'medal':medal,
-  'action':action
+  'action':action,
+  'id':tr_id ,   
+  'row':id_row 
   }, 
   response:'text', 
   success:function(data){ 
+    console.log(data);
     $.ajax({ 
       type:'GET', 
       url:'php/fill-table.php', 
@@ -144,7 +153,9 @@ function data_add_4(){
   'table_add':table_add,
   'fio':fio,
   'pos':pos,
-  'action':action
+  'action':action,
+  'id':tr_id ,   
+  'row':id_row 
   }, 
   response:'text', 
   success:function(data){ 
@@ -192,7 +203,9 @@ function data_add_5(){
   'manuf':manuf,    
   'cond':cond,
   'sugare':sugare,
-  'action':action
+  'action':action,
+  'id':tr_id ,   
+  'row':id_row 
   }, 
   response:'text', 
   success:function(data){ 
@@ -244,10 +257,13 @@ function data_add_6(){
   'type':type,
   'desc':desc,
   'grade':grade,
-  'action':action
+  'action':action,
+  'id':tr_id ,   
+  'row':id_row 
   }, 
   response:'text', 
   success:function(data){ 
+    console.log(data);
     $.ajax({ 
       type:'GET', 
       url:'php/fill-table-rating.php', 

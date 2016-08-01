@@ -36,16 +36,20 @@ function Show_float_window(){
     var vars = query.split("&");     
     var l = vars[0].split("=");
     codetable = l[1];
+
     if (codetable=='1'){
       $.get('../tmpl/pop1.php', function(result) {
     $('body').append(result);
     if (action==2) change();
+
+    id_row = 'CAPTION_ID';
 });
         table_add = 'TAST_CAPTION';
     } else if (codetable=='2'){
       $.get('../tmpl/pop2.php', function(result) {
     $('body').append(result);
     if (action==2) change();
+     id_row = 'GROUP_ID';
     
 });
         table_add = 'TAST_GROUP';
@@ -53,24 +57,28 @@ function Show_float_window(){
       $.get('../tmpl/pop3.php', function(result) {
     $('body').append(result);
     if (action==2) change();
+    id_row = 'PRIZE_GROUP';
 });
         table_add = 'TAST_PRIZE';
     } else if (codetable=='4'){
        $.get('../tmpl/pop4.php', function(result) {
     $('body').append(result);
     if (action==2) change();
+     id_row = 'MAN_ID';
 });
         table_add = 'TAST_MAN';
     } else if (codetable=='5'){
         $.get('../tmpl/pop5.php', function(result) {
     $('body').append(result);
     if (action==2) change();
+    id_row = 'COGNAC_ID';
 });
         table_add = 'TAST_COGNAC';
     } else if (codetable=='6'){
         $.get('../tmpl/pop6.php', function(result) {
     $('body').append(result);
     if (action==2) change();
+    id_row = 'RATING_ID';
 });
         table_add = 'TAST_RATING';
     }
