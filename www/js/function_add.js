@@ -98,11 +98,7 @@ function data_add_3(){
   var down = document.getElementById("popup3-down").value;
   var up = document.getElementById("popup3-up").value; 
   var medal = document.getElementById("popup3-medal").value;
-
-  var m = table_add +"|" + place +"|" + group
-   +"|" + down +"|" + up +"|" + medal;
   
-  console.log(m);
   $.ajax({ 
   type:'POST', 
   url:'php/add_popup3.php', 
@@ -115,7 +111,9 @@ function data_add_3(){
   'medal':medal,
   'action':action,
   'id':tr_id ,   
-  'row':id_row 
+  'row':id_row,
+  'prize_place':prize_place,
+  'prize_group':prize_group
   }, 
   response:'text', 
   success:function(data){ 
@@ -240,9 +238,7 @@ function data_add_6(){
   var type = document.getElementById("popup6-type").value; 
   var desc = document.getElementById("popup6-desc").value; 
   var grade = document.getElementById("popup6-grade").value;   
-  var m = fio +"|" + code+"|"  + opasity +"|" + color + +"|" 
-  buk+"|"  + taste +"|" + type+"|"  + desc+"|"  + grade; 
-  console.log(m);
+  
   $.ajax({ 
   type:'POST', 
   url:'php/add_popup6.php', 
@@ -268,7 +264,7 @@ function data_add_6(){
       type:'GET', 
       url:'php/fill-table-rating.php', 
       data:{      
-      'code': codetable   
+      'selection_condition':selection_condition  
       }, 
       response:'text', 
       success:function(data){ $('.left-column').html(data); }

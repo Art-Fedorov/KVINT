@@ -47,7 +47,7 @@ function delete_row(){
     data:{ 
     'id':tr_id ,
     'table':table,
-    'row':id_row 
+    'row':id_row
     }, 
     response:'text', 
     success:function(data){ $.ajax({ 
