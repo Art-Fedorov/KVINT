@@ -21,7 +21,7 @@
   <script src="js/function_add.js"></script>
   <script src="js/function_del.js"></script>
   <script src="js/function_change.js"></script>
-  <script src="js/admin-rating-search-select.js"></script>
+  
 </head>
 <body>
   <?php

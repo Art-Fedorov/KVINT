@@ -48,5 +48,6 @@
 			</div>
 		</div>
 	</div>
+  <script src="js/admin-rating.js"></script>
 </body>
 </html>

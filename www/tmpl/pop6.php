@@ -24,21 +24,21 @@
 			</div>
 			<div class="b-popup-content-block">				
 				<span>Прозрачность</span>
-				<input name="d3" id="popup6-opacity" type="text" class="input-text-short textalign-center">
+				<input name="d3" id="popup6-opacity" type="number" class="input-text-short text-center"  step="0.01" min="0" max="0.5" >
 				<span>Цвет</span>
-				<input name="d4" id="popup6-color" type="text" class="input-text-short textalign-center">
-				<span>Букет</span>
-				<input name="d5" id="popup6-buk" type="text" class="input-text-short textalign-center">	
+				<input name="d4" id="popup6-color" type="number" class="input-text-short text-center" step="0.01" min="0" max="0.5">
 				<span>Вкус</span>
-				<input name="d6" id="popup6-taste" type="text" class="input-text-short textalign-center">
+				<input name="d5" id="popup6-taste" type="number" class="input-text-short text-center" step="0.01" min="0" max="3.0">
+				<span>Букет</span>
+				<input name="d6" id="popup6-buk" type="number" class="input-text-short text-center" step="0.01" min="0" max="5.0">			
 				<span>Типичность</span>
-				<input name="d7" id="popup6-type" type="text" class="input-text-short textalign-center"">			
+				<input name="d7" id="popup6-type" type="number" class="input-text-short text-center" step="0.01" min="0" max="1.0">			
 			</div>			
 			<div class="b-popup-content-block">				
 				<span>Примечание</span>
 				<input name="d8" id="popup6-desc" type="text" class="input-text" style="width: 350px; margin-right: 28px;">
 				<span>Итоговая оценка</span>
-				<input name="d2" id="popup6-grade" type="button" class="final-grade" value="8.65"></span>
+				<input name="d2" id="popup6-grade" type="button" class="final-grade"></span>
 			</div>			
   	</div>		
   	<div class="b-popup-footer">
