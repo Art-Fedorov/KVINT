@@ -93,4 +93,7 @@ span.popup-result.false
 {
 	color:#b93838;
 }
+input:focus{
+	box-shadow: 0 0 0 0 white !important;
+}
 
