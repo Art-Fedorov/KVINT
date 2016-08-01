@@ -6,10 +6,12 @@
     }
 });*/
 function PopUpHide(){
+    $('div.b-popup').empty();
     $("div.b-popup").remove();
-    location.reload();
+
 }
-function cancel(){   
+function cancel(){ 
+		$('div.b-popup').empty();  
     $("div.b-popup").remove();   
     location.reload();
 }

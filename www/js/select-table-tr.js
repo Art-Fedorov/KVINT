@@ -42,42 +42,40 @@ function Show_float_window(){
     if (codetable=='1'){
       $.get('../tmpl/pop1.php', function(result) {
     $('body').append(result);
-    change();
+    if (action==2) change();
 });
         table_add = 'TAST_CAPTION';
     } else if (codetable=='2'){
       $.get('../tmpl/pop2.php', function(result) {
     $('body').append(result);
-    change();
+    if (action==2) change();
 });
         table_add = 'TAST_GROUP';
     } else if (codetable=='3'){
       $.get('../tmpl/pop3.php', function(result) {
     $('body').append(result);
-    change();
+    if (action==2) change();
 });
         table_add = 'TAST_PRIZE';
     } else if (codetable=='4'){
        $.get('../tmpl/pop4.php', function(result) {
     $('body').append(result);
-    change();
+    if (action==2) change();
 });
         table_add = 'TAST_MAN';
     } else if (codetable=='5'){
         $.get('../tmpl/pop5.php', function(result) {
     $('body').append(result);
-    change();
+    if (action==2) change();
 });
         table_add = 'TAST_COGNAC';
     } else if (codetable=='6'){
         $.get('../tmpl/pop6.php', function(result) {
     $('body').append(result);
-    change();
+    if (action==2) change();
 });
         table_add = 'TAST_RATING';
     }
     else console.log('bad request');
-    console.log(action);
-    console.log($('form').attr('id'));
     
 }

@@ -39,9 +39,7 @@
         data:msg,
         response:'text',
         success:function (data) {
-				    $.get('../tmpl/secure-pop.php', function(result) {
-				    $('body').append(result);});  
-				    perehod_text(); 
+				    
           },
         timeout:5000//таймаут запроса
 			});
@@ -139,17 +137,24 @@
 		  		$('input[name=mainpoint'+i+']').attr("value",sum.toFixed(2));
 		  	}
 			};
+			$(document).on('click','.submit-cognac',function(){
+				$.get('../tmpl/secure-pop.php', function(result) {
+				    $('body').append(result);});  
+		    $(".cognacgroup ul li").each(function(key,val){
+				if ($(val).children().hasClass('active')) {		
+					$('.wrapper').text($('.cognacgroup ul li:nth-child('+(key+2)+') p').text());
+					 return false;
+				}
+	});
+			});
+			$(document).on('click','span.next',function(){
+					perehod_action();
+			});
 		});
 //Переход на следующую группу 
 //(во всплывающем окне)
 function perehod_text(){
-	$(".cognacgroup ul li").each(function(key,val){
-		if ($(val).children().hasClass('active')) {			
-			$('#secure-popup span.next').text($('.cognacgroup ul li:nth-child('+(key+2)+') p').text());
-			console.log($('.cognacgroup ul li:nth-child('+(key+2)+') p').text());
-			 return false;
-		}
-	});
+	
 }
 function perehod_action(){
 	$(".cognacgroup ul li").each(function(key,val){
