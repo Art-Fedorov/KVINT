@@ -3,6 +3,8 @@ var tr_help;
 var table_add;
 var id_row;
 var codetable;
+var prize_place;
+var prize_group;
 $(document).ready(function(){
 
   //Выделение строки таблицы

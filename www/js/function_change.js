@@ -34,7 +34,6 @@ function change(){
                       $(v).attr('selected',true);
                     }
                 });
-                  console.log (codetable);
               }
           } else {
 
@@ -59,5 +58,9 @@ function change(){
                     }); 
                   }
             });
+            if (codetable=='3') {
+              if(key==0) prize_place=$(val).text();
+              if(key==1) prize_group=$(val).parent().attr('data-value');
+            }
         });
 }
