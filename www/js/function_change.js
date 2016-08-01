@@ -2,7 +2,7 @@
 //Заполнение полей по кнопке изменить
 $(function(){
     $('#right-column-button-re').click(function(){
-        if (tr_id!==undefined) { Show_float_window();
+        if (tr_id! == undefined) { Show_float_window();
           //console.log($('form').attr('id'));
           
        }  

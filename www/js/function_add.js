@@ -7,62 +7,14 @@
         });
     $('#right-column-button-add').click(function(){
         Show_float_window();
-      });
-    /*$('.apply1').click(function(){
-          data_add_1();
-    });
-    $('.apply2').click(function(){
-          data_add_2();
-    });
-    $('.apply3').click(function(){
-          data_add_3();
-    });
-    $('.apply4').click(function(){
-         
-          data_add_4();
-    });
-    $('.apply5').click(function(){
-          data_add_5();
-    });
-    $('.apply6').click(function(){
-          data_add_6();
-    });*/
-
+      });   
   });
-
-/*function Show_float_window(){    
-    var query = window.location.search.substring(1);
-    var vars = query.split("&");     
-    var l = vars[0].split("=");
-    var codetable = l[1];
-    if (codetable=='1'){
-        $("#popup1").show();
-        table_add = 'TAST_CAPTION';
-    } else if (codetable=='2'){
-        $("#popup2").show();
-        table_add = 'TAST_GROUP';
-    } else if (codetable=='3'){
-        $("#popup3").show();
-        table_add = 'TAST_PRIZE';
-    } else if (codetable=='4'){
-        $("#popup4").show();
-        table_add = 'TAST_MAN';
-    } else if (codetable=='5'){
-        $("#popup5").show();
-        table_add = 'TAST_COGNAC';
-    } else if (codetable=='6'){
-        $("#popup6").show();
-        table_add = 'TAST_RATING';
-    }
-    else  $("#popup1").show(); 
-}*/
 
 function data_add_1(){ 
   var date1 = document.getElementById("popup1-date1").value;
   var date2 = document.getElementById("popup1-date2").value; 
   var desc = document.getElementById("popup1-desc").value;   
   var m = table_add + date1 + date2 + desc;
-  location.reload(); 
   $.ajax({ 
   type:'POST', 
   url:'php/add_popup1.php', 
@@ -76,13 +28,14 @@ function data_add_1(){
   response:'text', 
   success:function(data){    
      $.ajax({ 
-      type:'POST', 
+      type:'GET', 
       url:'php/fill-table.php', 
       data:{        
+        'code': codetable 
       }, 
       response:'text', 
-      success:function(data){ }
-      })
+      success:function(data){$('.left-column').html(data); }
+      });
 
       $('#popup1 .b-popup-footer').
       prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
@@ -159,13 +112,14 @@ function data_add_3(){
   response:'text', 
   success:function(data){ 
     $.ajax({ 
-      type:'POST', 
+      type:'GET', 
       url:'php/fill-table.php', 
       data:{        
+        'code': codetable 
       }, 
       response:'text', 
-      success:function(data){ }
-      })
+      success:function(data){$('.left-column').html(data); }
+      });
 
       $('#popup3 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
@@ -195,13 +149,14 @@ function data_add_4(){
   response:'text', 
   success:function(data){ 
     $.ajax({ 
-      type:'POST', 
+      type:'GET', 
       url:'php/fill-table.php', 
-      data:{        
+      data:{    
+      'code': codetable     
       }, 
       response:'text', 
-      success:function(data){ }
-      })
+      success:function(data){ $('.left-column').html(data);}
+      });
 
       $('#popup4 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
@@ -242,13 +197,14 @@ function data_add_5(){
   response:'text', 
   success:function(data){ 
     $.ajax({ 
-      type:'POST', 
+      type:'GET', 
       url:'php/fill-table.php', 
-      data:{        
+      data:{       
+      'code': codetable  
       }, 
       response:'text', 
-      success:function(data){ }
-      })
+      success:function(data){$('.left-column').html(data); }
+      });
 
       $('#popup5 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
@@ -293,13 +249,14 @@ function data_add_6(){
   response:'text', 
   success:function(data){ 
     $.ajax({ 
-      type:'POST', 
+      type:'GET', 
       url:'php/fill-table-rating.php', 
-      data:{        
+      data:{      
+      'code': codetable   
       }, 
       response:'text', 
-      success:function(data){ }
-      })
+      success:function(data){ $('.left-column').html(data); }
+      });
 
     $('#popup6 .b-popup-footer').
     prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');

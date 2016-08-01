@@ -1,4 +1,4 @@
-<div class="b-popup" id="popup1" onclick="javascript:cancel()">
+<div class="b-popup" id="popup1">
   <div class="b-popup-border b-popup-border1">    
   	<div class="b-popup-header">
   		<label>Проведение дегустации</label>

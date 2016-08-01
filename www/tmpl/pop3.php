@@ -1,4 +1,4 @@
-<div class="b-popup" id="popup3" onclick="javascript:cancel()">
+<div class="b-popup" id="popup3>
   <div class="b-popup-border b-popup-border3">
     <div class="b-popup-header">
   		<label>Призовые места</label>

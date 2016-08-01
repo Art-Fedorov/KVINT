@@ -1,4 +1,4 @@
-<div class="b-popup" id="popup6" onclick="javascript:cancel()">
+<div class="b-popup" id="popup6">
   <div class="b-popup-border b-popup-border6">
   	<div class="b-popup-header">
   		<label>Оценки коньяка</label>

@@ -1,4 +1,4 @@
-<div class="b-popup" id="popup7" onclick="javascript:cancel()">
+<div class="b-popup" id="popup7">
   <div class="b-popup-border b-popup-border7">
     <div class="b-popup-header">
       <label>Удаление данных таблицы</label>

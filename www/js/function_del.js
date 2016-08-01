@@ -41,7 +41,6 @@ function delete_row(){
       id_row = 'RATING_ID';
   }
   //console.log(tr_id+" "+table+" "+id_row);
-  location.reload();  
   $.ajax({ 
     type:'POST', 
     url:'php/delete-row.php', 
@@ -51,7 +50,16 @@ function delete_row(){
     'row':id_row 
     }, 
     response:'text', 
-    success:function(data){  },
+    success:function(data){ $.ajax({ 
+      type:'GET', 
+      url:'php/fill-table.php', 
+      data:{      
+      'code': codetable   
+      }, 
+      response:'text', 
+      success:function(data){$('.left-column').html(data); }
+      });
+       },
     error:function(data){    
     }
   });
