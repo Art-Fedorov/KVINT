@@ -3,7 +3,6 @@ class Table {
     public function filltable($code,$id=NULL,$id_help=NULL) {
     /*подключение к бд*/
     include('connect.php');
-    
     $query=$code;
     $stid = oci_parse($conn,$query );
     oci_execute($stid);
@@ -15,7 +14,20 @@ class Table {
     echo "</th>";
     }
     while ($row = oci_fetch_array($stid)) {
-      echo "<tr data-value='$row[0]' data-value-help=".htmlentities($row[1], ENT_QUOTES, 'cp1251').">";
+        if($id!=NULL&&$id_help!=NULL)
+        {
+
+            if ($id==$row[0]&&$id_help==htmlentities($row[1], ENT_QUOTES, 'cp1251')){
+
+                echo "<tr class='selected' data-value='$row[0]' data-value-help=".htmlentities($row[1], ENT_QUOTES, 'cp1251')." >";
+            }
+            else{
+                echo "<tr data-value='$row[0]' data-value-help=".htmlentities($row[1], ENT_QUOTES, 'cp1251').">";
+            }
+        }
+        else{
+            echo "<tr data-value='$row[0]' data-value-help=".htmlentities($row[1], ENT_QUOTES, 'cp1251').">";
+        }
       for ($i = 1; $i < oci_num_fields($stid); $i++) {
         echo '<td>';
         echo $row[$i] !== null ? htmlentities($row[$i], ENT_QUOTES, 'cp1251') : "";

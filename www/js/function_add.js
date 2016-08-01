@@ -144,11 +144,14 @@ function data_add_4(){
       type:'GET', 
       url:'php/fill-table.php', 
       data:{    
-      'code': codetable 
-
+      'code': codetable,
+      'tr_id':tr_id,
+      'tr_id_help':tr_help
       }, 
       response:'text', 
-      success:function(data){ $('.left-column').html(data);}
+      success:function(data){ 
+        
+        $('.left-column').html(data);}
       });
     onsuccess();},
   error:function(){

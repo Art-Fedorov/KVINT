@@ -23,6 +23,11 @@ if (isset($_GET['code']))
   }        
   include('table-create.php');
   $table = new Table();
-  $table->filltable($code);    
+  if (isset($_GET['tr_id'])&& isset($_GET['tr_id_help'])){
+    echo $_GET['tr_id']." a ".$_GET['tr_id_help'];
+    $table->filltable($code,$_GET['tr_id'],$_GET['tr_id_help']);
+  }
+  else
+    {$table->filltable($code);   }
   }     
 ?> 
