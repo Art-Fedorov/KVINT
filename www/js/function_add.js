@@ -65,7 +65,7 @@ function data_add_2(){
   response:'text', 
   success:function(data){ 
     /*перезаполнение таблицы*/    
-    $.ajax({ 
+    $.ajax({
       type:'GET', 
       url:'php/fill-table.php', 
       data:{    

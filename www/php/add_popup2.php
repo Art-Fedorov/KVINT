@@ -7,8 +7,10 @@ if (!empty($_POST))
 		$table_add=$_POST['table_add'];
 		$prefix=$_POST['prefix'];
 		$group=$_POST['group'];
+		$action=$_POST['action'];
 		/*формирование sql запроса к бд*/		
 		$query="INSERT INTO ".$table_add." ( GROUP_TITLE, GROUP_PREFIX, GROUP_CAPTION) VALUES ('".$group."','".$prefix."',(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION))";		
+		echo $query;
 		$stid = oci_parse($conn,$query);
     oci_execute($stid);
     oci_commit($conn);
