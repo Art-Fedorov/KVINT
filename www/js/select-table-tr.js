@@ -46,6 +46,7 @@ function Show_float_window(){
       $.get('../tmpl/pop2.php', function(result) {
     $('body').append(result);
     if (action==2) change();
+    
 });
         table_add = 'TAST_GROUP';
     } else if (codetable=='3'){

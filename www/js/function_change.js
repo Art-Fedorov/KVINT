@@ -1,8 +1,11 @@
 //Админ
 //Заполнение полей по кнопке изменить
 $(function(){
+
     $('#right-column-button-re').click(function(){
-        if (tr_id! == undefined) { Show_float_window();
+        console.log(tr_id);
+        if (tr_id !== undefined) { 
+          Show_float_window();
           //console.log($('form').attr('id'));
           
        }  
@@ -12,6 +15,7 @@ $(function(){
 
 //Заполнение полей по кнопке изменить
 function change(){
+        
         $('tr[data-value='+tr_id+'][data-value-help="'+tr_help+'"]').find('td').each(function(key,val){
           if ($('form *[name=d'+key+'][type=date]').length==1){
             var text = $(val).text();
