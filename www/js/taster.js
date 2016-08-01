@@ -139,23 +139,24 @@
 			};
 			$(document).on('click','.submit-cognac',function(){
 				$.get('../tmpl/secure-pop.php', function(result) {
-				    $('body').append(result);});  
-		    $(".cognacgroup ul li").each(function(key,val){
-				if ($(val).children().hasClass('active')) {		
-					$('.wrapper').text($('.cognacgroup ul li:nth-child('+(key+2)+') p').text());
-					 return false;
-				}
-	});
+				    $('body').append(result);
+				  		perehod_text();
+				});  
 			});
 			$(document).on('click','span.next',function(){
 					perehod_action();
 			});
 		});
+//Добавление текста
+function perehod_text(){
+	$(".cognacgroup ul li").each(function(key,val){
+		if ($(val).children().hasClass('active')) {		
+		  $('span.next').text($('.cognacgroup ul li:nth-child('+(key+2)+') p').text());
+		  return false;
+		}});
+}
 //Переход на следующую группу 
 //(во всплывающем окне)
-function perehod_text(){
-	
-}
 function perehod_action(){
 	$(".cognacgroup ul li").each(function(key,val){
 			if ($(val).children().hasClass('active')) {

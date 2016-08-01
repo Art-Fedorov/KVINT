@@ -2,8 +2,10 @@
 class Config{
 	public $admin_password = 'qwerty';
 	public $db = [
-		'ip'=>'192.',
-		'login'=>'tasting'
+		'ip'=>'ora2.kvint.md/UNIACC',
+		'login'=>'TASTING',
+		'pass'=>'1111',
+		'encode'=>'CL8MSWIN1251'
 	];
 }
 
