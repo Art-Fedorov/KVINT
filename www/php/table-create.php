@@ -15,7 +15,7 @@ class Table {
     echo "</th>";
     }
     while ($row = oci_fetch_array($stid)) {
-      echo "<tr onclick='javascript:click_tr()' data-value='$row[0]' data-value-help='$row[1]'>";
+      echo "<tr data-value='$row[0]' data-value-help='$row[1]'>";
       for ($i = 1; $i < oci_num_fields($stid); $i++) {
         echo '<td>';
         echo $row[$i] !== null ? htmlentities($row[$i], ENT_QUOTES, 'cp1251') : "";
