@@ -2,11 +2,11 @@
 class Select {    
     public function fillselect_1() {
       include('connect.php');
-      $query='SELECT GROUP_ID, GROUP_TITLE FROM TAST_GROUP where GROUP_CAPTION = (SELECT MAX(GROUP_CAPTION) FROM TAST_GROUP)';
+      $query='SELECT GROUP_ID, GROUP_TITLE, GROUP_PREFIX FROM TAST_GROUP where GROUP_CAPTION = (SELECT MAX(GROUP_CAPTION) FROM TAST_GROUP)';
       $stid = oci_parse($conn,$query);
       oci_execute($stid);
       while ($row = oci_fetch_array($stid)) {
-        echo "<option value='$row[0]'>";        
+        echo "<option value='$row[0]' data-value='$row[2]'>";        
           echo $row[1] !== null ? htmlentities($row[1], ENT_QUOTES, 'cp1251') : "";
           echo '</option>';
         }

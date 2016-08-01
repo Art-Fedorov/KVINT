@@ -14,3 +14,5 @@ function cancel(){
 		$('div.b-popup').empty();  
     $("div.b-popup").remove();   
 }
+
+

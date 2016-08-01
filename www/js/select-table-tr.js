@@ -74,6 +74,7 @@ function Show_float_window(){
         $.get('../tmpl/pop5.php', function(result) {
     $('body').append(result);
     if (action==2) change();
+    else Fill_cipher_cognac();
     id_row = 'COGNAC_ID';
 });
         table_add = 'TAST_COGNAC';

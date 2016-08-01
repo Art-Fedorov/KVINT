@@ -26,7 +26,7 @@
 			</div>
 			<div class="row degustation">
 				<div class="col-md-offset-2 col-md-8 text-center">
-					<div class="vibortext"><h1>CHOOSE YOUR NAME</h1>
+					<div class="vibortext"><h1>CHOOSE YOUR NAME</h1><br><br>
 					<!--<p>свое имя и фамилию из списка</p>-->
 					</div>
 					<button class="choose-send smoothly" name="StartDeg" id="start-degustation">
@@ -41,15 +41,7 @@
 						<ul>
 							<?php 
 								include_once('php/group-ul-create.php');
-							 ?>
-							<!--<li><p class='active'>A</p></li>
-							<li><p>B</p></li>
-							<li><p>C</p></li>
-							<li><p>D</p></li>
-							<li><p>E</p></li>
-							<li><p>F</p></li>
-							<li><p>G</p></li>
-							<li><p>K</p></li>-->
+							 ?>							
 					</ul>
 					</nav>					
 					<div id="group" class="group">
