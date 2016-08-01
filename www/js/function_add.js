@@ -40,13 +40,9 @@ function data_add_1(){
       success:function(data){$('.left-column').html(data); }
       });
 
-      $('#popup1 .b-popup-footer').
-      prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
-      $('span.popup-result').css("opacity","1").addClass('ok');}, 
-    error:function(){
-      $('#popup1 .b-popup-footer').
-      prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
-      $('span.popup-result').css("opacity","1").addClass('false');
+        onsuccess();},
+  error:function(){
+    onerror();
      }
   });  
 }
@@ -81,13 +77,9 @@ function data_add_2(){
       success:function(data){$('.left-column').html(data); }
       });
 
-    $('#popup2 .b-popup-footer').
-    prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
-    $('span.popup-result').css("opacity","1").addClass('ok');}, 
+    onsuccess();},
   error:function(){
-    $('#popup2 .b-popup-footer').
-    prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
-    $('span.popup-result').css("opacity","1").addClass('false');
+    onerror();
      }
   });  
 }
@@ -127,15 +119,11 @@ function data_add_3(){
       response:'text', 
       success:function(data){$('.left-column').html(data); }
       });
-
-      $('#popup3 .b-popup-footer').
-    prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
-    $('span.popup-result').css("opacity","1").addClass('ok');}, 
-  error:function(){
-    $('#popup3 .b-popup-footer').
-    prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
-    $('span.popup-result').css("opacity","1").addClass('false');
+        onsuccess();},
+      error:function(){
+        onerror();
      }
+
   });  
 }
 
@@ -166,17 +154,12 @@ function data_add_4(){
       response:'text', 
       success:function(data){ $('.left-column').html(data);}
       });
-
-      $('#popup4 .b-popup-footer').
-    prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
-    $('span.popup-result').css("opacity","1").addClass('ok');}, 
+    onsuccess();},
   error:function(){
-    $('#popup4 .b-popup-footer').
-    prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
-    $('span.popup-result').css("opacity","1").addClass('false');
+    onerror();
      }
+
   });  
-  //return false;
 }
 
 function data_add_5(){   
@@ -216,14 +199,9 @@ function data_add_5(){
       response:'text', 
       success:function(data){$('.left-column').html(data); }
       });
-
-      $('#popup5 .b-popup-footer').
-    prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
-    $('span.popup-result').css("opacity","1").addClass('ok');}, 
+    onsuccess();},
   error:function(){
-    $('#popup5 .b-popup-footer').
-    prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
-    $('span.popup-result').css("opacity","1").addClass('false');
+    onerror();
      }
   });  
 }
@@ -270,13 +248,18 @@ function data_add_6(){
       success:function(data){ $('.left-column').html(data); }
       });
 
-    $('#popup6 .b-popup-footer').
-    prepend('<span class="smoothly popup-result"><i class="fa fa-check"></i>Запись успешно добавлена</span>');
-    $('span.popup-result').css("opacity","1").addClass('ok');}, 
+    onsuccess();},
   error:function(){
-    $('#popup6 .b-popup-footer').
-    prepend('<span class="smoothly popup-result"><i class="fa fa-close"></i>Запись успешно добавлена</span>');
-    $('span.popup-result').css("opacity","1").addClass('false');
+    onerror();
      }
   });  
+}
+function onsuccess(){
+      $('span.popup-result:first-child').addClass('ok').show();
+    setTimeout(function(){$('span.popup-result.ok').hide();},800);
+
+}
+function onerror(){
+  $('span.popup-result:last-child').addClass('false');
+    setTimeout(function(){$('span.popup-result.false').hide();},800);
 }

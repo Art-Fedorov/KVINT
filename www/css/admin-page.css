@@ -83,7 +83,7 @@ li.list-report-button > input:hover{
 }
 span.popup-result{
 	font-size:12px;
-	
+	display:none;
 }
 span.popup-result.ok
 {
