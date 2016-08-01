@@ -59,6 +59,7 @@ function delete_row(){
       response:'text', 
       success:function(data){$('.left-column').html(data); }
       });
+    tr_id=undefined;
        },
     error:function(data){    
     }

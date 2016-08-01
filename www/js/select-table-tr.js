@@ -12,7 +12,8 @@ $(document).ready(function(){
       $('tr').removeClass();
       $(this).addClass('selected');
       tr_id = $(this).data('value');
-      tr_help = $(this).attr('data-value-help');  
+      tr_help = $(this).attr('data-value-help'); 
+              console.log(tr_id+" "+tr_help); 
   });
   //Вызов нужного всплывающего окна и отмена 
   $('body').on('submit','form', function() {

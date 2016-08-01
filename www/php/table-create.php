@@ -1,6 +1,6 @@
 <?php
 class Table {    
-    public function filltable($code) {
+    public function filltable($code,$id=NULL,$id_help=NULL) {
     /*подключение к бд*/
     include('connect.php');
     

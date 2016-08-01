@@ -1,10 +1,5 @@
 
   $(document).ready(function(){
-    $('tr').click(function(){
-        $('tr').removeClass();
-        $(this).addClass('selected');
-        tr_id = $(this).data('value');        
-        });
     $('#right-column-button-add').click(function(){
         Show_float_window();
       });   
@@ -149,7 +144,8 @@ function data_add_4(){
       type:'GET', 
       url:'php/fill-table.php', 
       data:{    
-      'code': codetable     
+      'code': codetable 
+
       }, 
       response:'text', 
       success:function(data){ $('.left-column').html(data);}
