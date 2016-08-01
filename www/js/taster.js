@@ -17,15 +17,71 @@
 		});
 
 		//клик по своему имени из списка 
-		$('.cd-wrapper div.list p').click(function(){
-			$('#start-degustation').text($(this).text());
-			$('#hidden').html("<input type='hidden' value='"+$(this).attr('id')+"' name='taster'>");
-			$('.vibortext').hide();
-			$('.formgroup').show();
-			$('#exit').click();
-			sendTable("A");
-			$("#form span").hide();
+		$('.cancel-pin').click(function(){			
+			$('.pin').hide();
+			$('.list').show();
 		});
+		$('.cd-wrapper div.list p').click(function(){
+			
+			$('.taster-name').text($(this).text()).attr('id',$(this).attr('id'));
+			$('.pin').show();
+			$('.list').hide();
+			//$('div.pin input:first-of-type').focus();
+		});
+		$('#pin').pincodeInput()
+		/*var numbers=$('div.pin input[type=number]');
+		numbers.each(function(key,val){
+			if (key!=3)
+				$(val).on('keyup',function(){
+					$(numbers[key+1]).focus();
+					$(val).attr('readonly',true);
+				});
+			else
+				$(val).on('keyup',function(){
+					$(val).attr('disabled',true);
+				});
+		});*/
+		$('.btn-enter-pin').click(function(){
+			var id=$('.taster-name').attr('id');
+			var pin="";
+			var flag=false;
+			/*$('.pin input[type=number]').each(function(){
+				pin+=$(this).val(); 
+				if ($(this).val()==""){
+					flag=true;
+				}
+			});*/
+			pin=$('#pin').val();
+			console.log($('pin').val());
+			if (pin.length<4) flag=true;
+			if (!flag)
+			{
+			$.ajax({
+				url:'../php/check-pin.php',
+				type:'GET',
+				data:{
+					'id': id,
+					'pin':pin
+				},
+				success:function(data){
+					if (data=='1'){
+						$('#start-degustation').text($('.taster-name').text());
+						$('#hidden').html("<input type='hidden' value='"+$('.taster-name').attr('id')+"' name='taster'>");
+						$('.vibortext').hide();
+						$('.formgroup').show();
+						$('#exit').click();
+						sendTable("A");
+						$("#form span").hide();
+					}
+					console.log(data);
+				}
+			});
+		}
+			
+		});
+
+			
+		
 		$('.cognacgroup>ul>li>p').click(function(){
 			sendTable($(this).text());
 		});
@@ -146,6 +202,7 @@
 			$(document).on('click','span.next',function(){
 					perehod_action();
 			});
+			//$(document)
 		});
 //Добавление текста
 function perehod_text(){

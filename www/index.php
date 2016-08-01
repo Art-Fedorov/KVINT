@@ -30,7 +30,7 @@
 					Начать дегустацию
 					</button>
 				</div>
-			</div>
+			</div>			
 		</div>
 	</div>
 </body>

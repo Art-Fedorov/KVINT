@@ -10,10 +10,12 @@
 	<link rel="stylesheet" href="css/main-page.css" />
 	<link rel="stylesheet" href="css/taster-page.css" />
 	<link rel="stylesheet" href="css/admin-float-window.css" />
+	<link rel="stylesheet" href="libs/PIN/css/bootstrap-pincode-input.css" />
   <script src="libs/jquery/jquery-2.1.4.min.js"></script>
 	<script src="libs/modernizr.js"></script>
 	<script src="libs/mustache.min.js"></script>
 	<script src="js/admin-catalog-float-window.js"></script>
+	<script src="libs/PIN/js/bootstrap-pincode-input.js"></script>
 	<script src="js/taster.js"></script>
 </head>
 <body>
@@ -60,12 +62,27 @@
 	<div class="container">
 
 			<div class="row">
-				<div class="col-md-offset-4 col-md-4 col-sn-offset-4 col-sn-4  list">
+				<div class="col-sm-offset-4 col-sm-4 list">
 						<?php	
 						include_once 'php/taster-list.php';
 					
 					?>
+				</div>				
+				<div class="col-sm-offset-4 col-sm-4 pin">
+				<div class="text-center">
+					<button class="cancel-pin"><i class="fa fa-chevron-left "></i></button><br><br><br><br>
+					<p class="taster-name">Бенской В.Г.</p><hr><br>
+					<span class="text-info">Введите уникальный PIN код, выданный при проведении дегустации</span><br><br><br>
+					<p class="pin-code">PIN</p>
+					<div class="text-center text-pin">
+						<input type="number" min='0' max ='9' step='1'>
+						<input type="number" min='0' max ='9' step='1'>
+						<input type="number" min='0' max ='9' step='1'>
+						<input type="number" min='0' max ='9' step='1'>		
+					</div><br><br>
+					<button class="btn-enter-pin">Войти</button>
 				</div>
+			</div>
 			</div>
 		</div>			
 </div> <!-- .cd-wrapper -->	
