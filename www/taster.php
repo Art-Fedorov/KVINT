@@ -26,7 +26,8 @@
 			</div>
 			<div class="row degustation">
 				<div class="col-md-offset-2 col-md-8 text-center">
-					<div class="vibortext"><h1>CHOOSE YOUR NAME</h1><br><br>
+					<div class="vibortext"><h1>Выберите свое имя</h1>
+					<h2>(Choose your name)</h2><br><br>
 					<!--<p>свое имя и фамилию из списка</p>-->
 					</div>
 					<button class="choose-send smoothly" name="StartDeg" id="start-degustation">

@@ -50,11 +50,44 @@ function delete_row(){
     'row':id_row
     }, 
     response:'text', 
-    success:function(data){ $.ajax({ 
+    success:function(data){ 
+    $.ajax({ 
       type:'GET', 
       url:'php/fill-table.php', 
       data:{      
       'code': codetable   
+      }, 
+      response:'text', 
+      success:function(data){$('.left-column').html(data); }
+      });
+    tr_id=undefined;
+       },
+    error:function(data){    
+    }
+  });
+  $("#popup7").remove();
+}
+
+
+function delete_row_rating(){
+  table = 'TAST_RATING';
+  id_row = 'RATING_ID';  
+ 
+  $.ajax({ 
+    type:'POST', 
+    url:'php/delete-row.php', 
+    data:{ 
+    'id':tr_id ,
+    'table':table,
+    'row':id_row
+    }, 
+    response:'text', 
+    success:function(data){ 
+    $.ajax({ 
+      type:'GET', 
+      url:'php/fill-table-rating.php', 
+      data:{
+      'selection_condition':selection_condition  
       }, 
       response:'text', 
       success:function(data){$('.left-column').html(data); }

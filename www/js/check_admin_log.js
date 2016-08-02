@@ -2,6 +2,9 @@
     $('#btn_admin_enter').click(function(){
       log_admin();      
     });   
+    $('#cancel-admin').click(function(){
+      cancel_admin();      
+    });
   });
 
 function log_admin(){	
@@ -27,4 +30,8 @@ function log_admin(){
 	  		}
 	  }
 	});
+}
+
+function cancel_admin(){
+	document.location.href = "index.php";	
 }

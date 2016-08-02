@@ -20,13 +20,13 @@
 }
 /*индивидуальные размеры окон*/
 .b-popup-border1{
-  top:-webkit-calc(50% - 185px);
-  left:-webkit-calc(50% - 220px);   
+  top:-webkit-calc(50% - 182px);
+  left:-webkit-calc(50% - 214px);   
   box-sizing: content-box;  
 }
 .b-popup-border2{
-  top:-webkit-calc(50% - 145px);
-  left:-webkit-calc(50% - 240px);  
+  top:-webkit-calc(50% - 141px);
+  left:-webkit-calc(50% - 230px);  
   box-sizing: content-box;
 }
 .b-popup-border3{
@@ -40,7 +40,7 @@
   box-sizing: content-box;
 }
 .b-popup-border5{
-  top:-webkit-calc(50% - 190px);
+  top:-webkit-calc(50% - 231px);
   left:-webkit-calc(50% - 280px);  
   box-sizing: content-box;
 }

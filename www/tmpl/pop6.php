@@ -38,7 +38,7 @@
 				<span>Примечание</span>
 				<input name="d8" id="popup6-desc" type="text" class="input-text" style="width: 350px; margin-right: 28px;">
 				<span>Итоговая оценка</span>
-				<input name="d2" id="popup6-grade" type="button" class="final-grade"></span>
+				<input name="d2" id="popup6-grade" type="button" value="0" class="final-grade"></span>
 			</div>			
   	</div>		
   	<div class="b-popup-footer">

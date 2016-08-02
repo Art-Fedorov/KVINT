@@ -14,12 +14,13 @@
 <body>
 	<div class="container">
 		<div class="row">
-		<button class="cancel-admin smoothly" name="Exit" id="exit">&#215;</button>
-			<div class="col-md-4 col-md-offset-4 pin">
-				<div class="text-center">	
-					<span class="text-info">Для доступа к панели администратора необходимо ввести логин и пароль (если чё, то он в файле config)</span><br><br><br>
-					<input id="login-admin" class="login-admin" type="text" placeholder="login">
-					<input id="password-admin" class="password-admin" type="password" placeholder="password">
+		
+			<div class="col-md-4 col-md-offset-4">
+			<button class="cancel-admin smoothly" id="cancel-admin">&#215;</button>
+				<div class="text-center admin-auth">	
+					<span class="admin-info">Для доступа к панели администратора необходимо ввести логин и пароль<br> (если чё, то он в файле config)</span><br><br><br>
+					<input id="login-admin" class="login-admin text-admin" type="text" placeholder="login">
+					<input id="password-admin" class="password-admin text-admin " type="password" placeholder="password">
 					<br><br>
 					<button id="btn_admin_enter" class="btn_admin_enter smoothly">Войти</button>
 				</div>

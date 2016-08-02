@@ -71,3 +71,43 @@ body{
 }
 
 
+
+/*стили для панели аутентификации администратора*/
+.admin-auth{
+	display: block;
+	margin-top: 100px;
+}
+.cancel-admin{
+	display: block;	
+	float: right;
+	height: 40px;
+	width: 40px;
+	background-color: #ee6661;
+	color: #fff;	
+	font-size: 15px;
+	border: none;
+	border-radius: 50%;	
+	margin-right: -100px;
+}
+.admin-info{
+	font-size: 18px;
+}
+.text-admin{	
+	display: block;
+	color: #272727;
+  border: 1px solid #cac9c9;
+  border-radius: 6px;
+  padding:6px 20px; 
+  font-size: 16px;
+  width: 160px; 
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.btn_admin_enter{
+	color: #fff;
+  border: none;
+  background-color: #ee6661;
+  border-radius: 30px;
+  padding:14px 60px; 
+  font-size: 16px;     
+}
