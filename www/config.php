@@ -1,14 +1,21 @@
 <?php
-class Config{
-	public $admin_password = 'qwerty';
-	public $db = [
-		'ip'=>'ora2.kvint.md/UNIACC',
-		'login'=>'TASTING',
-		'pass'=>'1111',
-		'encode'=>'CL8MSWIN1251',
-		'admin-login'=>'kvint',
-		'admin-password'=>'degustation'
-	];
-}
+
+	
+
+	function control_admin ($log, $pass){
+		$admin_password = 'tast';
+	$admin_login = 'kvint';
+		if ($admin_password == $pass && $admin_login == $log) echo '1';
+		else echo '0';
+		//echo $log." ".$pass." ||| ".$admin_password." ".$admin_login;
+	}
+
+if (!empty($_POST))
+	{		
+		$log=$_POST['login'];
+		$pass=$_POST['password'];
+		//$control = new Config();
+    control_admin($log, $pass);
+	}
 
 ?>
