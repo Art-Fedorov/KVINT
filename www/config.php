@@ -5,7 +5,9 @@ class Config{
 		'ip'=>'ora2.kvint.md/UNIACC',
 		'login'=>'TASTING',
 		'pass'=>'1111',
-		'encode'=>'CL8MSWIN1251'
+		'encode'=>'CL8MSWIN1251',
+		'admin-login'=>'kvint',
+		'admin-password'=>'degustation'
 	];
 }
 

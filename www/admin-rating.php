@@ -12,7 +12,7 @@
           <hr>
           <div class="b-popup-content-block">
             <span>ФИО Дегустатора</span>
-            <select id="search-man-rating" style="width: 380px;" >
+            <select id="search-man-rating" style="width: 300px; margin-right: 40px;" >
             <option value="0">Нет</option>
               <?php 
               require('php/selection-create.php');

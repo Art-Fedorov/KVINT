@@ -16,20 +16,22 @@
 			}
 		});
 
-		//клик по своему имени из списка 
+		
 		$('.cancel-pin').click(function(){			
 			$('.pin').hide();
 			$('.list').show();
+			$('.cancel-tast').show();
 		});
-		$('.cd-wrapper div.list p').click(function(){
-			
+		//клик по своему имени из списка 
+		$('.cd-wrapper div.list p').click(function(){			
 			$('.taster-name').text($(this).text()).attr('id',$(this).attr('id'));
 			$('.pin').show();
 			$('.list').hide();
-			//$('div.pin input:first-of-type').focus();
+			$('.cancel-tast').hide();
+			$('div.pin input:first-of-type').focus();
 		});
-		$('#pin').pincodeInput()
-		/*var numbers=$('div.pin input[type=number]');
+		//$('#pin').pincodeInput();
+		var numbers=$('div.pin input[type=number]');
 		numbers.each(function(key,val){
 			if (key!=3)
 				$(val).on('keyup',function(){
@@ -40,17 +42,17 @@
 				$(val).on('keyup',function(){
 					$(val).attr('disabled',true);
 				});
-		});*/
+		});
 		$('.btn-enter-pin').click(function(){
 			var id=$('.taster-name').attr('id');
 			var pin="";
 			var flag=false;
-			/*$('.pin input[type=number]').each(function(){
+			$('.pin input[type=number]').each(function(){
 				pin+=$(this).val(); 
 				if ($(this).val()==""){
 					flag=true;
 				}
-			});*/
+			});
 			pin=$('#pin').val();
 			console.log($('pin').val());
 			if (pin.length<4) flag=true;

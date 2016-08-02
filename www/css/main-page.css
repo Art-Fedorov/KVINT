@@ -36,7 +36,7 @@ body{
 }
 .container{
 	height: inherit;	
-	padding-top: 50px;
+	padding-top: 30px;
 	padding-bottom: 30px;	
 	box-sizing: border-box;
 }
@@ -72,6 +72,10 @@ body{
 
 
 /*стили для окна пин кода*/
+.row{
+	padding: 0 10px 0 10px;
+	height: 100%;
+}
 div.pin{
 	display: block;
 	background-color: #fff;
@@ -79,6 +83,8 @@ div.pin{
 	//border:2px solid #ED5650;
 	border: none;
 	padding: 6px;
+	height: 100%;
+	box-sizing: border-box;
 }
 div.pin input{
 	display: block;
