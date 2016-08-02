@@ -59,7 +59,7 @@
 				<button class="cancel-tast smoothly" name="Exit" id="exit">&#215;</button>		
 	<div class="container list-pin-panel">
 
-			<div class="row">
+			<div class="row row-pin">
 				<div class="col-sm-12 col-md-4 col-md-offset-4 list">
 						<?php	
 						include_once 'php/taster-list.php';
@@ -73,12 +73,9 @@
 					<span class="text-info">Введите уникальный PIN код, выданный при проведении дегустации</span><br><br><br>
 					<p class="pin-code">PIN</p>
 					<div class="text-center text-pin">
-						<input type="number" min='0' max ='9' step='1'>
-						<input type="number" min='0' max ='9' step='1'>
-						<input type="number" min='0' max ='9' step='1'>
-						<input type="number" min='0' max ='9' step='1'>		
-					</div><br><br>
-					<button class="btn-enter-pin">Войти</button>
+						<input type="number" min='1000' max ='9999' step='1'>
+					</div><br>
+					<span class="pin-error text-info" style="display:none;">Вы ввели неправильный PIN</span>
 				</div>
 			</div>
 			</div>

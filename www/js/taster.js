@@ -1,11 +1,8 @@
 	$(function(){
 		//изначально скрывается блок с заполнением оценок
 		$('.formgroup').hide();
+		//активной становится 1ая группа
 		$('.cognacgroup ul li:first-child p').addClass('active');
-		//кнопка выхода из выбора имени
-		$('#exit').click(function(){
-			$('.cd-wrapper').hide();
-		});
 		//кнопка выбрать имя
 		$('#start-degustation').click(function(){
 			$('.cd-wrapper').show();
@@ -15,49 +12,31 @@
 				$('p#'+$('#hidden input').attr('value')).addClass('active');
 			}
 		});
-
-		
-		$('.cancel-pin').click(function(){			
-			$('.pin').hide();
-			$('.list').show();
-			$('.cancel-tast').show();
+		//кнопка выхода из выбора имени
+		$('#exit').click(function(){
+			$('.cd-wrapper').hide();
 		});
+
 		//клик по своему имени из списка 
 		$('.cd-wrapper div.list p').click(function(){			
 			$('.taster-name').text($(this).text()).attr('id',$(this).attr('id'));
 			$('.pin').show();
 			$('.list').hide();
 			$('.cancel-tast').hide();
-			$('div.pin input:first-of-type').focus();
+			$('div.pin input').focus();
 		});
-		//$('#pin').pincodeInput();
-		var numbers=$('div.pin input[type=number]');
-		numbers.each(function(key,val){
-			if (key!=3)
-				$(val).on('keyup',function(){
-					$(numbers[key+1]).focus();
-					$(val).attr('readonly',true);
-				});
-			else
-				$(val).on('keyup',function(){
-					$(val).attr('disabled',true);
-				});
-		});
-		$('.btn-enter-pin').click(function(){
-			var id=$('.taster-name').attr('id');
-			var pin="";
-			var flag=false;
-			$('.pin input[type=number]').each(function(){
-				pin+=$(this).val(); 
-				if ($(this).val()==""){
-					flag=true;
-				}
-			});
-			pin=$('#pin').val();
-			console.log($('pin').val());
-			if (pin.length<4) flag=true;
-			if (!flag)
-			{
+
+		//обработчик для пин-кода
+		$('.pin input').keyup(function(event){
+			if ($(this).val().length==1) $('span.pin-error').hide();
+			if ($(this).val().length==4) enterPin();
+			if ($(this).val().length>4) $(this).val($(this).val().substr(0,4));
+		}); 
+
+		//функция проверки пинкода и входа в дегустацию
+		function enterPin(){
+			var id=$('.taster-name').attr('id'); // ID_MAN
+			var pin=$('.pin input[type=number]').val(); // введенный пин-код
 			$.ajax({
 				url:'../php/check-pin.php',
 				type:'GET',
@@ -66,24 +45,38 @@
 					'pin':pin
 				},
 				success:function(data){
+					//1-успешно, 0-неуспешно
 					if (data=='1'){
+						$('.pin').hide();
+						$('.list').show();
 						$('#start-degustation').text($('.taster-name').text());
 						$('#hidden').html("<input type='hidden' value='"+$('.taster-name').attr('id')+"' name='taster'>");
-						$('.vibortext').hide();
+						$('.vibortext').hide();//скрытие текста "Выберите свое имя"
 						$('.formgroup').show();
 						$('#exit').click();
 						sendTable("A");
 						$("#form span").hide();
+						$(".pin input").val("");
+						$('span.pin-error').hide();
 					}
-					console.log(data);
+					else {
+						$('span.pin-error').show();
+						$('input').val("");
+					}
 				}
 			});
-		}
 			
-		});
+		};
 
+		//Кнопка закрытия окна ввода пин-кода
+		$('.cancel-pin').click(function(){			
+			$('.pin').hide();
+			$('span.pin-error').hide();
+			$('.list').show();
+			$('.cancel-tast').show();
+		});
 			
-		
+		//происходит при смене группы
 		$('.cognacgroup>ul>li>p').click(function(){
 			sendTable($(this).text());
 		});
@@ -112,6 +105,7 @@
 		        data:{'code':code},
 		        response:'text',
 		        success:function (data) {
+		        		//использование шаблона mustache
 		            $.get("tmpl/formgroup.html",function(tmpl){
 		            	var q={"data":data};
 		            	for (i in data)
@@ -166,45 +160,44 @@
 		//функция подсчета общего балла для каждого коньяка
 			function sum(){
 			var sum=parseFloat(0.00);
-		  	var opacity=$('#form .rowrate input[type=number]').length/5;
-		  	for(var i=0;i<opacity;i++)
-		  	{
-		  		/*проверка на мин макс значения*/
+			/*проверка на мин макс значения*/
+			$('#form .rowrate input[type=number]').each(function(key,val){
+				if ($(val).val()*1>$(val).attr('max')) 
+          {$(val).val($(val).attr('max')); }
+        if ($(val).val()*1<$(val).attr('min')) 
+          {$(val).val(""); }
+			});
+				//подсчет суммы для каждого коньяка в группе
+		  	var length=$('#form .rowrate input[type=number]').length/5;
+		  	for(var i=0;i<length;i++)
+		  	{	
 		  		var opa=parseFloat($('input[name=opacity'+i+']').val())||0;
-		  		if (opa>0.5) opa=0.5;
-		  		if (opa<0) opa=0;
-		  		$('input[name=opacity'+i+']').val(opa);
+		  		if (opa!=0) $('input[name=opacity'+i+']').val(opa);
 		  		var col=parseFloat($('input[name=color'+i+']').val())||0;
-		  		if (col>0.5) col=0.5;
-		  		if (col<0) col=0;
-		  		$('input[name=color'+i+']').val(col);
+		  		if (col!=0) $('input[name=color'+i+']').val(col);
 		  		var tas=parseFloat($('input[name=taste'+i+']').val())||0;
-		  		if (tas>3.0) tas=3.0;
-		  		if (tas<0) tas=0;
-		  		$('input[name=taste'+i+']').val(tas);
+		  		if (tas!=0) $('input[name=taste'+i+']').val(tas);
 		  		var bou=parseFloat($('input[name=bouquet'+i+']').val())||0;
-		  		if (bou>5.0) bou=5.0;
-		  		if (bou<0) bou=0;
-		  		$('input[name=bouquet'+i+']').val(bou);
+		  		if (bou!=0) $('input[name=bouquet'+i+']').val(bou);
 		  		var typ=parseFloat($('input[name=typicality'+i+']').val())||0;
-		  		if (typ>1.0) typ=1.0;
-		  		if (typ<0) typ=0;
-		  		$('input[name=typicality'+i+']').val(typ);
+		  		if (typ!=0) $('input[name=typicality'+i+']').val(typ);
 		  		var sum=opa+col+tas+bou+typ;
 		  		$('input[name=main'+i+']').val(sum.toFixed(2));
 		  		$('input[name=mainpoint'+i+']').attr("value",sum.toFixed(2));
 		  	}
 			};
-			$(document).on('click','.submit-cognac',function(){
-				$.get('../tmpl/secure-pop.php', function(result) {
-				    $('body').append(result);
-				  		perehod_text();
-				});  
-			});
-			$(document).on('click','span.next',function(){
-					perehod_action();
-			});
-			//$(document)
+		//при при отправке формы появляется всплывающее окно, в нем
+		//галочка икнопка перехода на следующую группу
+		$(document).on('click','.submit-cognac',function(){
+			$.get('../tmpl/secure-pop.php', function(result) {
+			    $('body').append(result);
+			  		perehod_text();
+			});  
+		});
+		//переход на следующую группу
+		$(document).on('click','span.next',function(){
+				perehod_action();
+		});
 		});
 //Добавление текста
 function perehod_text(){
