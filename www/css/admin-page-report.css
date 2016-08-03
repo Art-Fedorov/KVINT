@@ -1,120 +1,16 @@
-* {
-	padding:0;
-	margin: 0;
-}
-html{
-	height: 100%;
-}
-body{	
-	height: 100%;	
-	position:relative;
-	background: #fff;
-	background-attachment: fixed;
-	background-size:cover;
-}
-a,a:hover,a:focus,a:active{
-	text-decoration: none;
-	color:inherit;
-}
-.container{				
-	background-size: cover;	
-	box-sizing: border-box;
-}
-.header{	
-	display: table;
-	width: 100%;
-	height: 50px;
-	color: white;
-	background-color: #44404f;	
-}
-.row{
-	padding: 0;
-	margin: 0;
-}
-.smoothly{
-	-webkit-transition-duration: 0.4s; 
-  transition-duration: 0.4s;
-}
-.admin-link{	
+.report-place{
 	display: block;
-	padding:15px;
-	float: right;			
-	height: 50px;	
-}
-.admin-link:hover{
-	background-color: #6d6a76;
-	color: #fff;
-	cursor: pointer;
-}
-
-/*-------------------------------------------------------*/
-.main-menu {
-	display: block;	
-  float: left;
-  list-style: none;   
-  margin-bottom: 0px; 
-  height: 50px;
-}
-.list-report-button{
-	display: block;	
-	float: right;			
-	height: 50px;
-	vertical-align: middle;
-}
-.list-report-button > input{
-	padding:15px;
+	box-sizing: content-box;
+	padding:14px;
 	border: none;
+	border-radius: 4px;
 	background-color: #44404f;
 }
-li.list-report-button > input:hover{
-	background-color: #6d6a76;
-}
-.main-menu > li {
+.report-sample-list{
 	display: block;
-  position: relative;
-  display: inline-block;
+	box-sizing: content-box;
 }
-.main-menu .sub-menu {
-	/*width: 210px;*/
-	z-index: 10;
-  position: absolute;
-  top:50px;  
-  left:0px; 
-  display: none;    
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  background: #6d6a76;
-}
-.main-menu .sub-menu input {
-	/*width: 210px;*/
-	text-align: left;
-	padding: 10px 15px; 
-  border: none;
-  border-bottom: 1px solid #918f98;
-  background-color: #6d6a76; 
-}
-.main-menu > li:hover .sub-menu {
-  display: block;
-}
-.main-menu .sub-menu input:hover{
-	background-color: #44404f;
-}
-.sub-menu-report{
-	width: 340px;
-}
-.main-menu .sub-menu-report input{
-	width: 340px;
-}
-.sub-menu-directory{
-	width: 210px;
-}
-.main-menu .sub-menu-directory input{
-	width: 210px;
-}
-.sub-menu li.separator{		
-	display: block;	
-	/*margin-top: -1px;*/
-	background-color: #fff;
-	height: 1px;
+.load-report-1{
+	display: block;
+	box-sizing: content-box;
 }
