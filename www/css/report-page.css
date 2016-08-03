@@ -1,0 +1,21 @@
+body{
+	padding:20px;
+}
+header{
+	clear:both;
+}
+header p{ 
+	text-align: center;
+}
+header div{
+	width:500px;
+	display:inline-block;
+}
+header div:first-child{
+	padding-left: 40px;
+}
+header div:last-child{
+	padding-right: 40px;
+	float:right;
+	
+}
