@@ -1,5 +1,6 @@
 <?php
 use Dompdf\Adapter\CPDF;      
+use Dompdf\Dompdf;
 use Dompdf\Exception;
 	include_once '../php/connect.php' ;
 	if (isset($_GET['group_id']))
@@ -29,7 +30,7 @@ use Dompdf\Exception;
     }
     $html.= "</table></div>\n";  
     $html.="</html></body>";
-    require_once("dompdf/dompdf_config.inc.php-");
+    require_once("dompdf/autoload.inc.php");
     $dompdf = new DOMPDF();// Создаем обьект
     $dompdf->load_html($html); // Загружаем в него наш html код
     $dompdf->set_paper('A4','potrait');
