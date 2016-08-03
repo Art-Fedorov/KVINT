@@ -22,7 +22,21 @@
             $select->fillselect_1();
             ?>
            </select><br>
-					<button id="load-report-1" class="load-report">Просмотреть</a>
+					<button id="load-report-1" class="load-report">Просмотреть</button>
+					<a href="admin-report.php?asd=1"></a>
+					<?php 
+						/*use Dompdf\Adapter\CPDF;      
+						use Dompdf\Dompdf;
+						use Dompdf\Exception;
+						require_once("reports/dompdf/autoload.inc.php");
+				    $dompdf = new DOMPDF();// Создаем обьект
+				    $dompdf->load_html($html); // Загружаем в него наш html код
+				    $dompdf->render(); // Создаем из HTML PDF
+				    //$dompdf->stream('mypdf.pdf'); // Выводим результат (скачивание)
+				    $output = $dompdf->output();
+				    echo $html;
+				    file_put_contents('Brochure.pdf', $output);*/
+					 ?>
 				</div>					
 			</div>
 		</div>	
@@ -31,11 +45,11 @@
 			<div class="col-md-12">	
 				<div class="report-place report-place-min text-center">
 					<p>Оценки жури по всем коньякам</p>					
-					<button id="load-report-2" class="load-report">Просмотреть</a>
+					<button id="load-report-2" class="load-report">Просмотреть</button>
 				</div>		
 				<div class="report-place report-place-min text-center">
 					<p>Оценки жури по всем группам</p>					
-					<button id="load-report-3" class="load-report">Просмотреть</a>
+					<button id="load-report-3" class="load-report">Просмотреть</button>
 				</div>				
 			</div>
 		</div>
@@ -48,7 +62,7 @@
             $select->fillselect_1();
             ?>
            </select><br>			
-					<button id="load-report-4" class="load-report">Просмотреть</a>
+					<button id="load-report-4" class="load-report">Просмотреть</button>
 				</div>					
 				<div class="report-place report-place-min text-center">
 					<p>Результаты (с учетом отклонений по группам)</p>		
@@ -57,7 +71,7 @@
             $select->fillselect_1();
             ?>
            </select><br>			
-					<button id="load-report-5" class="load-report">Просмотреть</a>
+					<button id="load-report-5" class="load-report">Просмотреть</button>
 				</div>				
 			</div>
 		</div>
@@ -66,12 +80,11 @@
 			<div class="col-md-12">	
 				<div class="report-place report-place-min text-center">
 					<p>Результаты (конечные в разделе групп)</p>					
-					<button id="load-report-6" class="load-report">Просмотреть</a>
+					<button id="load-report-6" class="load-report">Просмотреть</button>
 				</div>	
 				<div class="report-place report-place-min text-center">
 					<p>Результаты (суммарная таблица)</p>					
-					<button id="load-report-7" class="load-report">Просмотреть</a>
-				</div>				
+					<button id="load-report-7" class="load-report">Просмотреть</button>				</div>				
 			</div>
 		</div>
 	</div>
