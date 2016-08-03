@@ -13,9 +13,9 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">	
-				<div class="report-place">
-					<span>Список образцов</span><br>
-					<select id="report-sample-list" style="width: 400px;">            
+				<div class="report-place report-place-min text-center">
+					<p>Список образцов</p>
+					<select id="report-sample-list" class="report-select" style="width: 400px;">            
             <?php  
             require('php/selection-create.php');
             $select = new Select();            
@@ -26,6 +26,54 @@
 				</div>					
 			</div>
 		</div>	
+		<hr>
+		<div class="row">
+			<div class="col-md-12">	
+				<div class="report-place report-place-min text-center">
+					<p>Оценки жури по всем коньякам</p>					
+					<button id="load-report-2" class="load-report">Просмотреть</a>
+				</div>		
+				<div class="report-place report-place-min text-center">
+					<p>Оценки жури по всем группам</p>					
+					<button id="load-report-3" class="load-report">Просмотреть</a>
+				</div>				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">	
+				<div class="report-place report-place-min text-center">
+					<p>Результаты (с уточнением по группам)</p>		
+					<select id="report-result-group" class="report-select" style="width: 400px;">            
+            <?php                   
+            $select->fillselect_1();
+            ?>
+           </select><br>			
+					<button id="load-report-4" class="load-report">Просмотреть</a>
+				</div>					
+				<div class="report-place report-place-min text-center">
+					<p>Результаты (с учетом отклонений по группам)</p>		
+					<select id="report-deviation-group" class="report-select" style="width: 400px;">            
+            <?php                     
+            $select->fillselect_1();
+            ?>
+           </select><br>			
+					<button id="load-report-5" class="load-report">Просмотреть</a>
+				</div>				
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-12">	
+				<div class="report-place report-place-min text-center">
+					<p>Результаты (конечные в разделе групп)</p>					
+					<button id="load-report-6" class="load-report">Просмотреть</a>
+				</div>	
+				<div class="report-place report-place-min text-center">
+					<p>Результаты (суммарная таблица)</p>					
+					<button id="load-report-7" class="load-report">Просмотреть</a>
+				</div>				
+			</div>
+		</div>
 	</div>
 </body>
 </html>
