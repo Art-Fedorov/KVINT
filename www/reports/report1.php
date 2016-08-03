@@ -12,45 +12,47 @@ use Dompdf\Exception;
     $array=array();
     $x=0;
     while ($row = oci_fetch_array($stid)) {
-      $array[$x][]=array('id'=>$row[0],'title'=> htmlentities($row[1], ENT_QUOTES, 'cp1251'));
+      $array[$x]=array('id'=>$row[0],'title'=> htmlentities($row[1], ENT_QUOTES, 'cp1251'));
       $x++;
     }
-    print_r($array);
-    
-    
 
-    //echo count($array);
-    for ($j=$array[0]['id'];$j<$array[count($array)]['id'];$j++)
+    for ($j=$array[0]['id'],$k=0;$j<$array[count($array)-1]['id'];$j++,$k++)
     {
-      echo $j;
+      $html.='<p>'.$array[$k]['title'].'</p>';
+      //echo $j;
       $query='SELECT G.GROUP_TITLE as "Категория", 
           C.COGNAC_CODE as "Шифр",C.COGNAC_TITLE as "Наименование", 
           C.COGNAC_MANUF as "Производитель", 
           C.COGNAC_AGE as "Возраст", 
-          C.COGNAC_CONDALC as "Спирт, %",
-          C.COGNAC_CONDSUG as "Сахар, г/дм3", 
+          C.COGNAC_CONDALC as "Спирт,<br> %",
+          C.COGNAC_CONDSUG as "Сахар,<br> г/дм3", 
           C.COGNAC_DESC as "Примечание" 
           FROM TAST_COGNAC C 
           INNER JOIN TAST_GROUP G
           ON C.COGNAC_GROUP=G.GROUP_ID
           WHERE COGNAC_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)
-          AND COGNAC_GROUP='.$j; 
+          AND COGNAC_GROUP='.$j.'
+          ORDER BY C.COGNAC_CODE'; 
       $stid = oci_parse($conn,$query );
       oci_execute($stid);
       $html.='<table border="1" style="width:100%;">';
+      $html.='<th>№</th>';
       for ($i = 1; $i-1 < oci_num_fields($stid); $i++) {
         $html.= "<th>";
         $html.= oci_field_name($stid,$i);            
         $html.= "</th>";
       }
+      $m=1;
       while ($row = oci_fetch_array($stid)) {
+
         $html.= "<tr>";
+        $html.="<td>".$m++."</td>";
         for ($i = 0; $i < oci_num_fields($stid); $i++) {
            $html.= '<td>';
            $html.=  htmlentities($row[$i], ENT_QUOTES, 'cp1251');
            $html.= '</td>';
         }
-        $html.= "</tr>\n";
+        $html.= "</tr>";
       }
       $html.='</table>';
     }           
