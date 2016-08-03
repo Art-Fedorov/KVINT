@@ -75,5 +75,6 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="js/admin-report.js"></script>
 </body>
 </html>
