@@ -5,10 +5,6 @@ $(function(){
 		$.ajax({
 			url:"../reports/report1.php",
 			type:"GET",
-			data:{
-				'group_id':group_id,
-				'group_prefix':group_prefix
-			},
 			success:function(data){
 				console.log(data);
 				}
