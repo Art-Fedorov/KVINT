@@ -1,11 +1,24 @@
 <?php
-use Dompdf\Adapter\CPDF;      
-use Dompdf\Dompdf;
-use Dompdf\Exception;
 	include_once '../php/connect.php' ;
 		
-		
+		use Dompdf\Adapter\CPDF;
+    use Dompdf\Dompdf;
+    use Dompdf\Exception;
 		$html=file_get_contents('report1.html');
+    $query='SELECT CAPTION_DESC FROM TAST_CAPTION WHERE CAPTION_ID=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
+    $stid = oci_parse($conn,$query );
+    oci_execute($stid);
+    $title="";
+    while ($row = oci_fetch_array($stid)) {
+      $title=htmlentities($row[0], ENT_QUOTES, 'cp1251');
+    }
+    $html.='<header>
+  <div style="width:600px; margin:0 auto; text-align: center;"><p><span>СПИСОК ОБРАЗЦОВ</span><br>представленных на Международном Конкурсе коньяков<br> "'.$title.'" г. Тирасполь</p></div>
+  </header>
+  <div class="simple_table">';
+
+
+
     $query='SELECT GROUP_ID, GROUP_TITLE FROM TAST_GROUP WHERE GROUP_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
     $stid = oci_parse($conn,$query );
     oci_execute($stid);
@@ -62,18 +75,15 @@ use Dompdf\Exception;
     /*iconv_set_encoding("internal_encoding", "UTF-8");
     iconv_set_encoding("input_encoding", "UTF-8");
     iconv_set_encoding("output_encoding", "UTF-8");*/
-    /*require_once("dompdf/autoload.inc.php");
+    require_once("dompdf/autoload.inc.php");
     $dompdf = new DOMPDF();// Создаем обьект
     $dompdf->load_html($html); // Загружаем в него наш html код
     $dompdf->set_paper('A4','album');
     $dompdf->render(); // Создаем из HTML PDF
     //$dompdf->stream('mypdf.pdf'); // Выводим результат (скачивание)
-    $output = $dompdf->output();*/
-    //file_put_contents('Brochure.pdf', $output);
+    $output = $dompdf->output();
+    file_put_contents('report_1.pdf', $output);
     file_put_contents('report_1.html', $html);
 
     //echo var_dump(iconv_get_encoding('all'));
-    
-    //echo $html;
-
     ?>

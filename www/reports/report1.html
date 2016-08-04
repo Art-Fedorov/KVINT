@@ -9,19 +9,25 @@
   <script src="../libs/jquery/jquery-2.1.4.min.js"></script>
     <script type="text/javascript">
   		$(function() {
-  			window.print();
+  			//window.print();
   		})
   </script>
   <style type="text/css">
 		body{
 			font-family: 'Arialuni','Arial',sans-serif;
+			position: relative;
 		}
 		table th{
+			position: relative;
 			font-size: 12px;
 			text-align:center;
 		}
-		table td{
-			padding:0 2px;
+				table td{
+					position: relative;
+			padding: 1px 5px;
+		}
+		table th{
+			padding: 5px 5px;
 		}
 		table tr td:first-child{
 			width: 3%;
@@ -56,6 +62,7 @@
 			width: 10%;
 		}
 		.simple_table p{
+
 			text-align: center;
 			font-weight: bold;
 			margin-top: 20px;
@@ -64,15 +71,9 @@
     table {
      page-break-after: always;
     } 
-    table tr {
-    	 page-break-after: auto;
-    }
    } 
   </style>
 </head>
 <body>
-	<header>
-	<div style="width:600px; margin:0 auto; text-align: center;"><p><span>СПИСОК ОБРАЗЦОВ</span><br>представленных на Международном Конкурсе коньяков<br> "KVINT 2017" г. Тирасполь</p></div>
-	</header>
-	<div class="simple_table">
+	
 	

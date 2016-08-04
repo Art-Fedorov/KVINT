@@ -11,11 +11,66 @@
 		body{
 			font-family: 'Arialuni','Arial',sans-serif;
 		}
+	
+		table th{
+			font-size: 12px;
+			text-align:center;
+		}
+		table td{
+			padding: 2px 5px;
+		}
+		table th{
+			padding: 5px 5px;
+		}
+		table tr td:first-child{
+			width: 5%;
+			text-align:center;
+		}
+		table tr td:nth-child(2){
+			width: 10%;
+			text-align:center;
+		}
+		table tr td:nth-child(3){
+			width: 30%;
+			
+		}
+		table tr td:nth-child(4){
+			width: 30%;
+		}
+		table tr td:nth-child(5){
+			width: 10%;
+			text-align:center;
+		}
+		table tr td:nth-child(6){
+			width: 15%;
+			text-align:center;
+		}
+		.simple_table p{
+			text-align: center;
+			font-weight: bold;
+			margin: 0 auto;
+		}
+		p{
+			margin-bottom: 5px !important;
+		}
+		p.last{
+			margin-bottom: 15px !important;
+		}
+		p.first{
+			margin-top: 25px;
+		}
+	@media print {
+    table {
+     page-break-after: always;
+    } 
+        table tbody tr td:before,
+    table tbody tr td:after {
+        content : "" ;
+        height : 4px ;
+        display : block ;
+    }
+  }
   </style>
 </head>
 <body>
-	<header>
-	<div style="width:600px; margin:0 auto; text-align: center;"><p><span>СПИСОК ОБРАЗЦОВ</span><br>представленных на Международном Конкурсе коньяков<br> "KVINT 2017" г. Тирасполь</p></div>
-	</header>
-	<div class="simple_table"><table border="1" style="width:100%;">
 	

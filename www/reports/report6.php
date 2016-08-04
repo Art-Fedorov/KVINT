@@ -6,6 +6,15 @@ use Dompdf\Exception;
 		
 		
 		$html=file_get_contents('report6.html');
+    $html.='<div class="simple_table">';
+ $query='SELECT CAPTION_DESC FROM TAST_CAPTION WHERE CAPTION_ID=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
+    $stid = oci_parse($conn,$query );
+    oci_execute($stid);
+    $title="";
+    while ($row = oci_fetch_array($stid)) {
+      $title=htmlentities($row[0], ENT_QUOTES, 'cp1251');
+    }
+    
      $query='SELECT GROUP_ID, GROUP_TITLE FROM TAST_GROUP WHERE GROUP_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
     $stid = oci_parse($conn,$query );
     oci_execute($stid);
@@ -18,7 +27,10 @@ use Dompdf\Exception;
 
     for ($j=$array[0]['id'],$k=0;$j<=$array[count($array)-1]['id'];$j++,$k++)
     {
-      $html.='<p>'.$array[$k]['title'].'</p>';
+      $html.='
+  <div style="width:600px; margin:0 auto; text-align: center;"><p class="first">РЕЗУЛЬТАТЫ МЕЖДУНАРОДНОГО КОНКУРСА КОНЬЯКОВ</p><p>"'.$title.'" г. Тирасполь</p></div>';
+  
+      $html.='<p class="last">'.$array[$k]['title'].'</p>';
       //echo $j;
       $query='SELECT a.COGNAC_CODE as "Шифр", a.COGNAC_TITLE as "Наименование", a.COGNAC_MANUF as "Изготовитель", a.COGNAC_AGE as "Возраст, г.", b.PRIZE_TITLE as "Награждение"
 					FROM TAST_COGNAC a, TAST_PRIZE b  
