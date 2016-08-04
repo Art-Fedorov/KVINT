@@ -40,6 +40,7 @@ function change(){
           $('form *[name=d'+key+']').val($(val).text());
           
           }
+          //select для 5 таблицы
           if (codetable=='5' && key==1)
             var id=$(this).parent().attr('data-value');
             $.ajax({
@@ -50,8 +51,8 @@ function change(){
                   },
                   success:function(data){
                     $('form select[name=d6] option').each(function(k,v){
-                      console.log(encodeURI(data));
-                        if ($(v).text()==data)
+                      
+                        if ($(v).attr('value')==data)
                         {
                           $(v).attr('selected',true);
                         }
