@@ -15,8 +15,7 @@ use Dompdf\Exception;
       $array[$x]=array('id'=>$row[0],'title'=> htmlentities($row[1], ENT_QUOTES, 'cp1251'));
       $x++;
     }
-
-    for ($j=$array[0]['id'],$k=0;$j<$array[count($array)-1]['id'];$j++,$k++)
+    for ($j=$array[0]['id'],$k=0;$j<=$array[count($array)-1]['id'];$j++,$k++)
     {
       $html.='<p>'.$array[$k]['title'].'</p>';
       //echo $j;
@@ -71,10 +70,10 @@ use Dompdf\Exception;
     //$dompdf->stream('mypdf.pdf'); // Выводим результат (скачивание)
     $output = $dompdf->output();*/
     //file_put_contents('Brochure.pdf', $output);
-    file_put_contents('Brochure.html', $html);
+    file_put_contents('report_1.html', $html);
 
     //echo var_dump(iconv_get_encoding('all'));
     
-    echo $html;
+    //echo $html;
 
     ?>

@@ -55,6 +55,14 @@
 			font-weight: bold;
 			margin-top: 20px;
 		}
+		@media print {
+    table {
+     page-break-after: always;
+    } 
+    table tr {
+    	 page-break-after: auto;
+    }
+   } 
   </style>
 </head>
 <body>

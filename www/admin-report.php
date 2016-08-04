@@ -15,13 +15,7 @@
 			<div class="col-md-12">	
 				<div class="report-place report-place-min text-center">
 					<p>Список образцов</p>
-					<select id="report-sample-list" class="report-select" style="width: 400px;">            
-            <?php  
-            require('php/selection-create.php');
-            $select = new Select();            
-            $select->fillselect_1();
-            ?>
-           </select><br>
+					
 					<button id="load-report-1" class="load-report">Просмотреть</button>
 					<a href="admin-report.php?asd=1"></a>
 					<?php 
@@ -44,15 +38,23 @@
 		<div class="row">
 			<div class="col-md-12">	
 				<div class="report-place report-place-min text-center">
-					<p>Оценки жури по всем коньякам</p>					
+					<p>Оценки жюри по всем коньякам</p>					
 					<button id="load-report-2" class="load-report">Просмотреть</button>
 				</div>		
 				<div class="report-place report-place-min text-center">
-					<p>Оценки жури по всем группам</p>					
+					<p>Оценки жюри по всем группам</p>		
+					<select id="report-sample-list" class="report-select" style="width: 400px;">            
+            <?php  
+            require('php/selection-create.php');
+            $select = new Select();            
+            $select->fillselect_1();
+            ?>
+           </select><br>			
 					<button id="load-report-3" class="load-report">Просмотреть</button>
 				</div>				
 			</div>
 		</div>
+				<hr>
 		<div class="row">
 			<div class="col-md-12">	
 				<div class="report-place report-place-min text-center">
@@ -75,7 +77,7 @@
 				</div>				
 			</div>
 		</div>
-		<hr>
+
 		<div class="row">
 			<div class="col-md-12">	
 				<div class="report-place report-place-min text-center">
