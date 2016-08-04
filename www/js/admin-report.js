@@ -28,6 +28,7 @@ $(function(){
 			url:"../reports/report7.php",
 			type:"GET",
 			success:function(data){
+				console.log(data);
 				window.open("reports/report_7.html");
 				}
 		})
@@ -37,6 +38,7 @@ $(function(){
 			url:"../reports/report6.php",
 			type:"GET",
 			success:function(data){
+				console.log(data);
 				window.open("reports/report_6.html");
 				}
 		})
@@ -52,6 +54,7 @@ $(function(){
 				'text':group_text
 			},
 			success:function(data){
+				console.log(data);
 				window.open("reports/report_5.html");
 				}
 		})
