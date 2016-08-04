@@ -64,8 +64,9 @@
             $select->fillselect_1();
             ?>
            </select><br>			
-					<button id="load-report-4" class="load-report">Просмотреть</button>
-				</div>					
+					<button id="load-report-5" class="load-report">Просмотреть</button>
+				</div>		
+				<!--			
 				<div class="report-place report-place-min text-center">
 					<p>Результаты (с учетом отклонений по группам)</p>		
 					<select id="report-deviation-group" class="report-select" style="width: 400px;">            
@@ -73,8 +74,9 @@
             $select->fillselect_1();
             ?>
            </select><br>			
-					<button id="load-report-5" class="load-report">Просмотреть</button>
-				</div>				
+					<button id="load-report-4" class="load-report">Просмотреть</button>
+				</div>	
+				-->			
 			</div>
 		</div>
 
