@@ -42,7 +42,7 @@ $(function(){
 		})
 	});
 	$('#load-report-5').click(function(){
-		var group_id=$('select#report-result-group option:selected').attr('value');
+		var group_id=$('select#report-result-group option:selected').attr('data-value');
 		var group_text=$('select#report-result-group option:selected').text();
 		$.ajax({
 			url:"../reports/report5.php",
