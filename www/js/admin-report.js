@@ -1,6 +1,5 @@
 $(function(){
 	$('#load-report-1').click(function(){
-		var group_id=$('select#report-sample-list option:selected').attr('value');
 		$.ajax({
 			url:"../reports/report1.php",
 			type:"GET",
@@ -20,6 +19,23 @@ $(function(){
 				console.log(data);
 					//window.location.href = "reports/report_2.html";
 					window.open("reports/report_2.html");
+				}
+		})
+	});
+		$('#load-report-3').click(function(){
+		var group_id=$('select#report-sample-list option:selected').attr('value');
+		var group_text=$('select#report-sample-list option:selected').text();
+		$.ajax({
+			url:"../reports/report3.php",
+			type:"GET",
+			data:{
+				'group_id':group_id,
+				'text':group_text
+			},
+			success:function(data){
+				console.log(data);
+					//window.location.href = "reports/report_2.html";
+					window.open("reports/report_3.html");
 				}
 		})
 	});

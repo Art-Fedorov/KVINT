@@ -2,12 +2,10 @@
 use Dompdf\Adapter\CPDF;      
 use Dompdf\Dompdf;
 use Dompdf\Exception;
-	include_once '../php/connect.php' ;
-		
-		
+	  include_once '../php/connect.php' ;
 		$html=file_get_contents('report6.html');
     $html.='<div class="simple_table">';
- $query='SELECT CAPTION_DESC FROM TAST_CAPTION WHERE CAPTION_ID=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
+    $query='SELECT CAPTION_DESC FROM TAST_CAPTION WHERE CAPTION_ID=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
     $stid = oci_parse($conn,$query );
     oci_execute($stid);
     $title="";
@@ -27,11 +25,8 @@ use Dompdf\Exception;
 
     for ($j=$array[0]['id'],$k=0;$j<=$array[count($array)-1]['id'];$j++,$k++)
     {
-      $html.='
-  <div style="width:600px; margin:0 auto; text-align: center;"><p class="first">РЕЗУЛЬТАТЫ МЕЖДУНАРОДНОГО КОНКУРСА КОНЬЯКОВ</p><p>"'.$title.'" г. Тирасполь</p></div>';
-  
-      $html.='<p class="last">'.$array[$k]['title'].'</p>';
-      //echo $j;
+      $html.='<div style="width:600px; margin:0 auto; text-align: center;"><p class="first">РЕЗУЛЬТАТЫ МЕЖДУНАРОДНОГО КОНКУРСА КОНЬЯКОВ</p><p>"'.$title.'" г. Тирасполь</p>';
+      $html.='<p class="last">'.$array[$k]['title'].'</p></div>';
       $query='SELECT a.COGNAC_CODE as "Шифр", a.COGNAC_TITLE as "Наименование", a.COGNAC_MANUF as "Изготовитель", a.COGNAC_AGE as "Возраст, г.", b.PRIZE_TITLE as "Награждение"
 					FROM TAST_COGNAC a, TAST_PRIZE b  
 					WHERE a.COGNAC_GROUP = b.PRIZE_GROUP 

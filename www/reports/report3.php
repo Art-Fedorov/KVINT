@@ -1,12 +1,11 @@
-<?php
-use Dompdf\Adapter\CPDF;      
-use Dompdf\Dompdf;
-use Dompdf\Exception;
-  /*Отчет оценки жюри по всем коньякам*/
-	include_once '../php/connect.php' ;
-		
-		
-		$html=file_get_contents('report2.html');
+<?php 
+include_once '../php/connect.php' ;
+    
+    if (isset($_GET['group_id']))
+    {
+      $text = $_GET['text'];
+      $group_id = $_GET['group_id'];
+    $html=file_get_contents('report3.html');
           $query='SELECT CAPTION_DESC FROM TAST_CAPTION WHERE CAPTION_ID=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
     $stid = oci_parse($conn,$query );
     oci_execute($stid);
@@ -14,7 +13,7 @@ use Dompdf\Exception;
     while ($row = oci_fetch_array($stid)) {
       $title=htmlentities($row[0], ENT_QUOTES, 'cp1251');
     }
-    $html.='<p>'.$title.'</p>';
+    $html.='<p>МЕЖДУНАРОДНЫЙ КОНКУРС КОНЬЯКОВ "'.$title.'" г. Тирасполь</p><p>Итоговая таблица результатов дегустации</p><p>'.$text.'</p>';
       $query='SELECT MAN_ID,MAN_FIO from TAST_MAN WHERE MAN_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
       $array=array();
       $stid = oci_parse($conn,$query );
@@ -34,7 +33,9 @@ use Dompdf\Exception;
                   ,(select cognac_code from tast_cognac where cognac_id=r.rating_cognac and cognac_caption=r.rating_caption) cognac_code
                   ,(select man_fio from tast_man where man_id=r.rating_man and man_caption=r.rating_caption) man_fio
                 from tast_rating r
-                where rating_caption=63
+                where rating_caption=63 and rating_cognac in 
+                (select cognac_id from tast_cognac where 
+                cognac_group='.$group_id.')
             ) r
         )
      ) pivot (
@@ -68,5 +69,6 @@ use Dompdf\Exception;
     
     $html.= "</div>\n";  
     $html.="</html></body>";
-    file_put_contents('report_2.html', $html);
-    ?>
+    file_put_contents('report_3.html', $html);
+  }
+ ?>
