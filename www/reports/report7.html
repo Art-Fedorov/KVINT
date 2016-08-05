@@ -7,11 +7,6 @@
 	<!--<link rel="stylesheet" type="text/css" href="../css/report-page.css">-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <script src="../libs/jquery/jquery-2.1.4.min.js"></script>
-  <script type="text/javascript">
-  		$(function() {
-  			window.print();
-  		})
-  </script>
   <style type="text/css">
 		body{
 			font-family: 'Arialuni','Arial',sans-serif;
@@ -19,9 +14,10 @@
 		table th{
 			font-size: 12px;
 			text-align:center;
+			padding: 0px 5px;
 		}
 		table td{
-			padding:0 2px;
+			padding: 3px 5px;
 		}
 		table tr td:first-child{
 			width: 2%;
@@ -48,21 +44,26 @@
 		.simple_table p{
 			text-align: center;
 			font-weight: bold;
-			margin-top: 20px;
+			margin: 0 auto;
 		}
-		@media print {
-    table {
-     page-break-after: always;
-    } 
-    table tr {
-    	 page-break-after: auto;
+		p{
+			margin-bottom: 5px !important;
+		}
+		p.last{
+			margin-top: 15px !important;
+		}
+		p.first{
+			margin-top: 25px;
+		}
+		@media print {   
+    table tbody tr td:before,
+    table tbody tr td:after {
+        content : "" ;
+        height : 4px ;
+        display : block ;
     }
    } 
   </style>
 </head>
-<body>
-	<header>
-	<div style="width:600px; margin:0 auto; text-align: center;"><p><span>СПИСОК ОБРАЗЦОВ</span><br>представленных на Международном Конкурсе коньяков<br> "KVINT 2017" г. Тирасполь</p></div>
-	</header>
-	<div class="simple_table"><table border="1" style="width:100%;">
+<body>	
 	

@@ -16,17 +16,17 @@
 			<div class="row header">			
 				<div class="col-md-12 col-xs-offset-0 col-xs-12 text-center">					
 					<h1>Дегустация</h1>
-					<p>коньяков</p>
+					<p style="font-size:24px;">коньяков</p>
 				</div>
 			</div>
 			<div class="row degustation">
-				<div class="col-md-offset-2 col-md-8 col-xs-offset-1 col-xs-10 text-center">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem enim repellendus aliquam voluptates quam, error corporis deleniti quo tenetur.				
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem enim repellendus aliquam voluptates quam, error corporis deleniti quo tenetur.				
-					</p>
+				<div class="col-md-offset-2 col-md-8 col-xs-offset-1 col-xs-10 text-center">	<br>		
 					<button class="start-btn smoothly" onClick='location.href="taster.php"'>
 					Начать дегустацию
 					</button>
+					<br><br><br>
+					<p style="font-size: 14px;">В хранилищах «KVINT» около 11 млн. литров абсолютного алкоголя коньячных спиртов, выдержанных в дубовых бочках по классической технологии от 1 года до 60 лет. Наличие спиртов в столь широком возрастном диапазоне позволяет специалистам коньячного производства разрабатывать новые бренды и гарантировать потребителю стабильно высокий уровень качества и узнаваемость марок. А присутствие в купажах спиртов, изготовленных из винограда классических коньячных сортов, делает наши дивины (коньяки) непревзойденными шедеврами, дарящими искушенным ценителям роскошный букет с тонким национальным колоритом. Обилие и многообразие материала позволяет нашим мастерам создавать первоклассные дивины (коньяки) возрастом от 3 до 50 лет. 			
+					</p>
 				</div>
 			</div>			
 		</div>

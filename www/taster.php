@@ -38,7 +38,7 @@
 					</div>
 					<div class="taster">
 					</div>
-					<nav class="cognacgroup">
+					<nav class="cognacgroup" id="scrollto-cognacgroup">
 						<ul>
 							<?php 
 								include_once('php/group-ul-create.php');
