@@ -20,7 +20,7 @@
 				</div>
 			</div>
 			<div class="row degustation">
-				<div class="col-md-offset-2 col-md-8 col-xs-offset-1 col-xs-10 text-center">	<br>		
+				<div class="col-md-offset-2 col-md-8 col-xs-offset-1 col-xs-10 text-center">		
 					<button class="start-btn smoothly" onClick='location.href="taster.php"'>
 					Начать дегустацию
 					</button>

@@ -1,3 +1,5 @@
+//изменение цветовой схемы у элементов 
+//при переключении вкладок
 $(function(){
 	$('.cognacgroup li a').each(function () {
      if($(this).attr('href') == location.pathname.substring(1)+location.search) 

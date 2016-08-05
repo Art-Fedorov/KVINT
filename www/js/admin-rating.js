@@ -1,24 +1,36 @@
+/*на старнице находится два селекта
+ при переключении которых выводятся только запрпашиваемые данные в таблице оценок
+ отбор идет по 2 криетриям: по фамилии и по шифру коньяка
+ */
 $(document).ready(function(){
     $('select#search-man-rating').change(function(){
+      //подгрузить таблицу с данными по фамилии
     	Select_search_rating_fio();
     });       
     $('select#search-cognac-rating').change(function(){
+       //подгрузить таблицу с данными по шифру дегустируемого коньяка
     	Select_search_rating_cipher();
     });
     $(document).on('change','#popup6 input[type=number]',function(){
+      //посчитать сумму введенных оценок при
+      // добавлении новой оценки или просмотре старой
       sum()  
     });     
 });
-var selection_condition='';
-var selection_condition_cipher='';
-var selection_condition_fio='';
+var selection_condition=''; //общая часть запроса
+var selection_condition_cipher=''; //шифр
+var selection_condition_fio=''; //фамилия
+
+//метод для отбора данных по фамилии 
 function Select_search_rating_fio(){	
 	var man = $('#search-man-rating option:selected').attr('value');  
   if(man!= 0){
+    //дотсраивание sql зарпоса
   	selection_condition_fio = ' AND RATING_MAN = ' + man.toString();  
   	selection_condition=selection_condition_cipher.toString() +
 		selection_condition_fio.toString();	
 	} else {
+    //дотсраивание sql зарпоса
 		selection_condition_fio = '';
 		selection_condition=selection_condition_cipher.toString() +
 		selection_condition_fio.toString();
@@ -34,6 +46,7 @@ function Select_search_rating_fio(){
 	}); 	
 };
 
+//метод для отбора данных по шифру коньяка 
 function Select_search_rating_cipher(){
 	var cipher = $('#search-cognac-rating option:selected').attr('value');
   if(cipher!= 0){
@@ -56,6 +69,7 @@ function Select_search_rating_cipher(){
 	}); 
 };
 
+//подсчет суммарной оценки коньяка при добавлении и изменении
 function sum(){
     var sum=0;
       $('#popup6 input[type=number]').each(function(key,val){

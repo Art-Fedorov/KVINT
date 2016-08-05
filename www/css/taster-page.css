@@ -3,7 +3,7 @@
 	margin-left: 15px;
 }
 .choose-send{		
-	padding:16px 28px;	
+	padding:20px 38px;	
 	border: none;
 	background-color: #ED5650;
 	color: #fff;
@@ -163,7 +163,6 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .res-button{
 	display:inline-block;
-
 	height: 55px;
 	width: 55px;
 	background-color: #ed5650;
@@ -293,3 +292,7 @@ span.pin-error{
 	font-size:14px;
 	color:#b94a48;
 }
+
+
+
+

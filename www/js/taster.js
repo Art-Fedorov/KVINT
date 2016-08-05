@@ -195,7 +195,7 @@
 			});  
 		});
 		//переход на следующую группу
-		$(document).on('click','span.next',function(){
+		$(document).on('click','input.next',function(){
 				perehod_action();
 		});
 		});
@@ -203,7 +203,7 @@
 function perehod_text(){
 	$(".cognacgroup ul li").each(function(key,val){
 		if ($(val).children().hasClass('active')) {		
-		  $('span.next').text($('.cognacgroup ul li:nth-child('+(key+2)+') p').text());
+		  $('input.next').val($('.cognacgroup ul li:nth-child('+(key+2)+') p').text());
 		  return false;
 		}});
 }

@@ -1,3 +1,4 @@
+ //функции аутентификации админа
  $(document).ready(function(){
     $('#btn_admin_enter').click(function(){
       log_admin();      
@@ -6,8 +7,9 @@
       cancel_admin();      
     });
   });
-
+//аутентификация админа
 function log_admin(){	
+	//полуцчение введенных данных админа
 	var login = $("#login-admin").val();
   var password = $("#password-admin").val();  
   var flag_log = false;
@@ -19,8 +21,8 @@ function log_admin(){
 	  'password':password  
 	  }, 
 	  response:'text', 
-	  success:function(data){
-	  	console.log(data);
+	  success:function(data){	  	
+	  		//проверка на совпадение пароля и логина
 	  		if(data == '1'){
 	  			document.location.href = "admin-catalog.php?code=1";	  			
 	  		}
@@ -33,5 +35,6 @@ function log_admin(){
 }
 
 function cancel_admin(){
+	//переход обратно к дегустации
 	document.location.href = "index.php";	
 }

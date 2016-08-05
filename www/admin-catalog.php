@@ -7,12 +7,8 @@
 					<h1>Справочник</h1>
 				</div>
 		</div>
-		<div class="row table">
-				<div class="col-md-12 col-xs-12 text-center conte">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem enim repellendus aliquam voluptates quam, error corporis deleniti quo tenetur assumenda ea, excepturi nobis explicabo? Nos	trum dignissimos animi eligendi id totam.
-					</p>		
-          <hr>								
-				</div>
+		<div class="row table">						
+        <hr>
         <div class="col-md-12 col-xs-12 text-center conte">
         <nav class="cognacgroup">
             <ul>

@@ -26,8 +26,8 @@
 			</div>
 			<div class="row degustation">
 				<div class="col-md-offset-2 col-md-8 text-center">
-					<div class="vibortext"><h1>Выберите свое имя</h1>
-					<h2>(Choose your name)</h2><br><br>
+					<div class="vibortext"><h2>Выберите свое имя</h2>
+					<h3>(Select your name)</h3><br><br><br><br>
 					<!--<p>свое имя и фамилию из списка</p>-->
 					</div>
 					<button class="choose-send smoothly" name="StartDeg" id="start-degustation">
@@ -63,20 +63,20 @@
 			<div class="row row-pin">
 				<div class="col-sm-12 col-md-4 col-md-offset-4 list">
 						<?php	
-						include_once 'php/taster-list.php';
-					
+						include_once 'php/taster-list.php';					
 					?>
 				</div>				
 				<div class="col-sm-12 col-md-4 col-md-offset-4 pin" style="display: none;">
 				<div class="text-center">
 					<button class="cancel-pin"><i class="fa fa-chevron-left "></i></button><br><br><br><br>
 					<p class="taster-name"></p><hr><br>
-					<span class="text-info">Введите уникальный PIN код, выданный при проведении дегустации</span><br><br><br>
+				
 					<p class="pin-code">PIN</p>
 					<div class="text-center text-pin">
 						<input type="number" min='1000' max ='9999' step='1'>
 					</div><br>
-					<span class="pin-error text-info" style="display:none;">Вы ввели неправильный PIN</span>
+					<span class="pin-error text-info" style="display:none;">Вы ввели неправильный PIN</span><br><br><br>
+						<span class="text-info">Введите уникальный PIN код, выданный при проведении дегустации<br><br>(Please enter your unique code received for tasting)</span>
 				</div>
 			</div>
 			</div>

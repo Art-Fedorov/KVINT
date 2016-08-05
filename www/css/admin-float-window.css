@@ -58,10 +58,32 @@
 
 /*ВСПЛЫВАЮЩЕЕ ОКОШКО ПРИ НАЖАТИИ НА ЗАКРЕПИТЬ 
 ИЗМЕНЕНИЯ В taster.php*/
+.small_next{
+  font-size: 16px;
+}
+.content_box{
+  display: block;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.prebut{
+  display: inline-block;
+}
+.next{  
+  font-size: 18px;
+  display: inline-block;
+  margin-left: 20px;
+  height: 50px;
+  width: 50px;
+  color: #fff;
+  background-color: #ED5650;
+  border: none;
+  border-radius: 50%;
+}
 .b-popup-border-secure{
   width:500px;
-  height:200px;
-  top:-webkit-calc(50% - 100px);
+  height:250px;
+  top:-webkit-calc(50% - 125px);
   left:-webkit-calc(50% - 250px);  
   font-size:32px;
   text-align:center;
@@ -78,9 +100,9 @@
   width:100%;
 }
 .b-popup-border-secure  p:last-child{
-  position:absolute;
-  bottom:0px;
-  right:15%;
+  //position:absolute;
+  //bottom:0px;
+  //right:15%;
   
 }
 .b-popup-border-secure  i{

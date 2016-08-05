@@ -6,9 +6,7 @@
 				</div>
 		</div>
 		<div class="row table">
-			<div class="col-xs-10 col-md-12 text-center conte">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem enim repellendus aliquam voluptates quam, error corporis deleniti quo tenetur assumenda ea, excepturi nobis explicabo? Nos	trum dignissimos animi eligendi id totam.	
-					</p>										
+			<div class="col-xs-10 col-md-12 text-center conte">	
           <hr>
           <div class="b-popup-content-block">
             <span>ФИО Дегустатора</span>
