@@ -7,7 +7,6 @@
 		</div>
 		<div class="row table">
 			<div class="col-xs-10 col-md-12 text-center conte">	
-          <hr>
           <div class="b-popup-content-block">
             <span>ФИО Дегустатора</span>
             <select id="search-man-rating" style="width: 300px; margin-right: 40px;" >
