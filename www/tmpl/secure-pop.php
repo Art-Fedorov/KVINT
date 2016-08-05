@@ -5,7 +5,7 @@
 	  		<p class="small_next">Tasting of the cohnac group is succesfully completed</p>				<div class="content_box">
 				<hr>
 					<span class="small_next prebut">Перейти к группе </span>
-					<input type="button" class='next'></input>
+					<a href="#scrollto-cognacgroup"><input type="button" class='next'></input></a>
 				</div>
 			</div>
   </div>  
