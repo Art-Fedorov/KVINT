@@ -81,7 +81,7 @@ li.list-report-button > input:hover{
 	background-color: #6d6a76;
 	color: #fff;
 }
-span.popup-result{
+/*span.popup-result{
 	font-size:12px;
 	display:none;
 }
@@ -92,7 +92,7 @@ span.popup-result.ok
 span.popup-result.false
 {
 	color:#b93838;
-}
+}*/
 input:focus{
 	box-shadow: 0 0 0 0 white !important;
 }

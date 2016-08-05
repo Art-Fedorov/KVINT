@@ -37,8 +37,6 @@
 			</div>					
   	</div>		
   	<div class="b-popup-footer">
-  		<span class="smoothly popup-result ok"><i class="fa fa-check"></i>Действие успешно произведено</span>
-  		<span class="smoothly popup-result false"><i class="fa fa-check"></i>Действие успешно произведено</span>
 			<input type="submit" class="apply3 button-ok smoothly" value="Применить"></input>
 			<input type="button" id="#float-window-cancel" class="button-cancel smoothly" onclick="javascript:cancel()" value="Отменить"></input>
 		</div>

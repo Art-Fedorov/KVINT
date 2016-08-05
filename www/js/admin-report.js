@@ -1,11 +1,11 @@
+/*Отчеты*/
+
 $(function(){
 	$('#load-report-1').click(function(){
 		$.ajax({
 			url:"../reports/report1.php",
 			type:"GET",
 			success:function(data){
-					//window.location.href = "reports/report_1.html";
-					console.log(data);
 					window.open("reports/report_1.html");
 				}
 		})
@@ -17,7 +17,6 @@ $(function(){
 			type:"GET",
 			success:function(data){
 				console.log(data);
-					//window.location.href = "reports/report_2.html";
 					window.open("reports/report_2.html");
 				}
 		})
@@ -34,28 +33,7 @@ $(function(){
 			},
 			success:function(data){
 				console.log(data);
-					//window.location.href = "reports/report_2.html";
 					window.open("reports/report_3.html");
-				}
-		})
-	});
-	$('#load-report-7').click(function(){
-		$.ajax({
-			url:"../reports/report7.php",
-			type:"GET",
-			success:function(data){
-				console.log(data);
-				window.open("reports/report_7.html");
-				}
-		})
-	});
-	$('#load-report-6').click(function(){
-		$.ajax({
-			url:"../reports/report6.php",
-			type:"GET",
-			success:function(data){
-				console.log(data);
-				window.open("reports/report_6.html");
 				}
 		})
 	});
@@ -75,4 +53,26 @@ $(function(){
 				}
 		})
 	});
+	$('#load-report-6').click(function(){
+		$.ajax({
+			url:"../reports/report6.php",
+			type:"GET",
+			success:function(data){
+				console.log(data);
+				window.open("reports/report_6.html");
+				}
+		})
+	});
+	$('#load-report-7').click(function(){
+		$.ajax({
+			url:"../reports/report7.php",
+			type:"GET",
+			success:function(data){
+				console.log(data);
+				window.open("reports/report_7.html");
+				}
+		})
+	});
+
+
 })

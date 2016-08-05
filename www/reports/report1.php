@@ -7,7 +7,7 @@
 		/*use Dompdf\Adapter\CPDF;
     use Dompdf\Dompdf;
     use Dompdf\Exception;*/
-
+ 
     /*Кусок со стилями и т.п берется из html файла*/
 		$html=file_get_contents('report1.html');
     /*Запрос для получения KVINT 2012 (2017...)*/

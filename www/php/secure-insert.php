@@ -1,15 +1,11 @@
 <?php 
-		$conn = oci_connect('TASTING', '1111', 'ora2.kvint.md/UNIACC', 'CL8MSWIN1251');
-					if (!$conn) {
-    				$e = oci_error();
-    				trigger_error(htmlentities($e['message'], ENT_QUOTES, 'cp1251'), E_USER_ERROR);
-					}
+				include_once '../php/connect.php' ;
+				/*ВСТАВЛЯЕТ РАНЕЕ ВНЕСЕННЫЕ ОЦЕНКИ*/
 				if (!empty($_POST))
 					{				
-							//print_r($_POST);
 							$array=array();
 							$i=0;	
-							$taster=$_POST['taster'];
+							$taster=$_POST['taster'];//id дегустатора
 							while (isset($_POST['id'.$i]))
 							{
 								//Преобразование к красивому виду
@@ -33,15 +29,12 @@
 								.$array[$i]['cognac_id'].
 								' AND RATING_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';	
 								$s = oci_parse($conn1,$q);
-
 								oci_execute($s);
 								$count=0;
-								//$count=oci_num_rows($s);
 								while ($row = oci_fetch_array($s, OCI_ASSOC)) {
 									$count++;
 									echo $row[0];
 								}
-								/*SELECT RATING_MAN FROM TAST_RATING WHERE RATING_MAN=83 AND RATING_COGNAC=192 AND RATING_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)*/
 								echo $count;
 								echo $q;
 								if ($count<1) {
@@ -65,15 +58,6 @@
 							oci_close($conn);
 							//header('Location: /taster.php');
 						}
-							function debug( $data ) {
-
-    if ( is_array( $data ) )
-        $output = "<script>console.log(" . implode($data) . " );</script>";
-    else
-        $output = "<script>console.log(". $data.");</script>";
-
-    echo $output;
-}
 
 
 ?>
