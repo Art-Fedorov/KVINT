@@ -1,13 +1,21 @@
-.report-place{
-	float: left;
-	display: block;
+.report-place{	
+	display: inline-block;
 	width: 432px;
 	padding:16px;
 	border: 1px solid #615B71;
 	border-radius: 4px;
 	background-color: #fff;
-	margin-top: 20px;
+}
+.headine{
+	padding-bottom: 30px;
+}
+.report-place-padding{
 	margin-right: 20px;
+}
+.sef{
+	display: block;
+	box-sizing: border-box;
+	clear: both;
 }
 .report-place p{	
 	text-align: center;
