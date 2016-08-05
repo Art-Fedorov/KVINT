@@ -81,7 +81,6 @@
 			</div>
 			</div>
 		</div>			
-</div> <!-- .cd-wrapper -->	
-	
+</div> <!-- .cd-wrapper -->		
 </body>
 </html>
