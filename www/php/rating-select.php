@@ -11,7 +11,7 @@
 		oci_execute($stid);
 
 			while ($row = oci_fetch_array($stid)) {
-		    echo	htmlentities($row[0], ENT_QUOTES, 'cp1251');}
+		    echo	($row[0]);}
 
 	}  //endif
 ?>

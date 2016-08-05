@@ -11,9 +11,9 @@
 
 			while ($row = oci_fetch_array($stid)) {
 		    $output[]= array(
-		    	'code'=>htmlentities($row[0], ENT_QUOTES, 'cp1251'),
-		    	'age'=>htmlentities($row[1], ENT_QUOTES, 'cp1251'),
-		    	'id'=>htmlentities($row[2], ENT_QUOTES, 'cp1251'));
+		    	'code'=>($row[0]),
+		    	'age'=>($row[1]),
+		    	'id'=>($row[2]));
 		  }
 	header('Content-Type: application/json');
 	echo json_encode($output);

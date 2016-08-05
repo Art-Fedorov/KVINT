@@ -17,20 +17,20 @@ class Table {
         if($id!=NULL&&$id_help!=NULL)
         {
 
-            if ($id==$row[0]&&$id_help==htmlentities($row[1], ENT_QUOTES, 'cp1251')){
+            if ($id==$row[0]&&$id_help==($row[1])){
 
-                echo "<tr class='selected' data-value='$row[0]' data-value-help=".htmlentities($row[1], ENT_QUOTES, 'cp1251')." >";
+                echo "<tr class='selected' data-value='$row[0]' data-value-help=".($row[1])." >";
             }
             else{
-                echo "<tr data-value='$row[0]' data-value-help=".htmlentities($row[1], ENT_QUOTES, 'cp1251').">";
+                echo "<tr data-value='$row[0]' data-value-help=".($row[1]).">";
             }
         }
         else{
-            echo "<tr data-value='$row[0]' data-value-help=".htmlentities($row[1], ENT_QUOTES, 'cp1251').">";
+            echo "<tr data-value='$row[0]' data-value-help=".($row[1]).">";
         }
       for ($i = 1; $i < oci_num_fields($stid); $i++) {
         echo '<td>';
-        echo $row[$i] !== null ? htmlentities($row[$i], ENT_QUOTES, 'cp1251') : "";
+        echo $row[$i] !== null ? ($row[$i]) : "";
         echo '</td>';
       }
       echo "</tr>\n";

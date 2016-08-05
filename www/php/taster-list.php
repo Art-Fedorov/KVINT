@@ -5,8 +5,8 @@
 	oci_execute($stid);
 	$i=0;
 	while ($row = oci_fetch_array($stid)) {
-		echo '<p name="p'.$i.'" id="'.htmlentities($row[1], ENT_QUOTES, 'cp1251').'">';
-			echo htmlentities($row[0], ENT_QUOTES, 'cp1251');
+		echo '<p name="p'.$i.'" id="'.$row[1].'">';
+			echo $row[0];
 		echo '</p>';
 	$i++;
 	}

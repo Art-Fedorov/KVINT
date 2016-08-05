@@ -12,15 +12,15 @@
 
 							while ($row = oci_fetch_array($stid)) {
 						    $output[]= array(
-						    	'man_id'=>floatval(htmlentities($row[0], ENT_QUOTES, 'cp1251')),
-						    	'cognac_id'=>floatval(htmlentities($row[1], ENT_QUOTES, 'cp1251')),
-						    	'mainpoint'=>floatval(htmlentities($row[3], ENT_QUOTES, 'cp1251')),
-						    	'opacity'=>floatval(htmlentities($row[4], ENT_QUOTES, 'cp1251')),
-						    	'color'=>floatval(htmlentities($row[5], ENT_QUOTES, 'cp1251')),
-						    	'bouquet'=>floatval(htmlentities($row[6], ENT_QUOTES, 'cp1251')),
-						    	'taste'=>floatval(htmlentities($row[7], ENT_QUOTES, 'cp1251')),
-						    	'typicality'=>floatval(htmlentities($row[8], ENT_QUOTES, 'cp1251')),
-						    	'note'=>htmlentities($row[9], ENT_QUOTES, 'cp1251'));
+						    	'man_id'=>floatval($row[0]),
+						    	'cognac_id'=>floatval($row[1]),
+						    	'mainpoint'=>floatval($row[3]),
+						    	'opacity'=>floatval($row[4]),
+						    	'color'=>floatval($row[5]),
+						    	'bouquet'=>floatval($row[6]),
+						    	'taste'=>floatval($row[7]),
+						    	'typicality'=>floatval($row[8]),
+						    	'note'=>$row[9]);
 						  }
 					header('Content-Type: application/json');
 					echo json_encode($output);

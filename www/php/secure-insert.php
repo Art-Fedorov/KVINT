@@ -21,7 +21,7 @@
 								$conn1 = oci_connect('TASTING', '1111', 'ora2.kvint.md/UNIACC', 'CL8MSWIN1251');
 								if (!$conn1) {
 			    				$e = oci_error();
-			    				trigger_error(htmlentities($e['message'], ENT_QUOTES, 'cp1251'), E_USER_ERROR);
+			    				trigger_error(($e['message']), E_USER_ERROR);
 								}
 								//Проверка на то, заполнял ли дегустатор этот коньяк
 								$q='SELECT RATING_MAN FROM TAST_RATING WHERE RATING_MAN='

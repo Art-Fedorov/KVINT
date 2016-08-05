@@ -7,7 +7,7 @@
 					$i=0;
 					while ($row = oci_fetch_array($stid)) {
 						echo '<li><p>';
-							echo htmlentities($row[0], ENT_QUOTES, 'cp1251');
+							echo ($row[0]);
 						echo '</p></li>';
 					$i++;
 					}
