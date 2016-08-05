@@ -1,6 +1,7 @@
 <?php	
 	include_once 'connect.php' ;
 	$output=array();
+	/*Берутся значения возраста шифра и id конька для определенной группы*/
 	if (isset($_GET['code']))
 	{
 		$code=$_GET['code'];

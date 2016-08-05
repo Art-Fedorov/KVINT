@@ -1,11 +1,11 @@
 <?php 
 	include_once 'connect.php' ;
+	/*Поиск уже заполненных полей*/
 					$output=array();
 					if (isset($_POST['code']))
 					{
-						$code=$_POST['code'];
-						$id=$_POST['id'];
-						//$caption=$_POST['caption'];
+						$code=$_POST['code'];//COGNAC_CODE
+						$id=$_POST['id'];//MAN_ID
 						$query='SELECT RATING_MAN,RATING_COGNAC,RATING_CAPTION,RATING_POINT,RATING_OPACITY,RATING_COLOR,RATING_BOUQUET,RATING_TASTE,RATING_TYPICALITY,RATING_NOTE FROM TAST_RATING WHERE RATING_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION) AND RATING_MAN='.$id.' AND RATING_COGNAC IN (SELECT COGNAC_ID FROM TAST_COGNAC WHERE COGNAC_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION) AND COGNAC_CODE LIKE \''.$code.'%\') ORDER BY RATING_COGNAC';
 						$stid = oci_parse($conn,$query );
 						oci_execute($stid);

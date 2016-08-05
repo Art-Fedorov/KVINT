@@ -1,5 +1,7 @@
 <?php	
 	include_once 'connect.php' ;
+	/*При нажатии на кнопку изменить в справочнике коньяков
+	для корректного значения выпадающего списка*/
 	$output=array();
 	if (isset($_GET['cognac_id']))
 	{
@@ -10,8 +12,6 @@
 
 			while ($row = oci_fetch_array($stid)) {
 		    echo	htmlentities($row[0], ENT_QUOTES, 'cp1251');}
-		  
-	//header('Content-Type: application/json');
-	//echo json_encode($output);
+
 	}  //endif
 ?>

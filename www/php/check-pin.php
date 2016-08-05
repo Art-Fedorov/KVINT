@@ -1,5 +1,6 @@
 <?php	
 	include_once 'connect.php' ;
+	/*Проверка правильности введенного пина*/
 	if (isset($_GET['id'])&&isset($_GET['pin']))
 	{
 		$id=$_GET['id'];

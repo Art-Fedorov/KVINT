@@ -1,6 +1,6 @@
 <?php 
 				include_once '../php/connect.php' ;
-				/*ВСТАВЛЯЕТ РАНЕЕ ВНЕСЕННЫЕ ОЦЕНКИ*/
+				/*Вставляет оценки дегустатора в БД*/
 				if (!empty($_POST))
 					{				
 							$array=array();
@@ -56,7 +56,6 @@
 							}
 							oci_commit($conn);
 							oci_close($conn);
-							//header('Location: /taster.php');
 						}
 
 

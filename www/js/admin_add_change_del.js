@@ -383,7 +383,8 @@ function change(){
             date1 = vars[2]+"-"+vars[1]+"-"+vars[0];
             $('form input[name=d'+key+'][type=date]').val(date1);
 
-          } else 
+          } else
+          //если вставка в select 
           if ($('form select[name=d'+key+']').length==1){
               
               if (codetable!=='5')
