@@ -4,9 +4,9 @@
 	include_once '../php/connect.php' ;
 
 		/*Подключение библиотек для генерации pdf*/
-		use Dompdf\Adapter\CPDF;
+		/*use Dompdf\Adapter\CPDF;
     use Dompdf\Dompdf;
-    use Dompdf\Exception;
+    use Dompdf\Exception;*/
 
     /*Кусок со стилями и т.п берется из html файла*/
 		$html=file_get_contents('report1.html');

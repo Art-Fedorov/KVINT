@@ -1,19 +1,24 @@
 <?php 
 include_once '../php/connect.php' ;
-    
+    /*Отчет оценки жюри по группам*/
     if (isset($_GET['group_id']))
     {
-      $text = $_GET['text'];
-      $group_id = $_GET['group_id'];
-    $html=file_get_contents('report3.html');
-          $query='SELECT CAPTION_DESC FROM TAST_CAPTION WHERE CAPTION_ID=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
-    $stid = oci_parse($conn,$query );
-    oci_execute($stid);
-    $title="";
-    while ($row = oci_fetch_array($stid)) {
-      $title=htmlentities($row[0], ENT_QUOTES, 'cp1251');
-    }
-    $html.='<p>МЕЖДУНАРОДНЫЙ КОНКУРС КОНЬЯКОВ "'.$title.'" г. Тирасполь</p><p>Итоговая таблица результатов дегустации</p><p>'.$text.'</p>';
+      $text = $_GET['text'];//Group_title
+      $group_id = $_GET['group_id'];//group_id
+      $html=file_get_contents('report3.html');
+
+      /*KVINT 2012*/
+      $query='SELECT CAPTION_DESC FROM TAST_CAPTION WHERE CAPTION_ID=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
+      $stid = oci_parse($conn,$query );
+      oci_execute($stid);
+      $title="";
+      while ($row = oci_fetch_array($stid)) {
+        $title=htmlentities($row[0], ENT_QUOTES, 'cp1251');
+      }
+      /*Шапка отчета*/
+      $html.='<p>МЕЖДУНАРОДНЫЙ КОНКУРС КОНЬЯКОВ "'.$title.'" г. Тирасполь</p><p>Итоговая таблица результатов дегустации</p><p>'.$text.'</p>';
+
+      /*Жюри для хедера таблицы*/
       $query='SELECT MAN_ID,MAN_FIO from TAST_MAN WHERE MAN_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
       $array=array();
       $stid = oci_parse($conn,$query );
@@ -23,6 +28,7 @@ include_once '../php/connect.php' ;
       while ($row = oci_fetch_array($stid)) {
         $array[$x++]=array('id'=>$row[0],'title'=> htmlentities($row[1], ENT_QUOTES, 'cp1251'));
       }
+      /*Построение таблицы*/
       $query ='SELECT *
       from (
         select man_id,cognac_code,point
@@ -69,6 +75,7 @@ include_once '../php/connect.php' ;
     
     $html.= "</div>\n";  
     $html.="</html></body>";
+    
     file_put_contents('report_3.html', $html);
   }
  ?>

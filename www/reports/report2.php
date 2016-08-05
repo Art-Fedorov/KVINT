@@ -5,8 +5,10 @@ use Dompdf\Exception;
   /*Отчет оценки жюри по всем коньякам*/
 	include_once '../php/connect.php' ;
 		
-		
+		/*Берем начало документа*/
 		$html=file_get_contents('report2.html');
+
+    /*KVINT 2012...*/
           $query='SELECT CAPTION_DESC FROM TAST_CAPTION WHERE CAPTION_ID=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
     $stid = oci_parse($conn,$query );
     oci_execute($stid);
@@ -15,6 +17,8 @@ use Dompdf\Exception;
       $title=htmlentities($row[0], ENT_QUOTES, 'cp1251');
     }
     $html.='<p>'.$title.'</p>';
+
+    /*Жюри для заполнения хедера таблицы*/
       $query='SELECT MAN_ID,MAN_FIO from TAST_MAN WHERE MAN_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
       $array=array();
       $stid = oci_parse($conn,$query );
@@ -24,6 +28,7 @@ use Dompdf\Exception;
       while ($row = oci_fetch_array($stid)) {
         $array[$x++]=array('id'=>$row[0],'title'=> htmlentities($row[1], ENT_QUOTES, 'cp1251'));
       }
+      /*Построение таблицы*/
       $query ='SELECT *
       from (
         select man_id,cognac_code,point
