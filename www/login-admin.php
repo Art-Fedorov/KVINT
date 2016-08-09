@@ -1,14 +1,11 @@
-<?php require_once 'DB.php'; 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Аутентификация</title>
-	<link rel="stylesheet" href="css/main-page.css" />
-	<link rel="stylesheet" href="css/taster-page.css" />
-	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/main-page.css" />
 	<script src="libs/jquery/jquery-2.1.4.min.js"></script>
 	<script src="libs/angular.js"></script>
 	<script src="js/check_admin_log.js"></script>
@@ -17,7 +14,7 @@
 	<div class="container">
 		<div class="row">
 		
-			<div class="col-md-4 col-md-offset-4">
+			<div class="col-md-offset-4 col-md-4">
 			<button class="cancel-admin smoothly" id="cancel-admin">&#215;</button>
 				<div class="text-center admin-auth">	
 					<span class="admin-info">Для доступа к панели администратора необходимо ввести логин и пароль<br> (если чё, то он в файле config)</span><br><br><br>

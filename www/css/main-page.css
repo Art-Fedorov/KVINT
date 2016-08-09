@@ -41,7 +41,6 @@ body{
 }
 .header h1{
 	font-size: 40px;
-	/*изменение шрифта медиа запросами*/
 }
 .header p{
 	font-size: 34x;

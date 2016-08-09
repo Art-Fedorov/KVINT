@@ -4,7 +4,7 @@
 	z-index: 110;
   width:100%;
   min-height:100%;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.2);
   overflow:hidden;
   position:fixed;
   top:0px;
@@ -14,7 +14,7 @@
   z-index: 110;
   width:100%;
   min-height:100%;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.2);
   overflow:hidden;
   position:fixed;
   top:0px;
@@ -70,8 +70,8 @@
 ИЗМЕНЕНИЯ В taster.php*/
 .b-popup-tasting .b-popup-tasting-close{
   position: absolute;
-  right:0px;
-  top:0px;
+  right:6px;
+  top:6px;
   display: block;
   height: 40px;
   width: 40px;
