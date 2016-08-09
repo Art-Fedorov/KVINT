@@ -203,10 +203,22 @@
 //Добавление текста
 function perehod_text(){
 	$(".cognacgroup ul li").each(function(key,val){
+		if (key + 1 == 	$(".cognacgroup ul li").length){
+			$('.content_box span.small_next').text('Дегустация успешно завершена');
+		  $('.content_box .next').hide();
+		  //console.log($(".cognacgroup ul li").length+" "+key);
+		}
+		else 
 		if ($(val).children().hasClass('active')) {		
 		  $('input.next').val($('.cognacgroup ul li:nth-child('+(key+2)+') p').text());
+		  $('span.small_next').text('Перейти к группе');
+		  $('.content_box .next').show();
 		  return false;
-		}});
+
+		}
+		
+		
+	});
 }
 //Переход на следующую группу 
 //(во всплывающем окне)

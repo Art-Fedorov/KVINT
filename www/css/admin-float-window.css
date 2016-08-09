@@ -60,6 +60,10 @@
 ИЗМЕНЕНИЯ В taster.php*/
 .small_next{
   font-size: 16px;
+  //line-height: 2;
+}
+.big_next{  
+  //line-height: 2;  
 }
 .content_box{
   display: block;
@@ -82,7 +86,7 @@
 }
 .b-popup-border-secure{
   width:500px;
-  height:250px;
+  height:270px;
   top:-webkit-calc(50% - 125px);
   left:-webkit-calc(50% - 250px);  
   font-size:32px;
