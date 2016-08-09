@@ -43,7 +43,7 @@ for ($j=$array[0]['id'],$k=0;$j<=$array[count($array)-1]['id'];$j++,$k++)
   /*Заполнение таблиц*/ 
   $query='SELECT G.GROUP_TITLE as "Категория", 
   C.COGNAC_CODE as "Шифр",C.COGNAC_TITLE as "Наименование", 
-  C.COGNAC_MANUF as "Предприятие - изготовитель", 
+  C.COGNAC_MANUF as "Предприятие-изготовитель", 
   C.COGNAC_AGE as "Возраст", 
   C.COGNAC_CONDALC as "Спирт,<br> %", 
   C.COGNAC_CONDSUG as "Сахар,<br> г/дм3", 
@@ -57,12 +57,17 @@ for ($j=$array[0]['id'],$k=0;$j<=$array[count($array)-1]['id'];$j++,$k++)
   $stid = oci_parse($conn,$query ); 
   oci_execute($stid); 
   $html.='<table border="1" style="width:100%;">'; 
+  /*Заполнение хедеров таблицы */
   $html.='<th>№</th>'; 
-  for ($i = 1; $i-1 < oci_num_fields($stid); $i++) { 
-    $html.= "<th>"; 
-    $html.= oci_field_name($stid,$i); 
-    $html.= "</th>"; 
-  } 
+  $html.='<th>Категория</th>'; 
+  $html.='<th>Шифр</th>'; 
+  $html.='<th>Наименование</th>'; 
+  $html.='<th>Государство, предприятие-изготовитель</th>'; 
+  $html.='<th>Возраст, г.</th>'; 
+  $html.='<th>Спирт, %</th>';
+  $html.='<th>Сахар, г/дм3</th>';  
+
+  /*Заполнение тела таблицы*/
   $m=1; 
   while ($row = oci_fetch_array($stid)) { 
     $html.= "<tr>"; 
