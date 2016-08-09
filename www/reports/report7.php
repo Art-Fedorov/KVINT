@@ -18,7 +18,7 @@ $html.='<div class="simple_table">';
       $title=$row[0];
     }
     /*Запрос на получение списка групп*/
-     $query='SELECT GROUP_ID, GROUP_TITLE FROM TAST_GROUP WHERE GROUP_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
+     $query='SELECT GROUP_ID, GROUP_TITLE FROM TAST_GROUP WHERE GROUP_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION) ORDER BY GROUP_ID';
     $stid = oci_parse($conn,$query );
     oci_execute($stid);
     $array=array();
@@ -81,9 +81,8 @@ $html.='<div class="simple_table">';
       $html.='</table>';
     }               
     $html.= "</div>\n";  
-    $html.="</html></body>";    
+    $html.="</body></html>";    
     //генерация документа с отчетом
     file_put_contents('report_7.html', $html);
-    echo $html;
 
     ?>

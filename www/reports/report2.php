@@ -27,8 +27,10 @@ use Dompdf\Exception;
       $point="";
       while ($row = oci_fetch_array($stid)) {
         $array[$x++]=array('id'=>$row[0],'title'=> $row[1]);
-        $point=$row[0]+",";
+        $point.=$row[0].',';
       }
+      /*$point для вставки в pivot query*/     
+      $point=substr($point, 0, -1);
       /*Построение таблицы*/
       $query ='SELECT *
       from (
@@ -40,12 +42,12 @@ use Dompdf\Exception;
                   ,(select cognac_code from tast_cognac where cognac_id=r.rating_cognac and cognac_caption=r.rating_caption) cognac_code
                   ,(select man_fio from tast_man where man_id=r.rating_man and man_caption=r.rating_caption) man_fio
                 from tast_rating r
-                where rating_caption=63
+                where rating_caption=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)
             ) r
         )
      ) pivot (
               max(point)
-              for man_id in (61,62,63,64,65,66,67,68,69,70,71)
+              for man_id in ('.$point.')
              )
       order by 1';
       $stid = oci_parse($conn,$query );
@@ -73,6 +75,6 @@ use Dompdf\Exception;
       $html.='</table>';          
     
     $html.= "</div>\n";  
-    $html.="</html></body>";
+    $html.="</body></html>";
     file_put_contents('report_2.html', $html);
     ?>

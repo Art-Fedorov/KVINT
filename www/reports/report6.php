@@ -18,7 +18,7 @@ while ($row = oci_fetch_array($stid)) {
   $title=$row[0];
 }
 /*Запрос на получение списка групп*/
- $query='SELECT GROUP_ID, GROUP_TITLE FROM TAST_GROUP WHERE GROUP_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
+ $query='SELECT GROUP_ID, GROUP_TITLE FROM TAST_GROUP WHERE GROUP_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)ORDER BY GROUP_ID';
 $stid = oci_parse($conn,$query );
 oci_execute($stid);
 $array=array();
@@ -66,6 +66,7 @@ for ($j=$array[0]['id'],$k=0;$j<=$array[count($array)-1]['id'];$j++,$k++)
     $html.= oci_field_name($stid,$i);            
     $html.= "</th>";
   }*/
+  echo oci_num_rows($stid);
   $m=1;
   while ($row = oci_fetch_array($stid)) {
     $html.= "<tr>";
@@ -80,9 +81,8 @@ for ($j=$array[0]['id'],$k=0;$j<=$array[count($array)-1]['id'];$j++,$k++)
   $html.='</table>';
 }
 $html.= "</div>\n";  
-$html.="</html></body>";    
+$html.="</body></html>";    
 //создание html документа с отчетом
 file_put_contents('report_6.html', $html);
-echo $html;
 
 ?>

@@ -24,7 +24,7 @@ $html.='<header>
 </header><div class="simple_table">'; 
 
 /*Запрос на получение списка групп*/ 
-$query='SELECT GROUP_ID, GROUP_TITLE FROM TAST_GROUP WHERE GROUP_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)'; 
+$query='SELECT GROUP_ID, GROUP_TITLE FROM TAST_GROUP WHERE GROUP_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION) ORDER BY GROUP_ID'; 
 $stid = oci_parse($conn,$query ); 
 oci_execute($stid); 
 $array=array(); 
@@ -38,6 +38,7 @@ while ($row = oci_fetch_array($stid)) {
 for ($j=$array[0]['id'],$k=0;$j<=$array[count($array)-1]['id'];$j++,$k++)
 { 
 /*Перед таблицей для каждой группы вставляем название группы*/ 
+
   $html.='<p>'.$array[$k]['title'].'</p>'; 
 
   /*Заполнение таблиц*/ 
@@ -54,7 +55,8 @@ for ($j=$array[0]['id'],$k=0;$j<=$array[count($array)-1]['id'];$j++,$k++)
   WHERE COGNAC_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION) 
   AND COGNAC_GROUP='.$j.' 
   ORDER BY C.COGNAC_CODE'; 
-  $stid = oci_parse($conn,$query ); 
+
+  $res=$stid = oci_parse($conn,$query ); 
   oci_execute($stid); 
   $html.='<table border="1" style="width:100%;">'; 
   /*Заполнение хедеров таблицы */
@@ -65,7 +67,8 @@ for ($j=$array[0]['id'],$k=0;$j<=$array[count($array)-1]['id'];$j++,$k++)
   $html.='<th>Государство, предприятие-изготовитель</th>'; 
   $html.='<th>Возраст, г.</th>'; 
   $html.='<th>Спирт, %</th>';
-  $html.='<th>Сахар, г/дм3</th>';  
+  $html.='<th>Сахар, г/дм3</th>'; 
+  $html.='<th>Примечание</th>';  
 
   /*Заполнение тела таблицы*/
   $m=1; 
@@ -83,7 +86,7 @@ for ($j=$array[0]['id'],$k=0;$j<=$array[count($array)-1]['id'];$j++,$k++)
 } 
 
 $html.= "</div>\n"; 
-$html.="</html></body>"; 
+$html.="</body></html>"; 
 /*Генерация пдф (не работает) на хабре советовали 
 wkhtmltopdf */ 
 /*require_once("dompdf/autoload.inc.php"); 
@@ -95,4 +98,5 @@ $output = $dompdf->output();
 file_put_contents('report_1.pdf', $output);*/ 
 /*Генерация html документа*/ 
 file_put_contents('report_1.html', $html); 
+echo $html;
 ?>

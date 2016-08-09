@@ -2,7 +2,7 @@
 class Select {    
     public function fillselect_1() {
       include('connect.php');
-      $query='SELECT GROUP_ID, GROUP_TITLE, GROUP_PREFIX FROM TAST_GROUP where GROUP_CAPTION =(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
+      $query='SELECT GROUP_ID, GROUP_TITLE, GROUP_PREFIX FROM TAST_GROUP where GROUP_CAPTION =(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION) ORDER BY GROUP_ID';
       $stid = oci_parse($conn,$query);
       oci_execute($stid);
       while ($row = oci_fetch_array($stid)) {
@@ -16,7 +16,7 @@ class Select {
  
     public function fillselect_2() {    
       include('connect.php');
-      $query='SELECT MAN_ID, MAN_FIO FROM TAST_MAN where MAN_CAPTION = (SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
+      $query='SELECT MAN_ID, MAN_FIO FROM TAST_MAN where MAN_CAPTION = (SELECT MAX(CAPTION_ID) FROM TAST_CAPTION) ORDER BY MAN_ID';
       $stid = oci_parse($conn,$query);
       oci_execute($stid);
       while ($row = oci_fetch_array($stid)) {
