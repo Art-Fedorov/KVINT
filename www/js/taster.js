@@ -5,8 +5,9 @@
 		$('.cognacgroup ul li:first-child p').addClass('active');
 		//кнопка выбрать имя
 		$('#start-degustation').click(function(){
-			$('.cd-wrapper').show();
+			$('.cd-wrapper').show();			
 			$('.list p').removeClass('active');
+			$('.cancel-tast').show();
 			if ($('#hidden input').length>0)
 			{
 				$('p#'+$('#hidden input').attr('value')).addClass('active');
@@ -22,7 +23,7 @@
 			$('.taster-name').text($(this).text()).attr('id',$(this).attr('id'));
 			$('.pin').show();
 			$('.list').hide();
-			$('.cancel-tast').hide();
+			//$('.cancel-tast').hide();
 			$('div.pin input').focus();
 		});
 

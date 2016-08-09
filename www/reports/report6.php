@@ -36,11 +36,11 @@ for ($j=$array[0]['id'],$k=0;$j<=$array[count($array)-1]['id'];$j++,$k++)
   //наименование группы
   $html.='<p class="last"> Группа: '.$array[$k]['title'].'</p></div>';
   //запрос к бд
-  $query='SELECT a.COGNAC_CODE as "Шифр", 
-      a.COGNAC_TITLE as "Наименование", 
-      a.COGNAC_MANUF as "Изготовитель", 
-      a.COGNAC_AGE as "Возраст, г.", 
-      b.PRIZE_TITLE as "Награждение"
+  $query='SELECT a.COGNAC_CODE, 
+      a.COGNAC_TITLE, 
+      a.COGNAC_MANUF, 
+      a.COGNAC_AGE, 
+      b.PRIZE_TITLE
 			FROM TAST_COGNAC a, TAST_PRIZE b  
 			WHERE a.COGNAC_GROUP = b.PRIZE_GROUP 
       AND b.PRIZE_TITLE = 
@@ -55,11 +55,17 @@ for ($j=$array[0]['id'],$k=0;$j<=$array[count($array)-1]['id'];$j++,$k++)
   oci_execute($stid);
   $html.='<table border="1" style="width:100%;">';
   $html.='<th>№</th>'; //добавление новог остолбца
+  $html.='<th>Шифр</th>'; 
+  $html.='<th>Наименование</th>'; 
+  $html.='<th>Государство, предприятие-изготовитель</th>'; 
+  $html.='<th>Возраст, г.</th>'; 
+  $html.='<th>Награждение</th>'; 
+  /*
   for ($i = 1; $i-1 < oci_num_fields($stid); $i++) {
     $html.= "<th>";
     $html.= oci_field_name($stid,$i);            
     $html.= "</th>";
-  }
+  }*/
   $m=1;
   while ($row = oci_fetch_array($stid)) {
     $html.= "<tr>";

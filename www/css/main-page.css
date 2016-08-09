@@ -3,6 +3,7 @@
 	margin: 0;
 }
 html{
+	-webkit-overflow-scrolling: touch;
 	height: 100%;
 	overflow: hidden;
 }
@@ -24,14 +25,12 @@ html{
 }
 body{	
 	height: 100%;
-	/*background: url("../images/iconbox-1.jpg") no-repeat 50% 50% ;
-	background-attachment: fixed;	
-	padding: 10px;*/	
 	overflow: auto;
 }
 .bg{	
 	min-height: 100%;	
-	background-color: #fff; 		
+	background-color: #fff;
+  //background: linear-gradient(to top left, #e060f0, #60ecf0);  
 	box-sizing: border-box;
 }
 .container{

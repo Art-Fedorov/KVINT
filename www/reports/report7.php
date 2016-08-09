@@ -38,10 +38,10 @@ $html.='<div class="simple_table">';
       /*Перед таблицей для каждой группы вставляем название группы*/
       $html.='<p class="last">'.$array[$k]['title'].'</p>';
        /*Заполнение таблиц*/
-      $query='SELECT a.COGNAC_TITLE as "Наименование", 
-          a.COGNAC_MANUF as "Изготовитель", 
-          a.COGNAC_AGE as "Возраст, г.", 
-          b.PRIZE_TITLE as "Награждение"
+      $query='SELECT a.COGNAC_TITLE, 
+          a.COGNAC_MANUF, 
+          a.COGNAC_AGE, 
+          b.PRIZE_TITLE
 					FROM TAST_COGNAC a, TAST_PRIZE b  
 					WHERE a.COGNAC_GROUP = b.PRIZE_GROUP 
           AND b.PRIZE_TITLE = (SELECT k.PRIZE_TITLE FROM TAST_PRIZE k 
@@ -55,12 +55,16 @@ $html.='<div class="simple_table">';
       $html.='<table border="1" style="width:100%;">';
       $html.='<th>№<br>п/п</th>'; //столбец для нумерации всех коньяков по порядку
       $html.='<th>№</th>';
-      for ($i = 1; $i-1 < oci_num_fields($stid); $i++) {
+      $html.='<th>Наименование</th>'; 
+      $html.='<th>Государство, предприятие-изготовитель</th>'; 
+      $html.='<th>Возраст, г.</th>'; 
+      $html.='<th>Награждение</th>'; 
+      /*for ($i = 1; $i-1 < oci_num_fields($stid); $i++) {
         $html.= "<th>";
         //заполнение заголовков таблицы
         $html.= oci_field_name($stid,$i);            
         $html.= "</th>";
-      }
+      }*/
       $m=1;
       //заполнение таблицы
       while ($row = oci_fetch_array($stid)) {

@@ -32,18 +32,26 @@ $html.='<div class="simple_table">';
   $html.='<p class="last"> Группа: '.$_GET['text'].'</p>';
 
   /*запрос на формирование выборки по конкретной группе*/
-  $query="SELECT cognac_code as \"Шифр\", cnt0 as \"Количество\", avg0 as \"Средний балл\", a.prize_title as \"Награда\", cnt1, avg1, b.prize_title from ( select count(rating_id) as cnt0, count(rating_id)-2 as cnt1, round(avg(rating_point),2) as avg0, round(((sum(rating_point)-min(rating_point)-max(rating_point))/(count(rating_point)-2)),2) as avg1, rating_cognac, (select cognac_group from tast_cognac where cognac_id=rating_cognac and cognac_caption=(select max(caption_id) from tast_caption)) as cg from tast_rating where rating_caption=(select max(caption_id) from tast_caption) group by rating_cognac) tr, tast_prize a, tast_prize b, tast_cognac where a.prize_group=tr.cg and b.prize_group=tr.cg and avg0>=a.prize_lowrange and avg0<=a.prize_highrange and avg1>=b.prize_lowrange and avg1<=b.prize_highrange and substr(cognac_code,1,2)='".$group_id."' and tr.rating_cognac=tast_cognac.cognac_id order by cognac_code";
+  $query="SELECT cognac_code, cnt0, avg0, a.prize_title, cnt1, avg1, b.prize_title from ( select count(rating_id) as cnt0, count(rating_id)-2 as cnt1, round(avg(rating_point),2) as avg0, round(((sum(rating_point)-min(rating_point)-max(rating_point))/(count(rating_point)-2)),2) as avg1, rating_cognac, (select cognac_group from tast_cognac where cognac_id=rating_cognac and cognac_caption=(select max(caption_id) from tast_caption)) as cg from tast_rating where rating_caption=(select max(caption_id) from tast_caption) group by rating_cognac) tr, tast_prize a, tast_prize b, tast_cognac where a.prize_group=tr.cg and b.prize_group=tr.cg and avg0>=a.prize_lowrange and avg0<=a.prize_highrange and avg1>=b.prize_lowrange and avg1<=b.prize_highrange and substr(cognac_code,1,2)='".$group_id."' and tr.rating_cognac=tast_cognac.cognac_id order by cognac_code";
     echo $query;
   $stid = oci_parse($conn,$query );
   oci_execute($stid); //выполнение запроса
   $html.='<table border="1" style="width:100%;">';
   $html.='<th>№</th>'; //добавление новог столбца в таблице - номер
   /*заполнение заголовков таблицы*/
+  $html.='<th>Шифр</th>'; 
+  $html.='<th>Количество оценок</th>'; 
+  $html.='<th>Средний балл</th>'; 
+  $html.='<th>Награда</th>'; 
+  $html.='<th>Количество оценок</th>'; 
+  $html.='<th>Средний балл</th>';
+  $html.='<th>Награда</th>';  
+  /*
   for ($i = 1; $i-1 < oci_num_fields($stid); $i++) {
     $html.= "<th>";
     $html.= oci_field_name($stid,$i);            
     $html.= "</th>";
-  }
+  }*/
   $m=1;
   //заполнение таблицы
   while ($row = oci_fetch_array($stid)) {

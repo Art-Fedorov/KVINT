@@ -19,12 +19,12 @@
 }
 .report-place p{	
 	text-align: center;
-	color: #24222A;
+	color: #000;
 	font-size: 16px;
 }
 .report-select{
 	background-color: #fff;
-	color: #24222A;
+	color: #000;
 	border:1px solid #615B71;
 	border-radius: 4px;
 	padding:6px 10px;
@@ -37,7 +37,7 @@
 .load-report{	
 	padding:4px 10px;
 	font-size: 15px;
-	color: #24222A;
+	color: #000;
 	border:1px solid #615B71;
 	background-color: #fff;
 	border-radius: 4px;	
