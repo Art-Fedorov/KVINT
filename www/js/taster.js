@@ -145,8 +145,9 @@
 				  		$('input[name=bouquet'+i+']').val(val.bouquet);
 				  		$('input[name=typicality'+i+']').val(val.typicality);
 				  		$('input[name=note'+i+']').val(val.note);
+				  		$('input[name=main'+i+']').val(val.mainpoint);
 				  	});
-				  	sum();
+				  	//sum();
 		  		}
 		  	});
 		  };

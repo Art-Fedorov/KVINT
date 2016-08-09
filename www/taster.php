@@ -48,7 +48,7 @@
 					</nav>					
 					<div id="group" class="group">
 					</div>
-					<button class="secure-button submit-cognac" type="submit">Закрепить изменения</button>
+					<button class="secure-button submit-cognac" type="button">Закрепить изменения</button>
 				</form>
 					<?php //require 'php/secure-insert.php';
 					//secure(); ?>
