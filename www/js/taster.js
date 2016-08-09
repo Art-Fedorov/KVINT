@@ -23,7 +23,7 @@
 			$('.taster-name').text($(this).text()).attr('id',$(this).attr('id'));
 			$('.pin').show();
 			$('.list').hide();
-			//$('.cancel-tast').hide();
+			$('.cancel-tast').hide();
 			$('div.pin input').focus();
 		});
 

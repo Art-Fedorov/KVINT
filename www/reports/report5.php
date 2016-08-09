@@ -22,7 +22,7 @@ $html.='<div class="simple_table">';
     oci_execute($stid);
     $title=""; //хранится KVINT 2012...
     while ($row = oci_fetch_array($stid)) {
-      $title=htmlentities($row[0], ENT_QUOTES, 'cp1251');
+      $title=$row[0];
     }
     /*Добавление шапки отчета*/
      $html.='
@@ -59,7 +59,7 @@ $html.='<div class="simple_table">';
     $html.="<td>".$m++."</td>";
     for ($i = 0; $i < oci_num_fields($stid); $i++) {
        $html.= '<td>';
-       $html.=  htmlentities($row[$i], ENT_QUOTES, 'cp1251');
+       $html.=  $row[$i];
        $html.= '</td>';
     }
     $html.= "</tr>";

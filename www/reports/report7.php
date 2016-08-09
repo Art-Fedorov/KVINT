@@ -15,7 +15,7 @@ $html.='<div class="simple_table">';
     oci_execute($stid);
     $title="";  //хранится KVINT 2012...
     while ($row = oci_fetch_array($stid)) {
-      $title=htmlentities($row[0], ENT_QUOTES, 'cp1251');
+      $title=$row[0];
     }
     /*Запрос на получение списка групп*/
      $query='SELECT GROUP_ID, GROUP_TITLE FROM TAST_GROUP WHERE GROUP_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
@@ -25,7 +25,7 @@ $html.='<div class="simple_table">';
     $x=0;
      /*Добавляем список групп в массив*/
     while ($row = oci_fetch_array($stid)) {
-      $array[$x]=array('id'=>$row[0],'title'=> htmlentities($row[1], ENT_QUOTES, 'cp1251'));
+      $array[$x]=array('id'=>$row[0],'title'=> $row[1]);
       $x++;
     }
     $pp=1;
@@ -73,7 +73,7 @@ $html.='<div class="simple_table">';
         $html.="<td>".$m++."</td>";
         for ($i = 0; $i < oci_num_fields($stid); $i++) {
            $html.= '<td>';
-           $html.=  htmlentities($row[$i], ENT_QUOTES, 'cp1251');
+           $html.= $row[$i];
            $html.= '</td>';
         }
         $html.= "</tr>";
