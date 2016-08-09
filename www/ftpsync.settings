@@ -4,7 +4,7 @@
 
 	"default": {
 
-		"host": "ftp:tasting.kvint.md",
+		"host": "tasting.kvint.md",
 		"username": "tasting",  // or null for anonymous login
 		"password": "uzC4PCsG`)UPmBmo6emeK",
 		"path": "/",
