@@ -9,14 +9,17 @@ $(document).mouseup(function (e) {
 $(document).bind( "touchstart", function(e){
   var container = $(".b-popup");
     if (container.has(e.target).length === 0) {
-        container.remove();  
+        container.remove();
     }
 });
 //скрытие окна и удаление его из разметки
 function PopUpHide(){
     $('div.b-popup').empty();
     $("div.b-popup").remove();
-
+}
+function PopUpHideTasting(){
+    $('div.b-popup-tasting').empty();
+    $("div.b-popup-tasting").remove();
 }
 //скрытие окна и удаление его из разметки
 function cancel(){ 

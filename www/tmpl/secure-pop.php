@@ -1,6 +1,7 @@
 <div class="b-popup-tasting" id="secure-popup">
   <div class="b-popup-border b-popup-border-secure">
-  		<div class="wrapper">   
+  	<button class="b-popup-tasting-close" onclick="javascript:PopUpHideTasting()">&#215;</button> 
+  		<div class="wrapper">
 	  		<p class="big_next">Дегустация группы успешно завершена</p>
 	  		<p class="small_next">Tasting of the cohnac group is succesfully completed</p>				
 	  		<div class="content_box">

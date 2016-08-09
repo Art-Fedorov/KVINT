@@ -227,7 +227,7 @@ function perehod_text(){
 function perehod_action(){
 	$(".cognacgroup ul li").each(function(key,val){
 			if ($(val).children().hasClass('active')) {
-				PopUpHide();
+				PopUpHideTasting();
 				$('.cognacgroup ul li:nth-child('+(key+2)+') p').click();
 				 return false;
 			}
