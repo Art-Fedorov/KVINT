@@ -13,10 +13,10 @@ include_once '../php/connect.php' ;
       oci_execute($stid);
       $title="";
       while ($row = oci_fetch_array($stid)) {
-        $title=htmlentities($row[0], ENT_QUOTES, 'cp1251');
+        $title=$row[0];
       }
       /*Шапка отчета*/
-      $html.='<p>МЕЖДУНАРОДНЫЙ КОНКУРС КОНЬЯКОВ "'.$title.'" г. Тирасполь</p><p>Итоговая таблица результатов дегустации</p><p>'.$text.'</p>';
+      $html.='<p>МЕЖДУНАРОДНЫЙ КОНКУРС КОНЬЯКОВ "'.$title.'" г. Тирасполь</p><p>Итог	овая таблица результатов дегустации</p><p>'.$text.'</p>';
 
       /*Жюри для хедера таблицы*/
       $query='SELECT MAN_ID,MAN_FIO from TAST_MAN WHERE MAN_CAPTION=(SELECT MAX(CAPTION_ID) FROM TAST_CAPTION)';
@@ -26,7 +26,7 @@ include_once '../php/connect.php' ;
       $x=0;
       $point="";
       while ($row = oci_fetch_array($stid)) {
-        $array[$x++]=array('id'=>$row[0],'title'=> htmlentities($row[1], ENT_QUOTES, 'cp1251'));
+        $array[$x++]=array('id'=>$row[0],'title'=> $row[1]);
       }
       /*Построение таблицы*/
       $query ='SELECT *
@@ -67,7 +67,7 @@ include_once '../php/connect.php' ;
         $html.= "<tr>";
         for ($i = 0; $i < oci_num_fields($stid); $i++) {
            $html.= '<td>';
-           $html.=  htmlentities($row[$i], ENT_QUOTES, 'cp1251');
+           $html.=  $row[$i];
            $html.= '</td>';
         }
         $html.= "</tr>";

@@ -43,7 +43,7 @@ for ($j=$array[0]['id'],$k=0;$j<=$array[count($array)-1]['id'];$j++,$k++)
   /*Заполнение таблиц*/ 
   $query='SELECT G.GROUP_TITLE as "Категория", 
   C.COGNAC_CODE as "Шифр",C.COGNAC_TITLE as "Наименование", 
-  C.COGNAC_MANUF as "Производитель", 
+  C.COGNAC_MANUF as "Предприятие - изготовитель", 
   C.COGNAC_AGE as "Возраст", 
   C.COGNAC_CONDALC as "Спирт,<br> %", 
   C.COGNAC_CONDSUG as "Сахар,<br> г/дм3", 
