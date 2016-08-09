@@ -83,9 +83,12 @@
 			sendTable($(this).text());
 		});
 
-		//при отправке группы дегустации
-		$('form#form').submit(function (){
+		/*//при отправке группы дегустации
+			//сейчас на 197 строке
+		$('form#form input.submit-cognac').click(function (){
 			var msg   = $('form#form').serialize();
+			console.log(msg);
+			console.log("asd");
 			$.ajax({
 				type:'post',
         url:'php/secure-insert.php',
@@ -96,8 +99,8 @@
           },
         timeout:5000//таймаут запроса
 			});
-			return false;
-		});
+			
+		});*/
 
 		//получение группы коньяков
 		function sendTable(code) {
@@ -192,10 +195,22 @@
 		//при при отправке формы появляется всплывающее окно, в нем
 		//галочка икнопка перехода на следующую группу
 		$(document).on('click','.submit-cognac',function(){
+			var msg   = $('form#form').serialize();		
+			$.ajax({
+				type:'post',
+        url:'php/secure-insert.php',
+        data:msg,
+        response:'text',
+        success:function (data) {
+				    
+          },
+        timeout:5000//таймаут запроса
+			});
 			$.get('../tmpl/secure-pop.php', function(result) {
 			    $('body').append(result);
 			  		perehod_text();
 			});  
+
 		});
 		//переход на следующую группу
 		$(document).on('click','input.next',function(){
