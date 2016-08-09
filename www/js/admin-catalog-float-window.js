@@ -6,6 +6,12 @@ $(document).mouseup(function (e) {
 
     }
 });
+$(document).bind( "touchstart", function(e){
+  var container = $(".b-popup");
+    if (container.has(e.target).length === 0) {
+        container.remove();  
+    }
+});
 //скрытие окна и удаление его из разметки
 function PopUpHide(){
     $('div.b-popup').empty();

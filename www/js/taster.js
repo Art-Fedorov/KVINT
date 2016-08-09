@@ -59,6 +59,7 @@
 						$("#form span").hide();
 						$(".pin input").val("");
 						$('span.pin-error').hide();
+						document.activeElement.blur();
 					}
 					else {
 						$('span.pin-error').show();

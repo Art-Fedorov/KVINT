@@ -1,10 +1,20 @@
 /*одинаковые свойства для всех окон*/
 .b-popup{		
 	display: block;
-	z-index: 103;
+	z-index: 110;
   width:100%;
   min-height:100%;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.3);
+  overflow:hidden;
+  position:fixed;
+  top:0px;
+}
+.b-popup-tasting{   
+  display: block;
+  z-index: 110;
+  width:100%;
+  min-height:100%;
+  background-color: rgba(0,0,0,0.3);
   overflow:hidden;
   position:fixed;
   top:0px;
