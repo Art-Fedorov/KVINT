@@ -56,6 +56,7 @@ include_once '../php/connect.php' ;
         $html.= "<th>";
         if($i>1)
         {
+          
           $f=oci_field_name($stid,$i);
         $html.= $array[$i-2]['title'];
         }
