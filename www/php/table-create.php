@@ -5,7 +5,7 @@ class Table {
     include('connect.php');
     $query=$code;
     $stid = oci_parse($conn,$query );
-    oci_execute($stid);
+    $res=oci_execute($stid);
     echo "<table class=\"table table-hover table-condensed success\">\n";
 
     for ($i = 2; $i-1 < oci_num_fields($stid); $i++) {

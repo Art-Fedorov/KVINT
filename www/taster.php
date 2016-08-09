@@ -1,4 +1,5 @@
-﻿<?php include_once 'php/connect.php' ?>
+﻿<?php include_once 'php/connect.php' 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
